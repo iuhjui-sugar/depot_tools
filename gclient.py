@@ -4619,6 +4619,7 @@ def main(argv):
         return 2
     disable_buffering()
     setup_color.init()
+    git_common.check_git_version()
     dispatcher = subcommand.CommandDispatcher(__name__)
     try:
         return dispatcher.execute(OptionParser(), argv)

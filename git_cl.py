@@ -7089,6 +7089,7 @@ class OptionParser(optparse.OptionParser):
 
 def main(argv):
     colorize_CMDstatus_doc()
+    git_common.check_git_version()
     dispatcher = subcommand.CommandDispatcher(__name__)
     try:
         return dispatcher.execute(OptionParser(), argv)
