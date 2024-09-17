@@ -70,6 +70,24 @@
       "parentUuid": "c8690c9b_3850fd82",
       "revId": "2fe7b1494987f564d15e85b2715a8641aea2dabc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "479df466_c4a14679",
+        "filename": "git_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-17T22:26:14Z",
+      "side": 1,
+      "message": "Opening a new thread.",
+      "parentUuid": "43f45686_a8356388",
+      "revId": "2fe7b1494987f564d15e85b2715a8641aea2dabc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
