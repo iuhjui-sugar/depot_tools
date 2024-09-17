@@ -150,6 +150,10 @@ GIT_TRANSIENT_ERRORS_RE = re.compile('|'.join(GIT_TRANSIENT_ERRORS),
 # See git commit b6160d95 for more information.
 MIN_UPSTREAM_TRACK_GIT_VERSION = (2, 3)
 
+# The minimum recommended version of Git.
+_GIT_MIN_VERSION = (2, 3)
+_GIT_MIN_VERSION_TAG = '.'.join(str(x) for x in _GIT_MIN_VERSION)
+
 
 class BadCommitRefException(Exception):
     def __init__(self, refs):
@@ -1193,6 +1197,35 @@ def upstream(branch):
                    branch + '@{upstream}')
     except subprocess2.CalledProcessError:
         return None
+
+
+def check_git_version():
+    """Checks git is installed and satisfies the minimum version recommended.
+
+    Prints a warning if git needs to be installed or updated.
+    """
+    if shutil.which('git') is None:
+        print(colorama.Fore.RED)
+        print('WARNING: git command not found.')
+        print('Please install version >= %s of git.' % _GIT_MIN_VERSION_TAG)
+        print('See instructions at')
+        print('https://git-scm.com/book/en/v2/Getting-Started-Installing-Git')
+        print(colorama.Style.RESET_ALL)
+        return
+
+    try:
+        actual = get_git_version()
+    except ValueError:
+        # Return early - failed to get the git version.
+        return
+
+    if actual < _GIT_MIN_VERSION:
+        actual_tag = '.'.join(str(x) for x in actual)
+        print(colorama.Fore.RED)
+        print('WARNING: git update is recommended. Installed git version is')
+        print('%s but depot_tools recommends >= %s' %
+              (actual_tag, _GIT_MIN_VERSION_TAG))
+        print(colorama.Style.RESET_ALL)
 
 
 def get_git_version():
