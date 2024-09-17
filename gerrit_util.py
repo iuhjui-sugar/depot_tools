@@ -287,6 +287,7 @@ class _Authenticator(object):
                         # GCE detection can't distinguish cloud workstations.
                         GceAuthenticator(),
                         LuciAuthAuthenticator(),
+                        NoAuthenticator(),
                     ]
                     if skip_sso:
                         LOGGER.debug(
@@ -828,9 +829,24 @@ class LuciAuthAuthenticator(LuciContextAuthenticator):
     non-google.com developer credentials.
     """
 
+    def is_applicable(self, *, conn: Optional[HttpConn] = None):
+        info = GetAccountDetails(conn.host, authenticator=self)
+        return 'email' in info
+
+
+class NoAuthenticator(_Authenticator):
+    """_Authenticator implementation that does no auth.
+    """
+
     @staticmethod
     def is_applicable(*, conn: Optional[HttpConn] = None):
         return True
+
+    def authenticate(self, conn: HttpConn):
+        pass
+
+    def debug_summary_state(self) -> str:
+        return ''
 
 
 class ChainedAuthenticator(_Authenticator):

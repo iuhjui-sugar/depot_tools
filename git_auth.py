@@ -36,7 +36,7 @@ class ConfigChanger(object):
     #
     # Increment this when making changes to the config, so that reliant
     # code can determine whether the config needs to be re-applied.
-    VERSION: int = 2
+    VERSION: int = 3
 
     def __init__(
         self,
@@ -130,6 +130,13 @@ class ConfigChanger(object):
         email: str = scm.GIT.GetConfig(cwd, 'user.email') or ''
         if gerrit_util.ShouldUseSSO(gerrit_host, email):
             return ConfigMode.NEW_AUTH_SSO
+        authenticator = gerrit_util.LuciAuthAuthenticator()
+        info = gerrit_util.GetAccountDetails(gerrit_host,
+                                             email,
+                                             authenticator=authenticator)
+        if 'email' not in info:
+            # User doesn't have a Gerrit account on this host
+            return ConfigMode.NO_AUTH
         return ConfigMode.NEW_AUTH
 
     def apply(self, cwd: str) -> None:
