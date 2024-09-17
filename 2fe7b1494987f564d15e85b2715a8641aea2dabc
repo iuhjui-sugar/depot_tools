@@ -34,6 +34,24 @@
       "parentUuid": "ffd910ec_c2538973",
       "revId": "2fe7b1494987f564d15e85b2715a8641aea2dabc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8690c9b_3850fd82",
+        "filename": "git_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-17T20:48:03Z",
+      "side": 1,
+      "message": "Yes, it\u0027s not possible to query accounts in chrome-internal without being logged in.\n\nA few options I can think of:\n* have a way to know what hosts are public vs private - that way we can force auth on private, and not on public. We would still need to handle this exception somehow, though.\n* always require luci-auth for newAuth. This is one-time, and aligns with future plans.\n\nI\u0027m leaning towards the second option.",
+      "parentUuid": "0d490b71_6e21c3c4",
+      "revId": "2fe7b1494987f564d15e85b2715a8641aea2dabc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
