@@ -52,6 +52,24 @@
       "parentUuid": "0d490b71_6e21c3c4",
       "revId": "2fe7b1494987f564d15e85b2715a8641aea2dabc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43f45686_a8356388",
+        "filename": "git_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-09-17T21:41:19Z",
+      "side": 1,
+      "message": "Have a working solution I think.  Basically, fall back to no auth if user isn\u0027t logged in, and print a reminder to login when running git cl creds-check (the de facto command to run for any auth issues)",
+      "parentUuid": "c8690c9b_3850fd82",
+      "revId": "2fe7b1494987f564d15e85b2715a8641aea2dabc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
