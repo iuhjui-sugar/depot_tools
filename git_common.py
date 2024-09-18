@@ -81,6 +81,9 @@ def win_find_git():
 
 GIT_EXE = 'git' if not IS_WIN else win_find_git()
 
+# The recommended minimum version of Git, in (<major>, <minor>) form.
+GIT_MIN_VERSION = (2, 3)
+
 FREEZE = 'FREEZE'
 FREEZE_SECTIONS = {'indexed': 'soft', 'unindexed': 'mixed'}
 FREEZE_MATCHER = re.compile(r'%s.(%s)' % (FREEZE, '|'.join(FREEZE_SECTIONS)))
