@@ -81,6 +81,9 @@ def win_find_git():
 
 GIT_EXE = 'git' if not IS_WIN else win_find_git()
 
+# The minimum recommended version of Git.
+GIT_MIN_VERSION = (2, 3)
+
 FREEZE = 'FREEZE'
 FREEZE_SECTIONS = {'indexed': 'soft', 'unindexed': 'mixed'}
 FREEZE_MATCHER = re.compile(r'%s.(%s)' % (FREEZE, '|'.join(FREEZE_SECTIONS)))
@@ -1195,6 +1198,34 @@ def upstream(branch):
         return None
 
 
+def check_git_version() -> Optional[str]:
+    """Checks whether git is installed, and its version is at least the minimum
+    recommended as defined in this file.
+
+    Returns:
+        - if not sufficient, returns a message with the remediation action.
+    """
+    min_tag = '.'.join(str(x) for x in GIT_MIN_VERSION)
+
+    if shutil.which(GIT_EXE) is None:
+        # git command was not found.
+        return ('git command was not found.\n'
+                f'Please install version >={min_tag} of git.\n'
+                'See instructions at\n'
+                'https://git-scm.com/book/en/v2/Getting-Started-Installing-Git')
+
+    git_version = get_git_version()
+    if git_version >= GIT_MIN_VERSION:
+        # git version is sufficient; no actions required.
+        return None
+
+    # git is installed but older than the recommended version.
+    installed_tag = '.'.join(str(x) for x in git_version)
+    return ('git update is recommended.\n'
+            f'Installed git version is {installed_tag}, but\n'
+            f'depot_tools recommends version {min_tag} or later.')
+
+
 def get_git_version():
     """Returns a tuple that contains the numeric components of the current git
     version."""
@@ -1204,9 +1235,10 @@ def get_git_version():
 
 def _extract_git_tuple(version_string):
     version_match = re.search(r'(\d+.)+(\d+)', version_string)
-    version = version_match.group() if version_match else ''
-
-    return tuple(int(x) for x in version.split('.'))
+    if version_match:
+        version = version_match.group()
+        return tuple(int(x) for x in version.split('.'))
+    return tuple()
 
 
 def get_num_commits(branch):
