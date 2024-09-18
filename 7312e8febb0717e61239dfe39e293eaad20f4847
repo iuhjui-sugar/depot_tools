@@ -3,6 +3,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "2a5c6496_3f9ecd8e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-18T21:34:47Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "7312e8febb0717e61239dfe39e293eaad20f4847",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "f9978d76_0e2b959f",
         "filename": "gerrit_util.py",
         "patchSetId": 5
