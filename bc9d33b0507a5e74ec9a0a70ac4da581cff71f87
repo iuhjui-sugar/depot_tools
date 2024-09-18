@@ -16,6 +16,24 @@
       "message": "lgtm, but tests are failing. Let\u0027s merge this after https://crrev.com/c/5869272 so warning is printed.",
       "revId": "bc9d33b0507a5e74ec9a0a70ac4da581cff71f87",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "647f8f84_81800c96",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-18T19:11:41Z",
+      "side": 1,
+      "message": "newest PS should pass! \ni am not a python person, tried to add a test to mock git version and check that `gitConfigCmd`  does not have the `--show-scope` - didn\u0027t succeed.\n\ntested it manually with forcing `gitConfigCmd` to be the \u003c2.26 version, works.\nbut would be awesome if you help me with the test, like pointing me to a similar one.",
+      "parentUuid": "c00cd252_00c2113b",
+      "revId": "bc9d33b0507a5e74ec9a0a70ac4da581cff71f87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
