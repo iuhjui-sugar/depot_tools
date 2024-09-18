@@ -34,6 +34,24 @@
       "parentUuid": "cfd8f868_54502b1e",
       "revId": "110f7e321531dd605382fe789b0efec039bdfce2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4192d29_cda3a824",
+        "filename": "git_common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-18T16:23:40Z",
+      "side": 1,
+      "message": "I\u0027m fairly certain we need to bump that version, see https://crbug.com/367915815\n\nLet\u0027s use 2.26 as minimum recommended version.",
+      "parentUuid": "66416d0c_0d4c3536",
+      "revId": "110f7e321531dd605382fe789b0efec039bdfce2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
