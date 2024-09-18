@@ -88,6 +88,24 @@
       "parentUuid": "10b252da_dc31d05c",
       "revId": "110f7e321531dd605382fe789b0efec039bdfce2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d20f37d_21b77d4e",
+        "filename": "git_common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-18T17:32:22Z",
+      "side": 1,
+      "message": "https://crrev.com/c/5874040 - this one should work, lets wait for bots,  happy to adapt to a better new helper method once this here is landed",
+      "parentUuid": "f6e15600_753bc219",
+      "revId": "110f7e321531dd605382fe789b0efec039bdfce2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
