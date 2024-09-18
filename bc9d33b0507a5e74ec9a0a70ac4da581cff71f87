@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c00cd252_00c2113b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-18T18:46:18Z",
+      "side": 1,
+      "message": "lgtm, but tests are failing. Let\u0027s merge this after https://crrev.com/c/5869272 so warning is printed.",
+      "revId": "bc9d33b0507a5e74ec9a0a70ac4da581cff71f87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
