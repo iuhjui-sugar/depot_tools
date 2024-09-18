@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4756eb3_08c3501f",
+        "filename": "git_common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1229,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-18T16:24:40Z",
+      "side": 1,
+      "message": "memoize this",
+      "revId": "3e382598804f93cb3af936cae0f2861f240b2a91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
