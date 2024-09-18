@@ -244,6 +244,7 @@ class CachedGitConfigState(object):
         """
 
         key = canonicalize_git_config_key(key)
+
         if not scope:
             scope = "default"
 
@@ -387,7 +388,11 @@ class GitConfigStateReal(GitConfigStateBase):
     def load_config(self) -> GitFlatConfigData:
         # NOTE: `git config --list` already canonicalizes keys.
         try:
-            rawConfig = GIT.Capture(['config', '--list', '-z', '--show-scope'],
+            gitConfigCmd = ['config', '--list', '-z', '--show-scope']
+            if git_common.get_git_version() <= (2, 25):
+                gitConfigCmd = ['config', '--list', '-z']
+
+            rawConfig = GIT.Capture(gitConfigCmd,
                                     cwd=self.root,
                                     strip_out=False)
         except subprocess2.CalledProcessError:
