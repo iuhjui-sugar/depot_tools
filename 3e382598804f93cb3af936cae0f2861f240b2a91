@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "99d68f6e_e63abd74",
+        "filename": "git_common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-18T16:26:09Z",
+      "side": 1,
+      "message": "extract this to a function - return True if min version is satisifed, and false if not. It should accept a git_version tuple as an argument.",
+      "range": {
+        "startLine": 1201,
+        "startChar": 0,
+        "endLine": 1220,
+        "endChar": 19
+      },
+      "revId": "3e382598804f93cb3af936cae0f2861f240b2a91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a4756eb3_08c3501f",
         "filename": "git_common.py",
         "patchSetId": 10
