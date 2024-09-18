@@ -1141,11 +1141,45 @@ class GitTestUtilsTest(git_test_utils.GitRepoReadOnlyTestBase):
             self.repo.show_commit('C', format_string='%cn %ce %ci'))
 
 
+class CheckGitVersionTest(unittest.TestCase):
+
+    def setUp(self):
+        import git_common
+        self.check_git_version = git_common.check_git_version
+        self.addCleanup(mock.patch.stopall)
+
+    def testGitNotInstalled(self):
+        mock.patch('shutil.which', lambda _: None).start()
+        recommendation = self.check_git_version()
+        self.assertIsNotNone(recommendation)
+        self.assertTrue('Please install' in recommendation)
+
+    def testGitOldVersion(self):
+        mock.patch('shutil.which', lambda _: '/example/bin/git').start()
+        mock.patch('git_common.run', lambda _: 'git version 2.2.40-abc').start()
+        recommendation = self.check_git_version()
+        self.assertIsNotNone(recommendation)
+        self.assertTrue('update is recommended' in recommendation)
+
+    def testGitSufficientVersion(self):
+        mock.patch('shutil.which', lambda _: '/example/bin/git').start()
+        mock.patch('git_common.run', lambda _: 'git version 2.30.1.456').start()
+        self.assertIsNone(self.check_git_version())
+
+    def testHandlesErrorGettingVersion(self):
+        mock.patch('shutil.which', lambda _: '/example/bin/git').start()
+        mock.patch('git_common.run', lambda _: 'Error with git version').start()
+        recommendation = self.check_git_version()
+        self.assertIsNotNone(recommendation)
+        self.assertTrue('update is recommended' in recommendation)
+
+
 class WarnSubmoduleTest(unittest.TestCase):
     def setUp(self):
         import git_common
         self.warn_submodule = git_common.warn_submodule
         mock.patch('sys.stdout', StringIO()).start()
+        self.addCleanup(mock.patch.stopall)
 
     def testWarnFSMonitorOldVersion(self):
         mock.patch('git_common.is_fsmonitor_enabled', lambda: True).start()
