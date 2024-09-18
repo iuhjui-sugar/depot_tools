@@ -16,6 +16,24 @@
       "message": "I based this off `MIN_UPSTREAM_TRACK_GIT_VERSION` - is there a known minimum this should be?",
       "revId": "110f7e321531dd605382fe789b0efec039bdfce2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66416d0c_0d4c3536",
+        "filename": "git_common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-09-18T16:04:41Z",
+      "side": 1,
+      "message": "I actually don\u0027t know if there is a well-defined min git version that depot tools supports. @sokcevic@chromium.org should we start define that?",
+      "parentUuid": "cfd8f868_54502b1e",
+      "revId": "110f7e321531dd605382fe789b0efec039bdfce2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
