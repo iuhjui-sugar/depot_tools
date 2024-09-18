@@ -7089,6 +7089,9 @@ class OptionParser(optparse.OptionParser):
 
 def main(argv):
     colorize_CMDstatus_doc()
+    recommendation = git_common.check_git_version()
+    if recommendation:
+        logging.warning(recommendation)
     dispatcher = subcommand.CommandDispatcher(__name__)
     try:
         return dispatcher.execute(OptionParser(), argv)
