@@ -1141,6 +1141,32 @@ class GitTestUtilsTest(git_test_utils.GitRepoReadOnlyTestBase):
             self.repo.show_commit('C', format_string='%cn %ce %ci'))
 
 
+class CheckGitVersionTest(unittest.TestCase):
+
+    def setUp(self):
+        import git_common
+        self.check_git_version = git_common.check_git_version
+
+    def testGitNotInstalled(self):
+        mock.patch('shutil.which', return_value=None)
+        self.assertTrue('Please install' in self.check_git_version())
+
+    def testGitOldVersion(self):
+        mock.patch('shutil.which', return_value='/example/bin/git')
+        mock.patch('git_common.run', lambda _: 'git version 2.2.40.abc').start()
+        self.assertTrue('update is recommended' in self.check_git_version())
+
+    def testGitSufficientVersion(self):
+        mock.patch('shutil.which', return_value='/example/bin/git')
+        mock.patch('git_common.run', lambda _: 'git version 2.30.0').start()
+        self.assertEqual(self.check_git_version(), None)
+
+    def testHandlesErrorGettingVersion(self):
+        mock.patch('shutil.which', return_value='/example/bin/git')
+        mock.patch('git_common.run', lambda _: '').start()
+        self.assertTrue('update is recommended' in self.check_git_version())
+
+
 class WarnSubmoduleTest(unittest.TestCase):
     def setUp(self):
         import git_common
