@@ -1,0 +1,86 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd45eb77_e59d4ce0",
+        "filename": "git_common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1224,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-09-19T16:43:06Z",
+      "side": 1,
+      "message": "nit-nit: tag \u003d \u0027.\u0027.join(str(x) for x in get_git_version()) or \u0027unknown\u0027",
+      "range": {
+        "startLine": 1222,
+        "startChar": 4,
+        "endLine": 1224,
+        "endChar": 23
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "950d6189_165f12d0",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "git_common.py",
+              "range": {
+                "startLine": 1222,
+                "startChar": 0,
+                "endLine": 1225,
+                "endChar": 0
+              },
+              "replacement": "    tag \u003d \u0027.\u0027.join(str(x) for x in get_git_version()) or \u0027unknown\u0027\n"
+            }
+          ]
+        }
+      ],
+      "revId": "7700917c51c556f51f3d2c7df93f8cb5db58b7a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66224e25_5509e792",
+        "filename": "git_common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1235,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-09-19T16:43:06Z",
+      "side": 1,
+      "message": "nit: I think 1 would be more appropriate as we are only expecting 1 version.",
+      "range": {
+        "startLine": 1235,
+        "startChar": 29,
+        "endLine": 1235,
+        "endChar": 33
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "452a0087_9cd0f75f",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "git_common.py",
+              "range": {
+                "startLine": 1235,
+                "startChar": 0,
+                "endLine": 1236,
+                "endChar": 0
+              },
+              "replacement": "@functools.lru_cache(maxsize\u003d1)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "7700917c51c556f51f3d2c7df93f8cb5db58b7a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
