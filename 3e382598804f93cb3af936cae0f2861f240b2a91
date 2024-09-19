@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00993713_a5160397",
+        "filename": "git_common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-09-19T08:20:32Z",
+      "side": 1,
+      "message": "Added `meets_git_version`.",
+      "parentUuid": "99d68f6e_e63abd74",
+      "range": {
+        "startLine": 1201,
+        "startChar": 0,
+        "endLine": 1220,
+        "endChar": 19
+      },
+      "revId": "3e382598804f93cb3af936cae0f2861f240b2a91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a4756eb3_08c3501f",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-09-18T16:24:40Z",
       "side": 1,
       "message": "memoize this",
+      "revId": "3e382598804f93cb3af936cae0f2861f240b2a91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "211fbc96_a51278ec",
+        "filename": "git_common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1229,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-09-19T08:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4756eb3_08c3501f",
       "revId": "3e382598804f93cb3af936cae0f2861f240b2a91",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

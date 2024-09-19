@@ -106,6 +106,24 @@
       "parentUuid": "f6e15600_753bc219",
       "revId": "110f7e321531dd605382fe789b0efec039bdfce2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "769447a7_bd61e527",
+        "filename": "git_common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-09-19T08:20:32Z",
+      "side": 1,
+      "message": "Updated `GIT_MIN_VERSION` to `(2, 26, 0)`.",
+      "parentUuid": "3d20f37d_21b77d4e",
+      "revId": "110f7e321531dd605382fe789b0efec039bdfce2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
