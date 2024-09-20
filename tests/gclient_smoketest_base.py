@@ -7,6 +7,7 @@ import logging
 import os
 import re
 import sys
+from unittest import mock
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GCLIENT_PATH = os.path.join(ROOT_DIR, 'gclient')
@@ -26,6 +27,9 @@ class GClientSmokeBase(fake_repos.FakeReposTestBase):
         # Suppress Python 3 warnings and other test undesirables.
         self.env['GCLIENT_TEST'] = '1'
         self.maxDiff = None
+        # Mock git version checking.
+        mock.patch('git_common.check_git_version', lambda: None).start()
+        self.addCleanup(mock.patch.stopall)
 
     def gclient(self, cmd, cwd=None, error_ok=False):
         if not cwd:
