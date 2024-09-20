@@ -12,6 +12,7 @@ import logging
 import os
 import sys
 import unittest
+from unittest import mock
 
 import gclient_smoketest_base
 
@@ -102,6 +103,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
         with self.assertRaisesRegex(AssertionError, 'from a gclient workspace'):
             self.gclient(['gitmodules'], cwd=self.root_dir)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testSync(self):
         self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
         # Test unversioned checkout.
@@ -202,6 +204,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
         }
         self.assertEqual(out, output_json)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testSyncIgnoredSolutionName(self):
         """TODO(maruel): This will become an error soon."""
         self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
@@ -219,6 +222,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
         tree['src/git_hooked2'] = 'git_hooked2'
         self.assertTree(tree)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testSyncNoSolutionName(self):
         # When no solution name is provided, gclient uses the first solution
         # listed.
@@ -241,6 +245,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
         ])
         self.assertTree(tree)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testSyncJobs(self):
         self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
         # Test unversioned checkout.
@@ -450,6 +455,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
             contents = f.read().splitlines()
             self.assertEqual(hook_contents, contents)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testRunHooks(self):
         self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
         self.gclient(['sync', '--deps', 'mac'])
@@ -481,6 +487,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
         tree['src/should_run'] = 'should_run'
         self.assertTree(tree)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testPreDepsHooks(self):
         self.gclient(['config', self.git_base + 'repo_5', '--name', 'src'])
         expectation = [
@@ -534,6 +541,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                                     ('repo_2@1', 'src/repo2'))
         self.assertTree(tree)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testPreDepsHooksError(self):
         self.gclient(['config', self.git_base + 'repo_5', '--name', 'src'])
         expectated_stdout = [
@@ -554,6 +562,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
         self.assertEqual(2, retcode)
         self.checkBlock(stdout, expectated_stdout)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testRevInfo(self):
         self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
         self.gclient(['sync', '--deps', 'mac'])
@@ -566,6 +575,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                })
         self.check((out, '', 0), results)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testRevInfoActual(self):
         self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
         self.gclient(['sync', '--deps', 'mac'])
@@ -580,6 +590,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                })
         self.check((out, '', 0), results)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testRevInfoFilterPath(self):
         self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
         self.gclient(['sync', '--deps', 'mac'])
@@ -589,6 +600,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
         })
         self.check((out, '', 0), results)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testRevInfoFilterURL(self):
         self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
         self.gclient(['sync', '--deps', 'mac'])
@@ -602,6 +614,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
         })
         self.check((out, '', 0), results)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testRevInfoFilterURLOrPath(self):
         self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
         self.gclient(['sync', '--deps', 'mac'])
@@ -865,6 +878,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
             '}]',
         ], contents)
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testGetDep(self):
         fake_deps = os.path.join(self.root_dir, 'DEPS.fake')
         with open(fake_deps, 'w') as f:
@@ -892,6 +906,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
             'bar_rev',
         ], results[0].splitlines())
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testGetDep_Submodule(self):
         self.gclient(['config', self.git_base + 'repo_20', '--name', 'src'])
         subprocess2.call([
@@ -910,6 +925,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
             'True', 'version:1234', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
         ], results[0].splitlines())
 
+    @mock.patch('git_common.check_git_version', lambda: None)
     def testGetDep_BuiltinVariables(self):
         self.gclient(['config', self.git_base + 'repo_1', '--name', 'src'])
         fake_deps = os.path.join(self.root_dir, 'DEPS.fake')
