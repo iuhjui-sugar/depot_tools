@@ -4619,6 +4619,10 @@ def main(argv):
         return 2
     disable_buffering()
     setup_color.init()
+    recommendation = git_common.check_git_version()
+    print(f'### Recommendation ###\n{recommendation}\n\n')
+    if recommendation:
+        gclient_utils.AddWarning(recommendation)
     dispatcher = subcommand.CommandDispatcher(__name__)
     try:
         return dispatcher.execute(OptionParser(), argv)
