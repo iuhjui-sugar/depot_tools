@@ -16,6 +16,29 @@
       "message": "Limited the git version checking to be similar to the submodules warning.",
       "revId": "606f6ec091f365b8cac8c655bd1652c73d306725",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9112122_4d22763a",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2456,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-09-23T17:25:05Z",
+      "side": 1,
+      "message": "I wonder if this check should just be built into `git_common.check_git_version()` i.e. git_common.check_git_version() gives no recommendation if it is in inside a Cog env.",
+      "range": {
+        "startLine": 2456,
+        "startChar": 0,
+        "endLine": 2456,
+        "endChar": 29
+      },
+      "revId": "606f6ec091f365b8cac8c655bd1652c73d306725",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
