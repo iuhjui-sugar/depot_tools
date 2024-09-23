@@ -5301,6 +5301,13 @@ def CMDupload(parser, args):
     if git_common.is_dirty_git_tree('upload'):
         return 1
 
+    # Check whether git should be updated.
+    recommendation = git_common.check_git_version()
+    if recommendation:
+        print(colorama.Fore.RED)
+        print(f'WARNING: {recommendation}')
+        print(colorama.Style.RESET_ALL)
+
     options.reviewers = cleanup_list(options.reviewers)
     options.cc = cleanup_list(options.cc)
 

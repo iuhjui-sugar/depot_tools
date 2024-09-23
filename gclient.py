@@ -2453,6 +2453,12 @@ it or fix the checkout.
                 % ('\n'.join(patch_repo + '@' + patch_ref
                              for patch_repo, patch_ref in patch_refs.items())))
 
+        if not self._IsCog():
+            # Check whether git should be updated.
+            recommendation = git_common.check_git_version()
+            if recommendation:
+                gclient_utils.AddWarning(recommendation)
+
         # TODO(crbug.com/1475405): Warn users if the project uses submodules and
         # they have fsmonitor enabled.
         if command == 'update':
