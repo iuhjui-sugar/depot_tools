@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7714b0f4_374afa66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-09-24T08:22:04Z",
+      "side": 1,
+      "message": "Sending as WIP for early feedback - I still need to go through the test sequence in `bootstrap/README.md`.\n\n@ayatane@chromium.org Is this what you had in mind?",
+      "revId": "4123e6b8de169d255b20c08b8a77ae5de5c98c69",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
