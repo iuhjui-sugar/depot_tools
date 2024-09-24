@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7145b703_cf0e508e",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-09-24T04:59:54Z",
+      "side": 1,
+      "message": "Better to add test for this path?",
+      "revId": "9c061e677a22ea67df213daddd8917ba88c5a1ac",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a861c20f_1d08d871",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-09-24T04:59:54Z",
+      "side": 1,
+      "message": "This can just be\n`load(response)`?",
+      "range": {
+        "startLine": 195,
+        "startChar": 20,
+        "endLine": 195,
+        "endChar": 51
+      },
+      "revId": "9c061e677a22ea67df213daddd8917ba88c5a1ac",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86738629_474d6882",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-09-24T04:59:54Z",
+      "side": 1,
+      "message": "If we know what exception is returned from non-GCE machine, it is better to distinguish the error from other errors?",
+      "range": {
+        "startLine": 196,
+        "startChar": 11,
+        "endLine": 196,
+        "endChar": 20
+      },
+      "revId": "9c061e677a22ea67df213daddd8917ba88c5a1ac",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
