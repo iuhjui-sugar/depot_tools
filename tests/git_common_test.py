@@ -1144,6 +1144,7 @@ class GitTestUtilsTest(git_test_utils.GitRepoReadOnlyTestBase):
 class CheckGitVersionTest(GitCommonTestBase):
 
     def setUp(self):
+        self.addCleanup(self.gc.check_git_version.cache_clear)
         self.addCleanup(self.gc.get_git_version.cache_clear)
 
     @mock.patch('shutil.which')
