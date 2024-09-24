@@ -373,6 +373,7 @@ def build_context(argv, tool, should_collect_logs):
     if reproxy_ret_code != 0:
         print(f'''Failed to start reproxy!
 See above error message for details.
+{"Run 'gcert' if you haven't done so recently." if shutil.which("gcert") else ""}
 Ensure you have completed the reproxy setup instructions:
 {reclient_setup_docs_url()}''',
               file=sys.stderr)
