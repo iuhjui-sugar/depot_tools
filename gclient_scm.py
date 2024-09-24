@@ -671,6 +671,29 @@ class GitWrapper(SCMWrapper):
                 # the cache to set and unset consecutively.
                 config_updates = []
 
+                blame_ignore_revs_cfg = scm.GIT.GetConfig(
+                    args[0].checkout_path, 'blame.ignorerevsfile')
+
+                blame_ignore_revs_cfg_set = \
+                    blame_ignore_revs_cfg == \
+                    git_common.GIT_BLAME_IGNORE_REV_FILE
+
+                blame_ignore_revs_exists = os.path.isfile(
+                    os.path.join(args[0].checkout_path,
+                                 git_common.GIT_BLAME_IGNORE_REV_FILE))
+
+                if not blame_ignore_revs_cfg_set and blame_ignore_revs_exists:
+                    config_updates.append(
+                        ('blame.ignoreRevsFile',
+                         git_common.GIT_BLAME_IGNORE_REV_FILE))
+                elif blame_ignore_revs_cfg_set and not blame_ignore_revs_exists:
+                    # Some repos may have incorrect config set, unset this
+                    # value. Moreover, some repositories may decide to remove
+                    # git_common.GIT_BLAME_IGNORE_REV_FILE, which would break
+                    # blame without this check.
+                    # See https://crbug.com/368562244 for more details.
+                    config_updates.append(('blame.ignoreRevsFile', None))
+
                 ignore_submodules = scm.GIT.GetConfig(args[0].checkout_path,
                                                       'diff.ignoresubmodules',
                                                       None, 'local')
