@@ -16,6 +16,52 @@
       "message": "Sending as WIP for early feedback - I still need to go through the test sequence in `bootstrap/README.md`.\n\n@ayatane@chromium.org Is this what you had in mind?",
       "revId": "4123e6b8de169d255b20c08b8a77ae5de5c98c69",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5af2bf19_b9f70796",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-09-24T09:09:26Z",
+      "side": 1,
+      "message": "nit: s/preferences/prefers/",
+      "range": {
+        "startLine": 258,
+        "startChar": 4,
+        "endLine": 258,
+        "endChar": 15
+      },
+      "revId": "4123e6b8de169d255b20c08b8a77ae5de5c98c69",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71719575_0bf971d4",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-09-24T09:09:26Z",
+      "side": 1,
+      "message": "nit: you might want to print to stderr.  I don\u0027t know for sure, since a lot of depot_tools does print to stdout, but it might interfere with something that relies on stdout in a shell pipeline.  Just FYI I guess, if anyone complains",
+      "range": {
+        "startLine": 269,
+        "startChar": 4,
+        "endLine": 269,
+        "endChar": 9
+      },
+      "revId": "4123e6b8de169d255b20c08b8a77ae5de5c98c69",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
