@@ -43,6 +43,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "8b1ea3c9_555d6010",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-24T18:32:28Z",
+      "side": 1,
+      "message": "Not sure what you meant exactly by that, but I extracted it into a var and used it throughout this function.",
+      "parentUuid": "5975fcf6_9f14a439",
+      "range": {
+        "startLine": 675,
+        "startChar": 20,
+        "endLine": 675,
+        "endChar": 41
+      },
+      "revId": "b60f8f62036450b9939225a15ba06fb1166e2284",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "deb3784b_4d6ff040",
         "filename": "gclient_scm.py",
         "patchSetId": 1
