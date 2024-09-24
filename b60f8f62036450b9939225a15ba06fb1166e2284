@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66284199_580703c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-24T18:08:49Z",
+      "side": 1,
+      "message": "TY for fixing my mess!",
+      "revId": "b60f8f62036450b9939225a15ba06fb1166e2284",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "deb3784b_4d6ff040",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-24T18:08:49Z",
+      "side": 1,
+      "message": "Drive-by: In C++ I might do this like:\n```\n  if (blame_ignore_revs_cfg_set !\u003d blame_ignore_revs_exists) {\n    config_updates.append(\n        {\"blame.ignoreRevsFile\",\n         blame_ignore_revs_exists ? git_common::GIT_BLAME_IGNORE_REV_FILE : {}});\n  }\n```\n\nI dunno if that\u0027s feasible in Python, or reads better, but it\u0027s less repetitive.",
+      "revId": "b60f8f62036450b9939225a15ba06fb1166e2284",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da611684_795544a2",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-24T18:08:49Z",
+      "side": 1,
+      "message": "Curiosity: What\u0027s the benefit of defining this here if it\u0027s only used in one spot?",
+      "revId": "b60f8f62036450b9939225a15ba06fb1166e2284",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
