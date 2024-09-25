@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd60ffda_489c8949",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-09-25T19:04:46Z",
+      "side": 1,
+      "message": "It depends on the instrumented code but it would be unlikely to be very large. Updated though since I don\u0027t see a downside",
+      "parentUuid": "6431558d_e472029b",
+      "range": {
+        "startLine": 67,
+        "startChar": 16,
+        "endLine": 67,
+        "endChar": 73
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b8fd6923_d13bef15",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-09-25T15:14:08Z",
       "side": 1,
       "message": "nit: Single letter variables are discouraged in [go/pystyle#names-to-avoid](http://go/pystyle#names-to-avoid).",
+      "range": {
+        "startLine": 144,
+        "startChar": 8,
+        "endLine": 144,
+        "endChar": 9
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f331e34_052460e2",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-09-25T19:04:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8fd6923_d13bef15",
       "range": {
         "startLine": 144,
         "startChar": 8,
@@ -88,6 +136,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "01a0c4af_2c472a5a",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-09-25T19:04:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00ab4801_1e8d243c",
+      "range": {
+        "startLine": 150,
+        "startChar": 49,
+        "endLine": 150,
+        "endChar": 51
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1558b93b_b70f21fd",
@@ -101,6 +173,30 @@
       "writtenOn": "2024-09-25T15:14:08Z",
       "side": 1,
       "message": "I think you can remove this line.  `isinstance(data.parent, otel_trace_api.Span)`, etc. should return False if `data.parent` is None.",
+      "range": {
+        "startLine": 237,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 35
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a59f06d2_dac0ac6d",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-09-25T19:04:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1558b93b_b70f21fd",
       "range": {
         "startLine": 237,
         "startChar": 0,
@@ -134,6 +230,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fdd9f47_f57462fd",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-09-25T19:04:46Z",
+      "side": 1,
+      "message": "Good point. I don\u0027t think the loop is necessary. I\u0027m still waiting to get our tables created in F1 so I can test this more extensively, there might be some issue I\u0027m not seeing either. Removing the loop",
+      "parentUuid": "f3262cd4_1b52854b",
+      "range": {
+        "startLine": 266,
+        "startChar": 0,
+        "endLine": 266,
+        "endChar": 19
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cab17300_5af715c7",
@@ -157,6 +277,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40894137_d55ac0aa",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-09-25T19:04:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cab17300_5af715c7",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 40,
+        "endChar": 51
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cea986c2_7f78308c",
@@ -170,6 +314,30 @@
       "writtenOn": "2024-09-25T15:14:08Z",
       "side": 1,
       "message": "Since `mock_open_times` is a reference to an object, it seems like we shouldn\u0027t need to use `nonlocal`. (Similar to what you\u0027re doing to `requests` in `test_flush_to_clear_export_queue_to_http_api`).",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 32
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4c8c3f2_e2e59b1d",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-09-25T19:04:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cea986c2_7f78308c",
       "range": {
         "startLine": 160,
         "startChar": 0,
