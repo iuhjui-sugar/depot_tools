@@ -183,7 +183,9 @@ def GetMetadata(cmdline, ninjalog, exit_code, build_duration, user):
 def GetGCEMetadata():
     gce = _getGCEInfo()
     if not gce:
-        return {}
+        return {
+            "is_cloudtop": False,
+        }
     md = {}
     if "cloudtop" in gce.get("project", {}).get("projectId", ""):
         md["is_cloudtop"] = True
