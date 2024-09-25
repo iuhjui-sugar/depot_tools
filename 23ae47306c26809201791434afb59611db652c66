@@ -16,6 +16,24 @@
       "message": "Still WIP - the templates use relative git paths, and I believe I need to switch to absolute paths to use a manually installed Git if it exists. The absolute posix path needs work.\n\n@sokcevic@chromium.org who made the most recent change to `bootstrap.py`: do you have any tips on testing these changes? The testing instruction in `bootstrap/README.md` says to run `gclient version`. This updates `depot_tools` to `main`, and so my changes to `bootstrap.py` are not used. Would be great to get your advice on how to verify this.",
       "revId": "23ae47306c26809201791434afb59611db652c66",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4daf236_a7a13ab0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-25T16:27:37Z",
+      "side": 1,
+      "message": "I think the approach looks good.\n\nAs for testing:\n\nset envvar DEPOT_TOOLS_UPDATE to 0\nthis prevents depot_tools from updating and interfering with your change\n\nThen, run `bootstrap\\win_tools.bat` to update your Git template. Then, run any operations, including gclient.\n\nThings to test:\n* existing installs with no system git - a warning should be printed after win_tools.bat\n* existing installs with a system git - a warning should be gone once win_tools.bat is executed\n* new install",
+      "parentUuid": "8a93a2c1_2b10512f",
+      "revId": "23ae47306c26809201791434afb59611db652c66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
