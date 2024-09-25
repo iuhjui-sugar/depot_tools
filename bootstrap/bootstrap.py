@@ -40,8 +40,8 @@ class Template(
         collections.namedtuple('Template', (
             'PYTHON3_BIN_RELDIR',
             'PYTHON3_BIN_RELDIR_UNIX',
-            'GIT_BIN_RELDIR',
-            'GIT_BIN_RELDIR_UNIX',
+            'GIT_BIN_ABSDIR',
+            'GIT_BIN_ABSDIR_UNIX',
             'GIT_PROGRAM',
         ))):
     @classmethod
@@ -246,6 +246,35 @@ def clean_up_old_installations(skip_dir):
 GIT_POSTPROCESS_VERSION = '2'
 
 
+def _is_depot_tools_path(dir):
+    """Returns whether the given directory is within depot_tools."""
+    return os.path.commonpath([os.path.abspath(dir), ROOT_DIR]) == ROOT_DIR
+
+
+def get_win_git_directory(bootstrap_dir):
+    """Returns the directory in which git was installed.
+
+    As depot_tools will soon stop bundling Git for Windows, this function
+    prefers installations outside of depot_tools and prints a warning if git
+    has not yet been directly installed.
+    """
+    # Look for the git command in PATH outside of depot_tools.
+    for dir in os.environ.get('PATH', '').split(os.pathsep):
+        for cmd in ('git.exe', 'git.bat'):
+            if (os.path.isfile(os.path.join(dir, cmd))
+                    and not _is_depot_tools_path(dir)):
+                return os.path.abspath(os.path.join(dir, '..'))
+
+    # Print deprecation warning and return depot_tools git folder.
+    print(
+        'depot_tools will soon stop bundling Git for Windows.\n'
+        'To prepare for this change, please install git directly. See\n'
+        'https://chromium.googlesource.com/chromium/src/+/main/docs/windows_build_instructions.md#Install-git',
+        file=sys.stderr,
+    )
+    return os.path.join(bootstrap_dir, 'git')
+
+
 def git_get_mingw_dir(git_directory):
     """Returns (str) The "mingw" directory in a Git installation, or None."""
     for candidate in ('mingw64', 'mingw32'):
@@ -255,9 +284,9 @@ def git_get_mingw_dir(git_directory):
     return None
 
 
-def git_postprocess(template, git_directory):
+def git_postprocess(template):
     # Update depot_tools files for "git help <command>"
-    mingw_dir = git_get_mingw_dir(git_directory)
+    mingw_dir = git_get_mingw_dir(template.GIT_BIN_ABSDIR)
     if mingw_dir:
         docsrc = os.path.join(ROOT_DIR, 'man', 'html')
         git_docs_dir = os.path.join(mingw_dir, 'share', 'doc', 'git-doc')
@@ -265,7 +294,8 @@ def git_postprocess(template, git_directory):
             maybe_copy(os.path.join(docsrc, name),
                        os.path.join(git_docs_dir, name))
     else:
-        logging.info('Could not find mingw directory for %r.', git_directory)
+        logging.info('Could not find mingw directory for %r.',
+                     template.GIT_BIN_ABSDIR)
 
     # Create Git templates and configure its base layout.
     for stub_name, relpath in WIN_GIT_STUBS.items():
@@ -289,7 +319,7 @@ def git_postprocess(template, git_directory):
         _check_call(
             [git_bat_path, 'config', '--system', 'protocol.version', '2'])
 
-    call_if_outdated(os.path.join(git_directory, '.git_postprocess'),
+    call_if_outdated(os.path.join(template.GIT_BIN_ABSDIR, '.git_postprocess'),
                      GIT_POSTPROCESS_VERSION, configure_git_system)
 
 
@@ -306,9 +336,7 @@ def main(argv):
     template = Template.empty()._replace(
         PYTHON3_BIN_RELDIR=os.path.join(args.bootstrap_name, 'python3', 'bin'),
         PYTHON3_BIN_RELDIR_UNIX=posixpath.join(args.bootstrap_name, 'python3',
-                                               'bin'),
-        GIT_BIN_RELDIR=os.path.join(args.bootstrap_name, 'git'),
-        GIT_BIN_RELDIR_UNIX=posixpath.join(args.bootstrap_name, 'git'))
+                                               'bin'))
 
     bootstrap_dir = os.path.join(ROOT_DIR, args.bootstrap_name)
 
@@ -316,7 +344,10 @@ def main(argv):
     clean_up_old_installations(bootstrap_dir)
 
     if IS_WIN:
-        git_postprocess(template, os.path.join(bootstrap_dir, 'git'))
+        git_directory = get_win_git_directory(bootstrap_dir)
+        template._replace(GIT_BIN_ABSDIR=git_directory,
+                          GIT_BIN_ABSDIR_UNIX=posixpath.abspath(git_directory))
+        git_postprocess(template)
         templates = [
             ('git-bash.template.sh', 'git-bash', ROOT_DIR),
             ('python3.bat', 'python3.bat', ROOT_DIR),

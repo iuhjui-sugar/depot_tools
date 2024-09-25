@@ -3,6 +3,10 @@
 This directory has the 'magic' for the `depot_tools` windows binary update
 mechanisms.
 
+**Warning:** `depot_tools` will soon stop bundling Git for Windows. To
+prepare for this change, Windows users should
+[install Git](https://chromium.googlesource.com/chromium/src/+/main/docs/windows_build_instructions.md#Install-git) directly.
+
 A previous Python may actually be in use when it is run, preventing us
 from replacing it outright without breaking running code. To
 ommodate this, and Python cleanup, we handle Python in two stages:
@@ -14,6 +18,8 @@ ommodate this, and Python cleanup, we handle Python in two stages:
 ## Software bootstrapped
   * Python 3 (https://www.python.org/)
   * Git for Windows (https://git-for-windows.github.io/)
+    * This will soon be unbundled from `depot_tools`; Windows users should
+    [install Git](https://chromium.googlesource.com/chromium/src/+/main/docs/windows_build_instructions.md#Install-git) directly.
 
 ## Mechanism
 

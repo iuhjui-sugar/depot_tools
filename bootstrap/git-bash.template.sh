@@ -6,7 +6,7 @@ export PATH="$PATH:$UNIX_BASE/${PYTHON3_BIN_RELDIR_UNIX}:$UNIX_BASE/${PYTHON3_BI
 export PYTHON_DIRECT=1
 export PYTHONUNBUFFERED=1
 if [[ $# > 0 ]]; then
-  $UNIX_BASE/${GIT_BIN_RELDIR_UNIX}/bin/bash.exe "$@"
+  ${GIT_BIN_ABSDIR_UNIX}/bin/bash.exe "$@"
 else
-  $UNIX_BASE/${GIT_BIN_RELDIR_UNIX}/git-bash.exe &
+  ${GIT_BIN_ABSDIR_UNIX}/git-bash.exe &
 fi
