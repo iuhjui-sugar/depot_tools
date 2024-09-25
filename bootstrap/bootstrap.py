@@ -246,6 +246,35 @@ def clean_up_old_installations(skip_dir):
 GIT_POSTPROCESS_VERSION = '2'
 
 
+def _is_depot_tools_path(dir):
+    """Returns whether the given directory is within depot_tools."""
+    return os.path.commonpath([os.path.abspath(dir), ROOT_DIR]) == ROOT_DIR
+
+
+def get_win_git_directory(bootstrap_dir):
+    """Returns the directory in which git was installed.
+
+    As depot_tools will soon stop bundling Git for Windows, this function
+    prefers installations outside of depot_tools and prints a warning if git
+    has not yet been directly installed.
+    """
+    # Look for the git command in PATH outside of depot_tools.
+    for dir in os.environ.get('PATH', '').split(os.pathsep):
+        for cmd in ('git.exe', 'git.bat'):
+            if (os.path.isfile(os.path.join(dir, cmd))
+                    and not _is_depot_tools_path(dir)):
+                return os.path.abspath(os.path.join(dir, '..'))
+
+    # Print deprecation warning and return depot_tools git folder.
+    print(
+        'depot_tools will soon stop bundling Git for Windows.\n'
+        'To prepare for this change, please install git directly. See\n'
+        'https://chromium.googlesource.com/chromium/src/+/main/docs/windows_build_instructions.md#Install-git',
+        file=sys.stderr,
+    )
+    return os.path.join(bootstrap_dir, 'git')
+
+
 def git_get_mingw_dir(git_directory):
     """Returns (str) The "mingw" directory in a Git installation, or None."""
     for candidate in ('mingw64', 'mingw32'):
@@ -316,7 +345,7 @@ def main(argv):
     clean_up_old_installations(bootstrap_dir)
 
     if IS_WIN:
-        git_postprocess(template, os.path.join(bootstrap_dir, 'git'))
+        git_postprocess(template, get_win_git_directory(bootstrap_dir))
         templates = [
             ('git-bash.template.sh', 'git-bash', ROOT_DIR),
             ('python3.bat', 'python3.bat', ROOT_DIR),
