@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd19938c_3a081b6b",
+        "filename": ".git-blame-ignore-revs",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-09-25T16:03:47Z",
+      "side": 1,
+      "message": "idk if it matters much but here\u0027s the revs in oldest-first order:\n\n```\n691128f836966a645a53185c98e8f83a9b1bcf0c\nf38dc929a88633e54d1911ba94b2b37a6c164238\n677616322a2bc16ed43ac0b3729eed23b50757f4\n124bb8e53ca9508b59c0ed6321c1ea43f8321296\nedba22d4eb12b5db5bdee7dc921da7857be1b687\n```",
+      "range": {
+        "startLine": 16,
+        "startChar": 38,
+        "endLine": 17,
+        "endChar": 25
+      },
+      "revId": "815eed8a6834804ae8d580f18513bc6cffefa00c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
