@@ -1,0 +1,183 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6431558d_e472029b",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-25T15:14:08Z",
+      "side": 1,
+      "message": "How big will spans be? We could avoid allocating a new list by using a generator expression, instead.  À la `(self._prefilter(self._translate_span(s)) for s in spans)`",
+      "range": {
+        "startLine": 67,
+        "startChar": 16,
+        "endLine": 67,
+        "endChar": 73
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8fd6923_d13bef15",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-25T15:14:08Z",
+      "side": 1,
+      "message": "nit: Single letter variables are discouraged in [go/pystyle#names-to-avoid](http://go/pystyle#names-to-avoid).",
+      "range": {
+        "startLine": 144,
+        "startChar": 8,
+        "endLine": 144,
+        "endChar": 9
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00ab4801_1e8d243c",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-25T15:14:08Z",
+      "side": 1,
+      "message": "Add return type, since we\u0027ve annotated the parameters.",
+      "range": {
+        "startLine": 150,
+        "startChar": 49,
+        "endLine": 150,
+        "endChar": 51
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "21991dbe_daf3cfd7",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "infra_lib/telemetry/clearcut_span_exporter.py",
+              "range": {
+                "startLine": 150,
+                "startChar": 0,
+                "endLine": 151,
+                "endChar": 0
+              },
+              "replacement": "    def _translate_env(self, data: Dict[str, str]) -\u003e Dict[str, str]:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1558b93b_b70f21fd",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-25T15:14:08Z",
+      "side": 1,
+      "message": "I think you can remove this line.  `isinstance(data.parent, otel_trace_api.Span)`, etc. should return False if `data.parent` is None.",
+      "range": {
+        "startLine": 237,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 35
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3262cd4_1b52854b",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-25T15:14:08Z",
+      "side": 1,
+      "message": "This seems a little hard to read.  It may be better to accept some repetition in order to reduce the scope of the `while` loop and make the condition explicit.  E.g.\n\n```\nwait_delta \u003d self._next_request_dt - datetime.datetime.now()\nwait_time \u003d wait_delta.total_seconds()\n\nif wait_time \u003e self._max_wait_secs:\n  # ...\n  \nwhile wait_time \u003e 0:\n  time.sleep(wait_time)\n  wait_delta \u003d self._next_request_dt - datetime.datetime.now()\n  wait_time \u003d wait_delta.total_seconds()\n  \nlogrequest \u003d self._prepare_request_body(spans)\n# ...\n```\n\nAlthough, I\u0027m curious under what conditions this will loop more than once.  Could we just use an if-statement?\n\n```\nwait_delta \u003d self._next_request_dt - datetime.datetime.now()\nwait_time \u003d wait_delta.total_seconds()\n\nif wait_time \u003e self._max_wait_secs:\n  # ...\n  \nif wait_time \u003e 0:\n  time.sleep(wait_time)\n  \nlogrequest \u003d self._prepare_request_body(spans)\n# ...\n```\n\nIf there\u0027s some subtlety behind the fact that datetime isn\u0027t monotonic, maybe we could use `time.monotonic` or something instead.",
+      "range": {
+        "startLine": 266,
+        "startChar": 0,
+        "endLine": 266,
+        "endChar": 19
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cab17300_5af715c7",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-25T15:14:08Z",
+      "side": 1,
+      "message": "Should this be part of *annonymization_unnittest.py*, instead? It doesn\u0027t look like it\u0027s using the `ClearcutSpanExporter`.",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 40,
+        "endChar": 51
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cea986c2_7f78308c",
+        "filename": "infra_lib/telemetry/clearcut_span_exporter_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-25T15:14:08Z",
+      "side": 1,
+      "message": "Since `mock_open_times` is a reference to an object, it seems like we shouldn\u0027t need to use `nonlocal`. (Similar to what you\u0027re doing to `requests` in `test_flush_to_clear_export_queue_to_http_api`).",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 32
+      },
+      "revId": "71665763705e9b841b434d66ddc105fe2cb74ff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
