@@ -64,6 +64,30 @@
       },
       "revId": "29002b99dbca8c2f0aed31e3dfbea2121d8b0628",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4be7871_8182009c",
+        "filename": "detect_host_arch.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1585327
+      },
+      "writtenOn": "2024-09-30T02:34:11Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "addcc83b_66e68d45",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "29002b99dbca8c2f0aed31e3dfbea2121d8b0628",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
