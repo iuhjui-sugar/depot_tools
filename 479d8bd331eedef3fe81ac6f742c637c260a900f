@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64bafe2e_33104d23",
+        "filename": "infra_lib/telemetry/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-10-02T00:04:35Z",
+      "side": 1,
+      "message": "nit: colon not necessary",
+      "range": {
+        "startLine": 27,
+        "startChar": 65,
+        "endLine": 27,
+        "endChar": 66
+      },
+      "revId": "479d8bd331eedef3fe81ac6f742c637c260a900f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "460b8dfa_aa9192b1",
+        "filename": "infra_lib/telemetry/__init__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-10-02T00:04:35Z",
+      "side": 1,
+      "message": "Should we add a comment that this includes all workstations and cloudtops, but not gLinux laptops or Bruschetta instances?  It seems unlikely that we\u0027d want to support Bruschetta or gLinux laptops, but it may save someone some debugging if they attempt it and follow the trace here.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 23
+      },
+      "revId": "479d8bd331eedef3fe81ac6f742c637c260a900f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "111c3a87_bba0ac06",
+        "filename": "infra_lib/telemetry/__main__.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-10-02T00:04:35Z",
+      "side": 1,
+      "message": "There\u0027s no docstring, so I think this will be `None`, right?  Or does this pull from somewhere else?  (It\u0027s been a while since I\u0027ve done a deep dive on Python modules).",
+      "range": {
+        "startLine": 13,
+        "startChar": 49,
+        "endLine": 13,
+        "endChar": 56
+      },
+      "revId": "479d8bd331eedef3fe81ac6f742c637c260a900f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
