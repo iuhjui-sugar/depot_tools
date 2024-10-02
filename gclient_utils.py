@@ -681,6 +681,8 @@ def CheckCallAndFilter(args,
                     line_start = command_output.tell()
 
                 stdout_write(in_byte)
+                if print_stdout:
+                    sys.stdout.flush()
                 command_output.write(in_byte)
 
             # Flush the rest of buffered output.
