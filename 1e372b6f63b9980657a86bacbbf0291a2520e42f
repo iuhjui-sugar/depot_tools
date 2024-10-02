@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "821cf48f_67748c21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1497432
+      },
+      "writtenOn": "2024-10-02T20:59:04Z",
+      "side": 1,
+      "message": "I\u0027m curious what you think of this.  It fixes the annoyance of an incomprehensible password prompt for the Mac XCode updates (the explanation has historically shown up *after* entering the password).  I\u0027m not sure if it\u0027s \"too much\" flushing.",
+      "revId": "1e372b6f63b9980657a86bacbbf0291a2520e42f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
