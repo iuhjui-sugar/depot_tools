@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5ee4869_47a6971a",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-10-03T23:06:22Z",
+      "side": 1,
+      "message": "I don\u0027t think we want to allow variations on this. IMO it should just be `DEPS`. \n\nApart from existing values, which we can auto fix - why allow this to be non-specific? We don\u0027t allow this in other fields like shipped or security critical?",
+      "revId": "6297947190f4d0b1e3ff5cea6461ef75ddcec9f6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
