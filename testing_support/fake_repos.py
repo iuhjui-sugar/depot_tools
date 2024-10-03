@@ -839,7 +839,11 @@ deps = {
      }],
      "dep_type": "cipd",
   },
-}""" % {
+}
+
+recursedeps = [
+  'chicken/dickens',
+]""" % {
                     'hash_2': self.git_hashes['repo_2'][1][0],
                     'hash_3': self.git_hashes['repo_3'][1][0],
                 },
@@ -872,7 +876,12 @@ deps = {
      }],
      "dep_type": "cipd",
   },
-}""" % {
+}
+
+recursedeps = [
+  'foo/chicken/dickens',
+]
+""" % {
                     'hash_2': self.git_hashes['repo_2'][1][0],
                     'hash_3': self.git_hashes['repo_3'][1][0],
                 },

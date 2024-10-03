@@ -3342,6 +3342,7 @@ def CMDgitmodules(parser, args):
         with open(options.output_gitmodules) as f:
             strip_git_suffix = not any(dot_git_pattern.match(l) for l in f)
 
+    recursedeps = ls.get('recursedeps')
     with open(options.output_gitmodules, 'w', newline='') as f:
         for path, dep in ls.get('deps').items():
             if path in options.skip_dep:
@@ -3354,6 +3355,7 @@ def CMDgitmodules(parser, args):
                 logging.error('error on %s; %s, not adding it', path,
                               dep["url"])
                 continue
+            isRecurseDeps = recursedeps and path in recursedeps
             if prefix_length:
                 path = path[prefix_length:]
 
@@ -3366,6 +3368,8 @@ def CMDgitmodules(parser, args):
             f.write(f'[submodule "{path}"]\n\tpath = {path}\n\turl = {url}\n')
             if 'condition' in dep:
                 f.write(f'\tgclient-condition = {dep["condition"]}\n')
+            if isRecurseDeps:
+                f.write(f'\tgclient-recursedeps = true\n')
             # Windows has limit how long, so let's chunk those calls.
             if len(cache_info) >= 100:
                 subprocess2.call(['git', 'update-index', '--add'] + cache_info)
