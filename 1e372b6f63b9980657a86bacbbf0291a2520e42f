@@ -33,6 +33,24 @@
       "message": "This will flush every byte. Is it expensive to do that? If so, maybe we can call flush on line 678 (in is_newline block).",
       "revId": "1e372b6f63b9980657a86bacbbf0291a2520e42f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d88bfc5_21a7bca9",
+        "filename": "gclient_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 1497432
+      },
+      "writtenOn": "2024-10-03T00:13:04Z",
+      "side": 1,
+      "message": "Expensive is relative... but it\u0027s probably somewhat expensive.\n\nConditioning on `is_newline` is a good idea since it makes it substantially less expensive and still solves the problem at hand.  (But I did it here rather than above since it should be after the `stdout_write(in_byte)` on line 683.)",
+      "parentUuid": "bdda4f3d_ee3b2ddd",
+      "revId": "1e372b6f63b9980657a86bacbbf0291a2520e42f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
