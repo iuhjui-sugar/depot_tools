@@ -51,7 +51,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                 '[submodule "some_repo"]', '\tpath = some_repo',
                 '\turl = /repo_2', '\tgclient-condition = not foo_checkout',
                 '[submodule "chicken/dickens"]', '\tpath = chicken/dickens',
-                '\turl = /repo_3'
+                '\turl = /repo_3', '\tgclient-recursedeps = true'
             ], contents)
 
     def testGitmodules_not_relative(self):
@@ -69,7 +69,7 @@ class GClientSmokeGIT(gclient_smoketest_base.GClientSmokeBase):
                 '[submodule "some_repo"]', '\tpath = some_repo',
                 '\turl = /repo_2', '\tgclient-condition = not foo_checkout',
                 '[submodule "chicken/dickens"]', '\tpath = chicken/dickens',
-                '\turl = /repo_3'
+                '\turl = /repo_3', '\tgclient-recursedeps = true'
             ], contents)
 
     def testGitmodules_migration_no_git_suffix(self):
