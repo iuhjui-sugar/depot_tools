@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abb3949c_26b61722",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3338,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-10-03T22:11:14Z",
+      "side": 1,
+      "message": "I think we need something similar for this feature to avoid flip flopping. E.g. users may get depot_tools before we make changes to chromium/src; or users may revert our changes. I have seen that with .git suffix hence this existing flow.\n\nSo, something like:\nset_recursedeps \u003d True\n...\nif \u0027gclient-recursedeps \u003d true\u0027 in content_output_gitmodules:\n  set recursedeps \u003d False\n\n...\n\nThe idea is:\n1) if .gitmodules already has \u0027gclient-recursedeps\u0027, we are safe to set\n2) if .gitmodules doesn\u0027t exist, we are safe to set it\n3) otherwise, don\u0027t store it\n\nWe roll this out to all users, wait a few days and then update chromium/src to use \u0027gclient-recursedeps\u0027 (by removing .gitmodules and rerunning the command).",
+      "range": {
+        "startLine": 3333,
+        "startChar": 0,
+        "endLine": 3338,
+        "endChar": 45
+      },
+      "revId": "f196819a52d06896d3f2ba227886438294033895",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
