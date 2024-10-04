@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "594ade16_165df8c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-10-04T16:27:35Z",
+      "side": 1,
+      "message": "It seems like the sort of warning that is not actually applicable to me, in which case somebody should investigate it. But I don\u0027t know. It\u0027s up to you. It\u0027s my last day so I won\u0027t be investigating further.",
+      "parentUuid": "7830f750_2d876fa5",
+      "revId": "f9ff9b0859a50b544b3a5abdf33ee2ff475f38a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "68a91767_451d807a",
@@ -49,6 +67,30 @@
       "writtenOn": "2024-10-04T16:23:02Z",
       "side": 1,
       "message": "Did you mean to keep this here?",
+      "range": {
+        "startLine": 22,
+        "startChar": 37,
+        "endLine": 22,
+        "endChar": 61
+      },
+      "revId": "f9ff9b0859a50b544b3a5abdf33ee2ff475f38a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e35cec91_a1eab3ad",
+        "filename": "OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-10-04T16:27:35Z",
+      "side": 1,
+      "message": "Oh wow. Whoops! I accidentally deleted the wrong line. Fixed.",
+      "parentUuid": "68a91767_451d807a",
       "range": {
         "startLine": 22,
         "startChar": 37,
