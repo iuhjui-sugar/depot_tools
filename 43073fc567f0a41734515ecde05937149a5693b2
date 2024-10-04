@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "907b28fc_7397bc38",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-10-04T00:34:19Z",
+      "side": 1,
+      "message": "LGTM % the change to harden to just `DEPS` as allowed",
+      "revId": "43073fc567f0a41734515ecde05937149a5693b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
