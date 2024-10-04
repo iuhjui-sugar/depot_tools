@@ -16,6 +16,23 @@
       "message": "@sokcevic@chromium.org\n\nThis is a requested feature in https://pdfium-review.googlesource.com/c/pdfium/+/124870",
       "revId": "62404ccd4146b108f4078a7a51c952d5677b5bdf",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05ae55d7_c5e92390",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-10-04T20:04:07Z",
+      "side": 1,
+      "message": "The PRESUBMIT failure must be from one of the CLs submitted for\nhttps://g-issues.chromium.org/issues/40712760\n\nI will ping the CL author",
+      "revId": "62404ccd4146b108f4078a7a51c952d5677b5bdf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
