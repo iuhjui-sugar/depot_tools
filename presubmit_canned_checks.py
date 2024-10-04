@@ -2632,9 +2632,17 @@ def CheckInclusiveLanguage(input_api,
     f = input_api.ReadFile(dirs_file_path)
 
     for line in f.splitlines():
-        path = line.split()[0]
-        if len(path) > 0:
-            excluded_paths.append(path)
+        words = line.split()
+        # if a line starts with #, followed by a whitespace or line-end,
+        # it's a comment line.
+        if len(words) == 0 or words[0] == '#' or words[0] == '':
+            continue
+
+        # The first word is a path. Some exempt_dirs.txt may have additional
+        # words in each line, like below, but the words are copied from legacy
+        # files and SHOULD NOT have any meaning.
+        # e.g., third_party 1 2
+        excluded_paths.append(words[0])
 
     excluded_paths = set(excluded_paths)
     for f in input_api.AffectedFiles():
