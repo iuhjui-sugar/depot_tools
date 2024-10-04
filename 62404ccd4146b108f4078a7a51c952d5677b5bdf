@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f679c778_ddecc88c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-10-04T19:59:47Z",
+      "side": 1,
+      "message": "@sokcevic@chromium.org\n\nThis is a requested feature in https://pdfium-review.googlesource.com/c/pdfium/+/124870",
+      "revId": "62404ccd4146b108f4078a7a51c952d5677b5bdf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
