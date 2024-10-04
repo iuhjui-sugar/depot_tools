@@ -46,6 +46,30 @@
       },
       "revId": "f196819a52d06896d3f2ba227886438294033895",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34820ed4_05fe58c7",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3338,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-10-04T16:44:08Z",
+      "side": 1,
+      "message": "Yup, that\u0027s right.",
+      "parentUuid": "20fe744c_d79815fe",
+      "range": {
+        "startLine": 3333,
+        "startChar": 0,
+        "endLine": 3338,
+        "endChar": 45
+      },
+      "revId": "f196819a52d06896d3f2ba227886438294033895",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
