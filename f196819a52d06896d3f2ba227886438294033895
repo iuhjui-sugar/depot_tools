@@ -22,6 +22,30 @@
       },
       "revId": "f196819a52d06896d3f2ba227886438294033895",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20fe744c_d79815fe",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3338,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-10-04T13:38:25Z",
+      "side": 1,
+      "message": "\u003e  E.g. users may get depot_tools before we make changes to chromium/src; or users may revert our changes.\n\nJust to make sure I understand the concerns raised here are\n1) If users get this depot_tools change before our chromium/src change, they may run `gclient gitmodules` which will produce these `gclient-recursedeps \u003d true` changes, which will confuse them and we don\u0027t want that?\n2) for the opposite situation, out-of-date depot_tools, up-to-date chromium/src, they may run `gclient gitmodules` and it will undo our chromium/src change.\n\nupdated code based on that understanding.",
+      "parentUuid": "abb3949c_26b61722",
+      "range": {
+        "startLine": 3333,
+        "startChar": 0,
+        "endLine": 3338,
+        "endChar": 45
+      },
+      "revId": "f196819a52d06896d3f2ba227886438294033895",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
