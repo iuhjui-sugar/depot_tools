@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecd3822e_2aa5c419",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-10-04T05:36:57Z",
+      "side": 1,
+      "message": "PTAL. Note that this warning gave a [code-owners] warning which I don\u0027t understand.\n\nremote: WARNING: commit f9ff9b0: [code-owners] invalid code owner config files (see https://chromium-review.googlesource.com/plugins/code-owners/Documentation/validation.html#validation-checks-for-code-owner-config-files for help)\nremote: WARNING: commit f9ff9b0: [code-owners] code owner email \u0027jojwang@google.com\u0027 in \u0027/OWNERS\u0027 cannot be resolved for brucedawson@chromium.org\nremote: WARNING: commit f9ff9b0: [code-owners] code owner email \u0027sokcevic@google.com\u0027 in \u0027/OWNERS\u0027 cannot be resolved for brucedawson@chromium.org",
+      "revId": "f9ff9b0859a50b544b3a5abdf33ee2ff475f38a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
