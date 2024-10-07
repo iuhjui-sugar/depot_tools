@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53d07e81_42dc7ff0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-10-07T23:25:09Z",
+      "side": 1,
+      "message": "Sorry about the other CL I opened and immediately abandoned. Realized it wouldn\u0027t work for the issue as soon as I hit send",
+      "revId": "a2302998c38c94b4e8c29268167fe4ac550a4b63",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
