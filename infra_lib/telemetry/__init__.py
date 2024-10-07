@@ -64,7 +64,8 @@ def get_host_name(fully_qualified: bool = False) -> str:
 def is_google_host() -> bool:
     """Checks if the code is running on google host."""
 
-    hostname = get_host_name(fully_qualified=True)
+    hostname = (get_host_name(fully_qualified=True)
+                or shutil.which('gcert') is not None)
     return hostname.endswith(_GOOGLE_HOSTNAME_SUFFIX)
 
 

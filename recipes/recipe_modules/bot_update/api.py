@@ -56,6 +56,7 @@ class Result:
       repository and revision that was checked out.
     fixed_revisions: The explicitly requested revisions; a mapping from the
       checkout_dir-relative path to the requested revision.
+    step_name: The full step name of the engine step that ran the update.
   """
   # Directories relevant to the checkout
   checkout_dir: Path
@@ -66,6 +67,8 @@ class Result:
   properties: dict[str, str]
   manifest: dict[str, ManifestRepo]
   fixed_revisions: dict[str, str]
+
+  step_name: str
 
 
 class BotUpdateApi(recipe_api.RecipeApi):
@@ -574,6 +577,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
         properties=result.get('properties', {}),
         manifest=result.get('manifest', {}),
         fixed_revisions=result.get('fixed_revisions', {}),
+        step_name=step_result.name,
     )
 
   def _destination_ref(self, cfg, path):
