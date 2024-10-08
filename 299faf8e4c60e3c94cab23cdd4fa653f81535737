@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6552a11_1d57fcf8",
+        "filename": "cpplint.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 6403,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-10-08T22:08:01Z",
+      "side": 1,
+      "message": "this change was missed in the py2-py3 conversion. Without this, `TypeError: typeerror can\u0027t concat str to bytes` raises.",
+      "range": {
+        "startLine": 6403,
+        "startChar": 33,
+        "endLine": 6403,
+        "endChar": 47
+      },
+      "revId": "299faf8e4c60e3c94cab23cdd4fa653f81535737",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
