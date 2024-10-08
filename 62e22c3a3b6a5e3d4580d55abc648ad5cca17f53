@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37f35c46_15a5b058",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2024-10-08T05:52:06Z",
+      "side": 1,
+      "message": "Should we add a `_FREEZE_MESSAGE` that gets printed when the freeze is active? Otherwise people might be confused why there is a freeze right now without looking at git history.",
+      "revId": "62e22c3a3b6a5e3d4580d55abc648ad5cca17f53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
