@@ -6399,22 +6399,10 @@ def ProcessFile(filename, vlevel, extra_check_functions=[]):
         # If after the split a trailing '\r' is present, it is removed
         # below.
         if filename == '-':
-            lines = codecs.StreamReaderWriter(sys.stdin,
-                                              codecs.getreader('utf8'),
-                                              codecs.getwriter('utf8'),
-                                              'replace').read().split('\n')
+            lines = sys.stdin.read().splitlines()
         else:
-            with codecs.open(filename, 'r', 'utf8', 'replace') as stream:
-                lines = stream.read().split('\n')
-
-        # Remove trailing '\r'.
-        # The -1 accounts for the extra trailing blank line we get from split()
-        for linenum in range(len(lines) - 1):
-            if lines[linenum].endswith('\r'):
-                lines[linenum] = lines[linenum].rstrip('\r')
-                crlf_lines.append(linenum + 1)
-            else:
-                lf_lines.append(linenum + 1)
+            with open(filename, 'r') as f:
+                lines = f.read().splitlines()
 
     except IOError:
         sys.stderr.write("Skipping input '%s': Can't open for reading\n" %
