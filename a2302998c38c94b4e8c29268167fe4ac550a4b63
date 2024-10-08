@@ -57,6 +57,30 @@
       },
       "revId": "a2302998c38c94b4e8c29268167fe4ac550a4b63",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29a2341d_d79546d6",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-10-08T16:31:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a88efb75_09a53df0",
+      "range": {
+        "startLine": 696,
+        "startChar": 14,
+        "endLine": 696,
+        "endChar": 29
+      },
+      "revId": "a2302998c38c94b4e8c29268167fe4ac550a4b63",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
