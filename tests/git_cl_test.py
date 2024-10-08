@@ -5,7 +5,6 @@
 # found in the LICENSE file.
 """Unit tests for git_cl.py."""
 
-import codecs
 import datetime
 import json
 import logging
@@ -5397,17 +5396,17 @@ class CMDLintTestCase(CMDTestCaseBase):
     def setUp(self):
         super(CMDLintTestCase, self).setUp()
         mock.patch('git_cl.sys.stderr', io.StringIO()).start()
-        mock.patch('codecs.open', mock.mock_open()).start()
+        mock.patch('builtins.open', mock.mock_open()).start()
         mock.patch('os.path.isfile', return_value=True).start()
 
     def testLintSingleFile(self, *_mock):
-        codecs.open().read.return_value = self.bad_indent
+        open().read.return_value = self.bad_indent
         self.assertEqual(1, git_cl.main(['lint', 'pdf.h']))
         self.assertIn('pdf.h:3:  (cpplint) Do not indent within a namespace',
                       git_cl.sys.stderr.getvalue())
 
     def testLintMultiFiles(self, *_mock):
-        codecs.open().read.return_value = self.bad_indent
+        open().read.return_value = self.bad_indent
         self.assertEqual(1, git_cl.main(['lint', 'pdf.h', 'pdf.cc']))
         self.assertIn('pdf.h:3:  (cpplint) Do not indent within a namespace',
                       git_cl.sys.stderr.getvalue())
@@ -5423,7 +5422,7 @@ class CMDLintTestCase(CMDTestCaseBase):
     @mock.patch('git_cl.Settings.GetRoot', return_value='.')
     @mock.patch('git_cl.FindCodereviewSettingsFile', return_value=None)
     def testLintChangelist(self, *_mock):
-        codecs.open().read.return_value = self.bad_indent
+        open().read.return_value = self.bad_indent
         self.assertEqual(1, git_cl.main(['lint']))
         self.assertIn('chg-1.h:3:  (cpplint) Do not indent within a namespace',
                       git_cl.sys.stderr.getvalue())
