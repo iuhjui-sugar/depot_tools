@@ -16,6 +16,24 @@
       "message": "Should we add a `_FREEZE_MESSAGE` that gets printed when the freeze is active? Otherwise people might be confused why there is a freeze right now without looking at git history.",
       "revId": "62e22c3a3b6a5e3d4580d55abc648ad5cca17f53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aebbf6ad_d2d21c9d",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-10-09T16:33:17Z",
+      "side": 1,
+      "message": "Done, also added this check to depot_tools\u0027s presubmit",
+      "parentUuid": "37f35c46_15a5b058",
+      "revId": "62e22c3a3b6a5e3d4580d55abc648ad5cca17f53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
