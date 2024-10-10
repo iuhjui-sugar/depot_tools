@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e162fd26_c9e30931",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2024-10-10T14:00:50Z",
+      "side": 1,
+      "message": "Not sure what this file is used for, but noticed other `checkdeps` entries were in it.",
+      "revId": "78205b44f5c970fb3f3e353d3e503654c8b358e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
