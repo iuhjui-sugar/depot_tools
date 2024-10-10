@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7246498_14d5b5f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2024-10-10T14:05:05Z",
+      "side": 1,
+      "message": "Relevant other change: https://chromium-review.googlesource.com/c/chromium/src/+/5910107\n\nEmail I plan to send:\n```\nYou currently need to get an OWNERS approval for paths that you add to a DEPS\u0027s \"include_rules\" list. This sometimes makes sense, but is more commonly just a rubber stamp review.\n\nIn order to reduce the number of these low-value reviews, I\u0027d like to change the default behavior to not require an OWNERS review for additions to \"include_rules\" (crbug).\n\nNo review will be required by default, but directories can opt in. For example:\nIf //base/DEPS contains:new_deps_require_review \u003d True\nThen a CL that added:include_rules \u003d [ \"+base/foo/bar\" ]\nWould require a review from a //base OWNER\n\nAction required:\nTo opt-in to needing reviews, please add new_deps_require_review \u003d True to your DEPS files.\n\nI\u0027ll plan to switch the default on October 24 (two weeks) to give everyone time to add the line, or to shout and convince me this is a terrible idea :P\n```",
+      "revId": "83c36f9181ed9e101713db807b30d4cd56c09470",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
