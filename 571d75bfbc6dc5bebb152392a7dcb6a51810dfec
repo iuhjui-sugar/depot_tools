@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de89d2f6_16efaefb",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1121,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2024-10-10T18:44:23Z",
+      "side": 1,
+      "message": "exits",
+      "range": {
+        "startLine": 1121,
+        "startChar": 18,
+        "endLine": 1121,
+        "endChar": 24
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "35de194e_8bd5f73b",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "scm.py",
+              "range": {
+                "startLine": 1121,
+                "startChar": 0,
+                "endLine": 1122,
+                "endChar": 0
+              },
+              "replacement": "            # Git exits with 1 if no config matches are found.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "571d75bfbc6dc5bebb152392a7dcb6a51810dfec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
