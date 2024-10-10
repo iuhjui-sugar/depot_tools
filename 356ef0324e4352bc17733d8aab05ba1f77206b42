@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f625f0d4_93a5929e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1118894
+      },
+      "writtenOn": "2024-10-10T09:20:16Z",
+      "side": 1,
+      "message": "This change kinda break things, because an import statement in the args.gn can be current-directory-relative or -C-directory relative, but the _gn_lines function assumes the import is -C-directory-relative, and so the wrapper breaks on things where ninja itself would work just fine.",
+      "revId": "356ef0324e4352bc17733d8aab05ba1f77206b42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f72dfbc_ff9f739d",
