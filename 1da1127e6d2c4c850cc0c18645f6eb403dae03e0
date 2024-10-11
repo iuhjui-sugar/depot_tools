@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ec9193f_c1302d86",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 3424806
+      },
+      "writtenOn": "2024-10-11T08:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e80cbc1_43f4d59c",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "1da1127e6d2c4c850cc0c18645f6eb403dae03e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7bed507d_5e1a9633",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-10-10T16:23:15Z",
       "side": 1,
       "message": "`GetConfig` accepts a default, let\u0027s use that: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:scm.py;l\u003d760;drc\u003dd1259b49c5b41bc4939ba7c5bb8e8e08083a05f6",
+      "range": {
+        "startLine": 878,
+        "startChar": 30,
+        "endLine": 878,
+        "endChar": 39
+      },
+      "revId": "1da1127e6d2c4c850cc0c18645f6eb403dae03e0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58b589f3_25122de4",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 3424806
+      },
+      "writtenOn": "2024-10-11T08:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bed507d_5e1a9633",
       "range": {
         "startLine": 878,
         "startChar": 30,
