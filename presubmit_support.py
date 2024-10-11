@@ -2127,7 +2127,7 @@ def _parse_change(parser, options):
         options.issue, options.patchset, options.author
     ]
 
-    if diff:
+    if diff or options.generate_diff:
         return ProvidedDiffChange(*change_args, diff=diff)
     if change_scm == 'git':
         return GitChange(*change_args,
