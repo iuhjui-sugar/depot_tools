@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b86ecd3c_2f3f31e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3680774
+      },
+      "writtenOn": "2024-10-13T07:06:30Z",
+      "side": 1,
+      "message": "This change will improve the user experience for network proxy users",
+      "revId": "04ca0f2102e4a567727e55a4b18dc90fc0e8def6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
