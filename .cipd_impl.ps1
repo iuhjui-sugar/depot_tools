@@ -110,9 +110,21 @@ $URL = "$BackendURL/client?platform=$Platform&version=$Version"
 $TmpPath = $CipdBinary + ".tmp." + $PID
 try {
   Write-Output "Downloading CIPD client for $Platform from $URL..."
+  if ($env:HTTPS_PROXY) {
+    $proxy = $env:HTTPS_PROXY
+  } elseif ($env:HTTP_PROXY) {
+    $proxy = $env:HTTP_PROXY
+  } else {
+    $proxy = null
+  }
   Retry-Command {
     $ProgressPreference = "SilentlyContinue"
-    Invoke-WebRequest -UserAgent $UserAgent -Uri $URL -OutFile $TmpPath
+    if($proxy){
+      Write-Output "Using Proxy $proxy..."
+      Invoke-WebRequest -UserAgent $UserAgent -Uri $URL -OutFile $TmpPath -Proxy $proxy
+    }else{
+      Invoke-WebRequest -UserAgent $UserAgent -Uri $URL -OutFile $TmpPath
+    }
   }
 
   $ActualSHA256 = (Get-FileHash -Path $TmpPath -Algorithm "SHA256").Hash.toLower()
