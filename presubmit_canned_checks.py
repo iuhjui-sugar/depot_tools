@@ -973,7 +973,7 @@ def CheckInfraFreeze(input_api,
         report_type('There is a prod infra freeze in effect from {} until {}:\n'
                     '\t{}\n\n'
                     'The following files cannot be modified:\n  {}.\n\n'
-                    'Set git-footer "{}" to override.'.format(
+                    'Add "{}: <reason>" to the end of your commit message to override.'.format(
                         _FREEZE_START, _FREEZE_END, _FREEZE_DETAILS,
                         '\n  '.join(files), _IGNORE_FREEZE_FOOTER))
     ]
