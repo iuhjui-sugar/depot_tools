@@ -1,6 +1,98 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "20a706d8_9e837c86",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-10-14T17:42:14Z",
+      "side": 1,
+      "message": "nit: use `$Env` here and below instead of `$env` to match the rest of the file",
+      "range": {
+        "startLine": 113,
+        "startChar": 6,
+        "endLine": 113,
+        "endChar": 10
+      },
+      "revId": "04ca0f2102e4a567727e55a4b18dc90fc0e8def6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fe37717_3c4ac506",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-10-14T17:42:14Z",
+      "side": 1,
+      "message": "Use `$null` here",
+      "range": {
+        "startLine": 118,
+        "startChar": 13,
+        "endLine": 118,
+        "endChar": 17
+      },
+      "revId": "04ca0f2102e4a567727e55a4b18dc90fc0e8def6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d241add_8bd65c30",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-10-14T17:42:14Z",
+      "side": 1,
+      "message": "nit: Fix whitespace here and in the `else`, e.g. `if ($proxy) {` for consistency",
+      "range": {
+        "startLine": 122,
+        "startChar": 4,
+        "endLine": 122,
+        "endChar": 15
+      },
+      "revId": "04ca0f2102e4a567727e55a4b18dc90fc0e8def6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d78da1d3_44c3d336",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-10-14T17:42:14Z",
+      "side": 1,
+      "message": "We can dedupe the `Invoke-WebRequest` w/ splatting, ie\n```\n$WebRequestParams \u003d @{\n  UserAgent \u003d $UserAgent\n  Uri \u003d $URL\n  OutFile \u003d $TmpPath\n}\n```\nand then printing/adding when `$proxy` is set",
+      "range": {
+        "startLine": 124,
+        "startChar": 6,
+        "endLine": 124,
+        "endChar": 23
+      },
+      "revId": "04ca0f2102e4a567727e55a4b18dc90fc0e8def6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "b86ecd3c_2f3f31e5",
