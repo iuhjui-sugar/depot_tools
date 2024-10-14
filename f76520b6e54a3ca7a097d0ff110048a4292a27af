@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cb2fcd9_48e4b174",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-10-14T16:45:33Z",
+      "side": 1,
+      "message": "I\u0027ll pick this up after infra freeze is over",
+      "revId": "f76520b6e54a3ca7a097d0ff110048a4292a27af",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
