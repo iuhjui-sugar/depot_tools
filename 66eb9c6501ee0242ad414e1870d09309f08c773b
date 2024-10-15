@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82c30ec4_9f1e8fc0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2024-10-15T18:41:49Z",
+      "side": 1,
+      "message": "Presubmit told me:\n\n```\nThere is a prod infra freeze in effect from 2024-10-12 00:00:00-08:00 until 2024-10-19 00:00:00-08:00:\n```\n\nI\u0027ll wait with landing this until Oct 20.",
+      "revId": "66eb9c6501ee0242ad414e1870d09309f08c773b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
