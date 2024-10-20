@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdf4b2d6_483fe38f",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 3680774
+      },
+      "writtenOn": "2024-10-20T02:56:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20a706d8_9e837c86",
+      "range": {
+        "startLine": 113,
+        "startChar": 6,
+        "endLine": 113,
+        "endChar": 10
+      },
+      "revId": "04ca0f2102e4a567727e55a4b18dc90fc0e8def6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6fe37717_3c4ac506",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-10-14T17:42:14Z",
       "side": 1,
       "message": "Use `$null` here",
+      "range": {
+        "startLine": 118,
+        "startChar": 13,
+        "endLine": 118,
+        "endChar": 17
+      },
+      "revId": "04ca0f2102e4a567727e55a4b18dc90fc0e8def6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddb931e9_d50bb8d2",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 3680774
+      },
+      "writtenOn": "2024-10-20T02:56:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6fe37717_3c4ac506",
       "range": {
         "startLine": 118,
         "startChar": 13,
@@ -70,6 +118,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec1133c1_375c018d",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 3680774
+      },
+      "writtenOn": "2024-10-20T02:56:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d241add_8bd65c30",
+      "range": {
+        "startLine": 122,
+        "startChar": 4,
+        "endLine": 122,
+        "endChar": 15
+      },
+      "revId": "04ca0f2102e4a567727e55a4b18dc90fc0e8def6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d78da1d3_44c3d336",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-10-14T17:42:14Z",
       "side": 1,
       "message": "We can dedupe the `Invoke-WebRequest` w/ splatting, ie\n```\n$WebRequestParams \u003d @{\n  UserAgent \u003d $UserAgent\n  Uri \u003d $URL\n  OutFile \u003d $TmpPath\n}\n```\nand then printing/adding when `$proxy` is set",
+      "range": {
+        "startLine": 124,
+        "startChar": 6,
+        "endLine": 124,
+        "endChar": 23
+      },
+      "revId": "04ca0f2102e4a567727e55a4b18dc90fc0e8def6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6298e35d_ebff8d54",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 3680774
+      },
+      "writtenOn": "2024-10-20T02:56:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d78da1d3_44c3d336",
       "range": {
         "startLine": 124,
         "startChar": 6,
