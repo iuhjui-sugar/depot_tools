@@ -16,6 +16,24 @@
       "message": "Guessing this one is stale now?",
       "revId": "4b0a71fe719b4266996a695f47a551c51fe69d4c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d8d0cb1_5b6e2d27",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1378662
+      },
+      "writtenOn": "2024-10-29T05:51:41Z",
+      "side": 1,
+      "message": "vpython in depot_tools is actually on a newer version than this because of https://chromium-review.googlesource.com/c/infra/luci/luci-go/+/5834682\n\nabandoned.",
+      "parentUuid": "bd76645a_6f1eb67d",
+      "revId": "4b0a71fe719b4266996a695f47a551c51fe69d4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
