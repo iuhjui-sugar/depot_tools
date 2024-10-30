@@ -5195,11 +5195,16 @@ def CMDupload(parser, args):
     parser.add_option('--set-bot-commit',
                       action='store_true',
                       help=optparse.SUPPRESS_HELP)
-    parser.add_option('--preserve-tryjobs',
-                      action='store_true',
-                      help='instruct the CQ to let tryjobs running even after '
-                      'new patchsets are uploaded instead of canceling '
-                      'prior patchset\' tryjobs')
+    parser.add_option(
+        '--preserve-tryjobs',
+        action='store_true',
+        help='instruct the CQ (by adding `Cq-Cq-Do-Not-Cancel-Tryjobs: true` to '
+        'the commit message) to not cancel tryjobs for this patchset if new '
+        'patchsets are uploaded after this one. Note this only protects the '
+        'tryjobs of the patchset currently being uploaded and any future '
+        'patchsets where the tag is carried over in the commit message. '
+        'Tryjobs of previous patchsets uploaded without this flag are NOT '
+        'protected from cancellation.')
     parser.add_option(
         '--dependencies',
         action='store_true',
