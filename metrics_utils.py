@@ -139,12 +139,26 @@ KNOWN_HTTP_PATHS = {
     'projects/branches': re.compile(r'(/a)?/projects/.*/branches/.*'),
 }
 
+
+# List of Gerrit API additional fields that has specific effect in this script.
+# See:
+# https://gerrit-documentation.storage.googleapis.com/Documentation/2.13.8/rest-api-changes.html#labels
+CURRENT_REVISION = 'CURRENT_REVISION'
+CURRENT_COMMIT = 'CURRENT_COMMIT'
+ALL_REVISIONS = 'ALL_REVISIONS'
+LABELS = 'LABELS'
+DETAILED_ACCOUNTS = 'DETAILED_ACCOUNTS'
+DETAILED_LABELS = 'DETAILED_LABELS'
+SUBMITTABLE = 'SUBMITTABLE'
+MESSAGES = 'MESSAGES'
+DOWNLOAD_COMMANDS = 'DOWNLOAD_COMMANDS'
+
 KNOWN_HTTP_ARGS = {
-    'ALL_REVISIONS',
-    'CURRENT_COMMIT',
-    'CURRENT_REVISION',
-    'DETAILED_ACCOUNTS',
-    'LABELS',
+    ALL_REVISIONS,
+    CURRENT_COMMIT,
+    CURRENT_REVISION,
+    DETAILED_ACCOUNTS,
+    LABELS,
 }
 
 GIT_VERSION_RE = re.compile(r'git version (\d)\.(\d{0,2})\.(\d{0,2})')

@@ -44,6 +44,7 @@ import gclient_paths  # Exposed through the API
 import gclient_utils
 import git_footers
 import gerrit_util
+import metrics_utils
 import owners_client
 import owners_finder
 import presubmit_canned_checks
@@ -413,9 +414,10 @@ class GerritAccessor(object):
     def _FetchChangeDetail(self, issue):
         # Separate function to be easily mocked in tests.
         try:
-            return gerrit_util.GetChangeDetail(
-                self.host, str(issue),
-                ['ALL_REVISIONS', 'DETAILED_LABELS', 'ALL_COMMITS'])
+            return gerrit_util.GetChangeDetail(self.host, str(issue), [
+                metrics_utils.ALL_REVISIONS, metrics_utils.DETAILED_LABELS,
+                'ALL_COMMITS'
+            ])
         except gerrit_util.GerritError as e:
             if e.http_status == 404:
                 raise Exception('Either Gerrit issue %s doesn\'t exist, or '

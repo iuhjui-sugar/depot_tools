@@ -454,7 +454,7 @@ class GitWrapper(SCMWrapper):
         changes_with_same_topic = gerrit_util.QueryChanges(
             gerrit_host_url, [('topic', topic), ('status', 'open'),
                               ('repo', repo)],
-            o_params=['ALL_REVISIONS'])
+            o_params=[metrics_utils.ALL_REVISIONS])
         for c in changes_with_same_topic:
             if str(c['_number']) == change:
                 # This change is already in the patch_rev.

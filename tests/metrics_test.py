@@ -742,13 +742,15 @@ class MetricsUtilsTest(unittest.TestCase):
         http_metrics = metrics_utils.extract_http_metrics(
             'https://review.example.com/?q=123&foo=bar&o=ALL_REVISIONS', '', 0,
             0)
-        self.assertEqual(['ALL_REVISIONS'], http_metrics['arguments'])
+        self.assertEqual([metrics_utils.ALL_REVISIONS],
+                         http_metrics['arguments'])
 
         # Some unexpected arguments are filtered out.
         http_metrics = metrics_utils.extract_http_metrics(
             'https://review.example.com/?o=ALL_REVISIONS&o=LABELS&o=UNEXPECTED',
             '', 0, 0)
-        self.assertEqual(['ALL_REVISIONS', 'LABELS'], http_metrics['arguments'])
+        self.assertEqual([metrics_utils.ALL_REVISIONS, metrics_utils.LABELS],
+                         http_metrics['arguments'])
 
         # No valid arguments, so arguments is not present
         http_metrics = metrics_utils.extract_http_metrics(

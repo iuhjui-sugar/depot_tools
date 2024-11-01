@@ -51,6 +51,7 @@ import re
 import auth
 import gclient_utils
 import gerrit_util
+import metrics_utils
 
 try:
     import dateutil  # pylint: disable=import-error
@@ -224,14 +225,15 @@ class MyActivity(object):
             # Instantiate the generator to force all the requests now and catch
             # the errors here.
             return list(
-                gerrit_util.GenerateAllChanges(instance['url'],
-                                               req,
-                                               o_params=[
-                                                   'MESSAGES', 'LABELS',
-                                                   'DETAILED_ACCOUNTS',
-                                                   'CURRENT_REVISION',
-                                                   'CURRENT_COMMIT'
-                                               ]))
+                gerrit_util.GenerateAllChanges(
+                    instance['url'],
+                    req,
+                    o_params=[
+                        metrics_utils.MESSAGES, LABELS,
+                        metrics_utils.DETAILED_ACCOUNTS,
+                        metrics_utils.CURRENT_REVISION,
+                        metrics_utils.CURRENT_COMMIT
+                    ]))
         except gerrit_util.GerritError as e:
             error_message = 'Looking up %r: %s' % (instance['url'], e)
             if error_message not in self.access_errors:
