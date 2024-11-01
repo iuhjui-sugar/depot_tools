@@ -3346,13 +3346,24 @@ class Changelist(object):
             ps_to_commit[ps_num] = commit_id
             ps_to_info[ps_num] = revision_info
 
+        # Whether a revision is not just a change in commit message
+        real_revision = False
         for ps in range(external_ps, local_ps, -1):
             commit = ps_to_commit[ps][:8]
             desc = ps_to_info[ps].get('description', '')
+            if (desc == "Edit commit message"):
+                real_revision = True
             print('Patchset %d [%s] %s' % (ps, commit, desc))
 
         print('\nSee diff at: %s/%d..%d' %
               (self.GetIssueURL(short=True), local_ps, external_ps))
+
+        if not real_revision:
+            # All chances are edition of commit message.
+            # Those changes can’t be overridden during upload, so there is
+            # no need to warn or query the user. We can behaves as if the user
+            # answered NO to the following question.
+            return
         print('\nUploading without applying patches will override them.')
 
         if not ask_for_explicit_yes('Get the latest changes and apply on top?'):
