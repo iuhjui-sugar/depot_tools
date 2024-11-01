@@ -1520,11 +1520,10 @@ class GerritChangesTest(fake_repos.FakeReposTestBase):
                                     'refs/heads/main', self.options, file_list)
 
         get_change_mock.assert_called_once_with(mock.ANY, '1234')
-        query_changes_mock.assert_called_once_with(mock.ANY,
-                                                   [('topic', 'test_topic'),
-                                                    ('status', 'open'),
-                                                    ('repo', 'repo_1')],
-                                                   o_params=['ALL_REVISIONS'])
+        query_changes_mock.assert_called_once_with(
+            mock.ANY, [('topic', 'test_topic'), ('status', 'open'),
+                       ('repo', 'repo_1')],
+            o_params=[metrics_utils.ALL_REVISIONS])
 
         self.assertCommits([1, 2, 3, 5, 6])
         # The commit hash after the two cherry-picks is not known, but it must

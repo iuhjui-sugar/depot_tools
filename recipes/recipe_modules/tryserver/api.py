@@ -7,6 +7,7 @@ import hashlib
 
 from recipe_engine import recipe_api
 
+import metrics_utils
 
 class Constants:
   def __init__(self):
@@ -137,7 +138,7 @@ class TryserverApi(recipe_api.RecipeApi):
         # This list must remain static/hardcoded.
         # If you need extra info, either change it here (hardcoded) or
         # fetch separately.
-        o_params=['ALL_REVISIONS', 'DOWNLOAD_COMMANDS'],
+        o_params=[metrics_utils.ALL_REVISIONS, metrics_utils.DOWNLOAD_COMMANDS],
         limit=1,
         name='fetch current CL info',
         timeout=480,

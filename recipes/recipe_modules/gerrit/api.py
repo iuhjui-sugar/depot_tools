@@ -4,6 +4,9 @@
 
 from recipe_engine import recipe_api
 
+import metrics_utils
+
+
 class GerritApi(recipe_api.RecipeApi):
   """Module for interact with Gerrit endpoints"""
 
@@ -162,12 +165,13 @@ class GerritApi(recipe_api.RecipeApi):
         lambda: self.test_api.get_one_change_response_data(change_number=change,
                                                            patchset=patchset))
 
-    cls = self.get_changes(host,
-                           query_params=[('change', str(change))],
-                           o_params=['ALL_REVISIONS', 'ALL_COMMITS'],
-                           limit=1,
-                           timeout=timeout,
-                           step_test_data=step_test_data)
+    cls = self.get_changes(
+        host,
+        query_params=[('change', str(change))],
+        o_params=[metrics_utils.ALL_REVISIONS, metrics_utils.ALL_COMMITS],
+        limit=1,
+        timeout=timeout,
+        step_test_data=step_test_data)
     cl = cls[0] if len(cls) == 1 else {'revisions': {}}
     for ri in cl['revisions'].values():
       # TODO(tandrii): add support for patchset=='current'.

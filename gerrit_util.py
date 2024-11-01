@@ -110,7 +110,6 @@ GERRIT_PROTOCOL = 'https'
 # Controls how many concurrent Gerrit connections there can be.
 MAX_CONCURRENT_CONNECTION = 20
 
-
 def time_sleep(seconds):
     # Use this so that it can be mocked in tests without interfering with python
     # system machinery.
@@ -1324,7 +1323,13 @@ def GetChange(host, change, accept_statuses: Container[int] = frozenset([200])):
 
 
 def GetChangeDetail(host, change, o_params=None):
-    """Queries a Gerrit server for extended information about a single change."""
+    """Queries a Gerrit server for extended information about a single change.
+
+    Response is a ChangeInfo as described in
+    https://gerrit-documentation.storage.googleapis.com/Documentation/2.13.8/rest-api-changes.html#change-info
+
+    `o_params` is an iterable of fields as described in Gerrit API "additional fields" section.
+    https://gerrit-documentation.storage.googleapis.com/Documentation/2.13.8/rest-api-changes.html#labels"""
     path = 'changes/%s/detail' % change
     if o_params:
         path += '?%s' % '&'.join(['o=%s' % p for p in o_params])
@@ -1339,12 +1344,16 @@ def GetChangeCommit(host: str, change: str, revision: str = 'current') -> dict:
 
 def GetChangeCurrentRevision(host, change):
     """Get information about the latest revision for a given change."""
-    return QueryChanges(host, [], change, o_params=('CURRENT_REVISION', ))
+    return QueryChanges(host, [],
+                        change,
+                        o_params=(metrics_utils.CURRENT_REVISION, ))
 
 
 def GetChangeRevisions(host, change):
     """Gets information about all revisions associated with a change."""
-    return QueryChanges(host, [], change, o_params=('ALL_REVISIONS', ))
+    return QueryChanges(host, [],
+                        change,
+                        o_params=(metrics_utils.ALL_REVISIONS, ))
 
 
 def GetChangeReview(host, change, revision=None):

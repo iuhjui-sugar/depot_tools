@@ -1589,7 +1589,8 @@ class Changelist(object):
         assert self.GetIssue(), 'issue is required to query Gerrit'
 
         if self.description is None:
-            data = self._GetChangeDetail(['CURRENT_REVISION', 'CURRENT_COMMIT'])
+            data = self._GetChangeDetail(
+                [metrics_utils.CURRENT_REVISION, metrics_utils.CURRENT_COMMIT])
             current_rev = data['current_revision']
             self.description = data['revisions'][current_rev]['commit'][
                 'message']
@@ -2079,7 +2080,8 @@ class Changelist(object):
         if self.GetIssue():
             if options.edit_description:
                 change_desc.prompt()
-            change_detail = self._GetChangeDetail(['CURRENT_REVISION'])
+            change_detail = self._GetChangeDetail(
+                [metrics_utils.CURRENT_REVISION])
             change_id = change_detail['change_id']
             change_desc.ensure_change_id(change_id)
 
@@ -2446,8 +2448,10 @@ class Changelist(object):
             return None
 
         try:
-            data = self._GetChangeDetail(
-                ['DETAILED_LABELS', 'CURRENT_REVISION', 'SUBMITTABLE'])
+            data = self._GetChangeDetail([
+                metrics_utils.DETAILED_LABELS, metrics_utils.CURRENT_REVISION,
+                metrics_utils.SUBMITTABLE
+            ])
         except GerritChangeNotExists:
             return 'error'
 
@@ -2491,7 +2495,7 @@ class Changelist(object):
         if not self.GetIssue():
             return None
 
-        data = self._GetChangeDetail(['CURRENT_REVISION'])
+        data = self._GetChangeDetail([metrics_utils.CURRENT_REVISION])
         patchset = data['revisions'][data['current_revision']]['_number']
         if update:
             self.SetPatchset(patchset)
@@ -2503,7 +2507,7 @@ class Changelist(object):
         if not self.GetIssue():
             return False
 
-        data = self._GetChangeDetail(['ALL_REVISIONS'])
+        data = self._GetChangeDetail([metrics_utils.ALL_REVISIONS])
         ps_kind = {}
         for rev_info in data.get('revisions', {}).values():
             ps_kind[rev_info['_number']] = rev_info.get('kind', '')
@@ -2521,7 +2525,7 @@ class Changelist(object):
         if not self.GetIssue():
             return None
 
-        data = self._GetChangeDetail(['ALL_REVISIONS'])
+        data = self._GetChangeDetail([metrics_utils.ALL_REVISIONS])
         patchset = data['revisions'][data['current_revision']]['_number']
         dry_run = {
             int(m['_revision_number'])
@@ -2548,12 +2552,13 @@ class Changelist(object):
                               ready=publish)
 
     def GetCommentsSummary(self, readable=True):
-        # DETAILED_ACCOUNTS is to get emails in accounts.
-        # CURRENT_REVISION is included to get the latest patchset so that
+        # metrics_utils.DETAILED_ACCOUNTS is to get emails in accounts.
+        # metrics_utils.CURRENT_REVISION is included to get the latest patchset so that
         # only the robot comments from the latest patchset can be shown.
-        messages = self._GetChangeDetail(
-            options=['MESSAGES', 'DETAILED_ACCOUNTS', 'CURRENT_REVISION']).get(
-                'messages', [])
+        messages = self._GetChangeDetail(options=[
+            metrics_utils.MESSAGES, metrics_utils.DETAILED_ACCOUNTS,
+            metrics_utils.CURRENT_REVISION
+        ]).get('messages', [])
         file_comments = gerrit_util.GetChangeComments(
             self.GetGerritHost(), self._GerritChangeIdentifier())
         robot_file_comments = gerrit_util.GetChangeRobotComments(
@@ -2666,13 +2671,20 @@ class Changelist(object):
                                  self._GerritChangeIdentifier())
 
     def _GetChangeDetail(self, options=None):
-        """Returns details of associated Gerrit change and caching results."""
+        """Returns details of associated Gerrit change and caching results.
+
+        Response is a ChangeInfo as described in
+        https://gerrit-documentation.storage.googleapis.com/Documentation/2.13.8/rest-api-changes.html#change-info
+        Raises GerritChangeNotExists if there is no change on gerrit for the current CL.
+
+        `options` is an iterable of fields as described in Gerrit API "additional fields" section.
+        https://gerrit-documentation.storage.googleapis.com/Documentation/2.13.8/rest-api-changes.html#labels"""
         options = options or []
         assert self.GetIssue(), 'issue is required to query Gerrit'
 
         # Optimization to avoid multiple RPCs:
-        if 'CURRENT_REVISION' in options or 'ALL_REVISIONS' in options:
-            options.append('CURRENT_COMMIT')
+        if metrics_utils.CURRENT_REVISION in options or metrics_utils.ALL_REVISIONS in options:
+            options.append(metrics_utils.CURRENT_COMMIT)
 
         # Normalize issue and options for consistent keys in cache.
         cache_key = str(self.GetIssue())
@@ -2682,8 +2694,8 @@ class Changelist(object):
             # Assumption: data fetched before with extra options is suitable
             # for return for a smaller set of options.
             # For example, if we cached data for
-            #     options=[CURRENT_REVISION, DETAILED_FOOTERS]
-            #   and request is for options=[CURRENT_REVISION],
+            #     options=[metrics_utils.CURRENT_REVISION, DETAILED_FOOTERS]
+            #   and request is for options=[metrics_utils.CURRENT_REVISION],
             # THEN we can return prior cached data.
             if options_set.issubset(cached_options_set):
                 return data
@@ -2714,14 +2726,15 @@ class Changelist(object):
         return data
 
     def _IsCqConfigured(self):
-        detail = self._GetChangeDetail(['LABELS'])
+        detail = self._GetChangeDetail([metrics_utils.LABELS])
         return u'Commit-Queue' in detail.get('labels', {})
 
     def CMDLand(self, force, bypass_hooks, verbose, parallel, resultdb, realm):
         if git_common.is_dirty_git_tree('land'):
             return 1
 
-        detail = self._GetChangeDetail(['CURRENT_REVISION', 'LABELS'])
+        detail = self._GetChangeDetail(
+            [metrics_utils.CURRENT_REVISION, metrics_utils.LABELS])
         if not force and self._IsCqConfigured():
             confirm_or_exit(
                 '\nIt seems this repository has a CQ, '
@@ -2786,7 +2799,7 @@ class Changelist(object):
             self._gerrit_server = 'https://%s' % self._gerrit_host
 
         try:
-            detail = self._GetChangeDetail(['ALL_REVISIONS'])
+            detail = self._GetChangeDetail([metrics_utils.ALL_REVISIONS])
         except GerritChangeNotExists as e:
             DieWithError(str(e))
 
@@ -3084,7 +3097,8 @@ class Changelist(object):
                 # User requested to change description
                 if options.edit_description:
                     change_desc.prompt()
-                change_detail = self._GetChangeDetail(['CURRENT_REVISION'])
+                change_detail = self._GetChangeDetail(
+                    [metrics_utils.CURRENT_REVISION])
                 change_id = change_detail['change_id']
                 change_desc.ensure_change_id(change_id)
 
@@ -3340,7 +3354,7 @@ class Changelist(object):
         # Print an overview of external changes.
         ps_to_commit = {}
         ps_to_info = {}
-        revisions = self._GetChangeDetail(['ALL_REVISIONS'])
+        revisions = self._GetChangeDetail([metrics_utils.ALL_REVISIONS])
         for commit_id, revision_info in revisions.get('revisions', {}).items():
             ps_num = revision_info['_number']
             ps_to_commit[ps_num] = commit_id
@@ -3478,7 +3492,7 @@ class Changelist(object):
         host = urllib.parse.urlparse(self.GetCodereviewServer()).hostname
         issue = self.GetIssue()
         patchset = int(patchset or self.GetPatchset())
-        data = self._GetChangeDetail(['ALL_REVISIONS'])
+        data = self._GetChangeDetail([metrics_utils.ALL_REVISIONS])
 
         assert host and issue and patchset, 'CL must be uploaded first'
 
@@ -3497,10 +3511,11 @@ class Changelist(object):
         }
 
     def GetIssueOwner(self):
-        return self._GetChangeDetail(['DETAILED_ACCOUNTS'])['owner']['email']
+        return self._GetChangeDetail([metrics_utils.DETAILED_ACCOUNTS
+                                      ])['owner']['email']
 
     def GetReviewers(self):
-        details = self._GetChangeDetail(['DETAILED_ACCOUNTS'])
+        details = self._GetChangeDetail([metrics_utils.DETAILED_ACCOUNTS])
         return [r['email'] for r in details['reviewers'].get('REVIEWER', [])]
 
 
@@ -5354,7 +5369,8 @@ def CMDupload(parser, args):
     # developers.
     if cl.GetIssue():
         cl._GetChangeDetail([
-            'DETAILED_ACCOUNTS', 'CURRENT_REVISION', 'CURRENT_COMMIT', 'LABELS'
+            metrics_utils.DETAILED_ACCOUNTS, metrics_utils.CURRENT_REVISION,
+            metrics_utils.CURRENT_COMMIT, metrics_utils.LABELS
         ])
 
     if options.retry_failed and not cl.GetIssue():
@@ -6020,7 +6036,8 @@ def CMDtry(parser, args):
         parser.error('Need to upload first.')
 
     # HACK: warm up Gerrit change detail cache to save on RPCs.
-    cl._GetChangeDetail(['DETAILED_ACCOUNTS', 'ALL_REVISIONS'])
+    cl._GetChangeDetail(
+        [metrics_utils.DETAILED_ACCOUNTS, metrics_utils.ALL_REVISIONS])
 
     error_message = cl.CannotTriggerTryJobReason()
     if error_message:
@@ -6313,7 +6330,8 @@ def CMDdiff(parser, args):
     if not base:
         base = cl._GitGetBranchConfigValue(GERRIT_SQUASH_HASH_CONFIG_KEY)
     if not base:
-        detail = cl._GetChangeDetail(['CURRENT_REVISION', 'CURRENT_COMMIT'])
+        detail = cl._GetChangeDetail(
+            [metrics_utils.CURRENT_REVISION, metrics_utils.CURRENT_COMMIT])
         revision_info = detail['revisions'][detail['current_revision']]
         fetch_info = revision_info['fetch']['http']
         RunGit(['fetch', fetch_info['url'], fetch_info['ref']])
