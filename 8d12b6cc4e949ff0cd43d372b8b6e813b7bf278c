@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4398636_f1431b74",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1545727
+      },
+      "writtenOn": "2024-11-02T02:50:21Z",
+      "side": 1,
+      "message": "Hi,\n\nThis would improve my workflow. If you think it can be accepted, I’d appreciate help to understand the build_internal requirement that seems to block here.",
+      "revId": "8d12b6cc4e949ff0cd43d372b8b6e813b7bf278c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
