@@ -29,7 +29,7 @@ cases is not true, it will download and unpack the respective binary.
 Installation of Git and Python is done by the [win_tools.bat](./win_tools.bat)
 script, which uses CIPD (via the [cipd](/cipd.bat) bootstrap) to acquire and
 install each package into the root of the `depot_tools` repository. Afterwards,
-the [win_tools.py](./win_tools.py) Python script is invoked to install stubs,
+the [bootstrap.py](./bootstrap.py) Python script is invoked to install stubs,
 wrappers, and support scripts into `depot_tools` for end-users.
 
 ### Manifest
