@@ -16,6 +16,23 @@
       "message": "Hi,\n\nThis would improve my workflow. If you think it can be accepted, I’d appreciate help to understand the build_internal requirement that seems to block here.",
       "revId": "8d12b6cc4e949ff0cd43d372b8b6e813b7bf278c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58891d2f_14052fb4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-11-04T23:52:34Z",
+      "side": 1,
+      "message": "I believe the existing code already handles the problem you are trying to solve. See: https://g-issues.chromium.org/issues/376910768#comment5",
+      "revId": "8d12b6cc4e949ff0cd43d372b8b6e813b7bf278c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
