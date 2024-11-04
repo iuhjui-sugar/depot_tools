@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ccfba0e_5e029db0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1581717
+      },
+      "writtenOn": "2024-11-04T08:20:45Z",
+      "side": 1,
+      "message": "PTAL a small fix for autoninja RBE users",
+      "revId": "ef12a7772798dcb2e82bf96a9a4386ad9ff1690a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
