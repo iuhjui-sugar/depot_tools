@@ -22,6 +22,30 @@
       },
       "revId": "98506ead934ade98631b7fa415af9bb7090812e1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f72f4ed_529771b3",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-11-05T01:26:37Z",
+      "side": 1,
+      "message": "`siso ninja -t` may not be offline if it uses use_remoteexec ?",
+      "parentUuid": "4e973b4b_e2e8da50",
+      "range": {
+        "startLine": 275,
+        "startChar": 48,
+        "endLine": 275,
+        "endChar": 57
+      },
+      "revId": "98506ead934ade98631b7fa415af9bb7090812e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
