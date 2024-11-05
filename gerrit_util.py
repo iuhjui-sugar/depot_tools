@@ -352,6 +352,11 @@ class SSOAuthenticator(_Authenticator):
     # Overridden in tests.
     _timeout_secs = 5
 
+    # The required fields for SSO configuration, expected from the sso helper's
+    # output.
+    _required_config_fields = frozenset(
+        ['http.cookiefile', 'http.proxy', 'include.path'])
+
     @dataclass
     class SSOInfo:
         proxy: httplib2.ProxyInfo
@@ -466,11 +471,22 @@ class SSOAuthenticator(_Authenticator):
                     timer = threading.Timer(cls._timeout_secs, _fire_timeout)
                     timer.start()
                     try:
-                        stdout_data = proc.stdout.read()
+                        # Keep track of which config settings have been read.
+                        fields = set()
+                        stdout_data = ''
+                        for line in proc.stdout:
+                            if not line:
+                                break
+                            stdout_data += line
+                            fields.add(line.split('=', 1)[0])
+                            # Stop reading if we have all the required fields.
+                            if fields >= cls._required_config_fields:
+                                break
                     finally:
                         timer.cancel()
 
-                    if timedout:
+                    missing_fields = cls._required_config_fields - fields
+                    if timedout or missing_fields:
                         LOGGER.error(
                             'SSOAuthenticator: Timeout: %r: reading config.',
                             cmd)
