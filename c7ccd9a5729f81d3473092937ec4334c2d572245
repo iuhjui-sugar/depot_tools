@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aed9f0f9_200acb2c",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-11-05T07:16:27Z",
+      "side": 1,
+      "message": "Mhm, why would there be a `.siso_deps` file for the initial build? Wouldn\u0027t the directory be empty, thus this condition fails, but the `elif` also, so `use_siso` stays `None`?",
+      "range": {
+        "startLine": 169,
+        "startChar": 27,
+        "endLine": 169,
+        "endChar": 45
+      },
+      "revId": "c7ccd9a5729f81d3473092937ec4334c2d572245",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
