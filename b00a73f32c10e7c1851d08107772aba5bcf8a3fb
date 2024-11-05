@@ -16,6 +16,40 @@
       "message": "I was trying to improve code I was reading. Admittedly, I got an error I don’t understand. I’d appreciate help if you think this code is improvement and easy to merge. Otherwise, I’m okay with abandonning it",
       "revId": "b00a73f32c10e7c1851d08107772aba5bcf8a3fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6446f6f2_a8b45e00",
+        "filename": "metrics_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-11-05T19:56:29Z",
+      "side": 1,
+      "message": "It feels off to define those in metrics_util and include in a bunch of other files. I suggest to move this to gerrit_util",
+      "revId": "b00a73f32c10e7c1851d08107772aba5bcf8a3fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d946938d_d70fe964",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-11-05T19:56:29Z",
+      "side": 1,
+      "message": "I don\u0027t think this will work, have you tested it? Same goes for tryserver.",
+      "revId": "b00a73f32c10e7c1851d08107772aba5bcf8a3fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
