@@ -161,7 +161,17 @@ def _main_inner(input_args, build_id, should_collect_logs=False):
 
     use_remoteexec = False
     use_reclient = None
-    use_siso = False
+    use_siso = None  # initial build. follow `use_siso` value.
+
+    siso_marker = os.path.join(output_dir, ".siso_deps")
+    ninja_marker = os.path.join(output_dir, ".ninja_deps")
+    if os.path.exists(siso_marker):
+        # already used siso
+        use_siso = True
+    elif os.path.exists(ninja_marker):
+        # already used ninja
+        use_siso = False
+
 
     # Attempt to auto-detect remote build acceleration. We support gn-based
     # builds, where we look for args.gn in the build tree, and cmake-based
@@ -182,9 +192,23 @@ def _main_inner(input_args, build_id, should_collect_logs=False):
                 use_remoteexec = False
                 continue
             if k == "use_siso" and v == "true":
+                if use_siso == False:
+                    print(
+                        "Run gn clean before switching from ninja to siso in %s"
+                        % output_dir,
+                        file=sys.stderr,
+                    )
+                    return 1
                 use_siso = True
                 continue
             if k == "use_siso" and v == "false":
+                if use_siso == True:
+                    print(
+                        "Run gn clean before switching from siso to ninja in %s"
+                        % output_dir,
+                        file=sys.stderr,
+                    )
+                    return 1
                 use_siso = False
                 continue
             if k == "use_reclient" and v == "true":
@@ -244,20 +268,7 @@ def _main_inner(input_args, build_id, should_collect_logs=False):
                     file=sys.stderr,
                 )
 
-        siso_marker = os.path.join(output_dir, ".siso_deps")
         if use_siso:
-            # siso generates a .ninja_log file so the mere existence of a
-            # .ninja_log file doesn't imply that a ninja build was done. However
-            # if there is a .ninja_log but no .siso_deps then that implies a
-            # ninja build.
-            ninja_marker = os.path.join(output_dir, ".ninja_log")
-            if os.path.exists(ninja_marker) and not os.path.exists(siso_marker):
-                print(
-                    "Run gn clean before switching from ninja to siso in %s" %
-                    output_dir,
-                    file=sys.stderr,
-                )
-                return 1
             # Build ID consistently used in other tools. e.g. Reclient, ninjalog.
             os.environ.setdefault("SISO_BUILD_ID", build_id)
             if use_remoteexec:
@@ -274,13 +285,6 @@ def _main_inner(input_args, build_id, should_collect_logs=False):
                 return siso.main(["siso", "ninja"] + input_args[1:])
             return siso.main(["siso", "ninja", "--offline"] + input_args[1:])
 
-        if os.path.exists(siso_marker):
-            print(
-                "Run gn clean before switching from siso to ninja in %s" %
-                output_dir,
-                file=sys.stderr,
-            )
-            return 1
 
     # Strip -o/--offline so ninja doesn't see them.
     input_args = [arg for arg in input_args if arg not in ("-o", "--offline")]
