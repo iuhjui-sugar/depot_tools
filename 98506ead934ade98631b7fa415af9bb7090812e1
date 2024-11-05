@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e973b4b_e2e8da50",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-11-05T01:25:35Z",
+      "side": 1,
+      "message": "Technically, \"siso ninja -t\" doesn\u0027t need to be offline. For example, if Siso enables Cloud logging, we may want to collect logs for \"siso ninja -t\". \nSo it might be worth leaving a TODO for it.",
+      "range": {
+        "startLine": 275,
+        "startChar": 48,
+        "endLine": 275,
+        "endChar": 57
+      },
+      "revId": "98506ead934ade98631b7fa415af9bb7090812e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
