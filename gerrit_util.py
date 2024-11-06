@@ -352,6 +352,11 @@ class SSOAuthenticator(_Authenticator):
     # Overridden in tests.
     _timeout_secs = 5
 
+    # The required fields for the sso config, expected from the sso helper's
+    # output.
+    _required_config_fields = frozenset(
+        ['http.cookiefile', 'http.proxy', 'include.path'])
+
     @dataclass
     class SSOInfo:
         proxy: httplib2.ProxyInfo
@@ -388,6 +393,12 @@ class SSOAuthenticator(_Authenticator):
 
     @classmethod
     def _parse_config(cls, config: str) -> SSOInfo:
+        """Parses the sso config from the given string.
+
+        Note: update cls._required_config_fields appropriately when making
+        changes to this method, to ensure the field values are captured
+        from the sso helper.
+        """
         parsed: Dict[str, str] = dict(line.strip().split('=', 1)
                                       for line in config.splitlines())
 
@@ -442,8 +453,9 @@ class SSOAuthenticator(_Authenticator):
                 #
                 # 1. writes files to disk.
                 # 2. writes config to stdout, referencing those files.
-                # 3. closes stdout (thus sending EOF to us, allowing
-                #    sys.stdout.read() to complete).
+                # 3. closes stdout (sending EOF to us, ending the stdout data).
+                #    - Note: on Windows, stdout.read() times out anyway, so
+                #      instead we process stdout line by line.
                 # 4. waits for stdin to close.
                 # 5. deletes files on disk (which is why we make sys.stdin a PIPE
                 #    instead of closing it outright).
@@ -466,24 +478,41 @@ class SSOAuthenticator(_Authenticator):
                     timer = threading.Timer(cls._timeout_secs, _fire_timeout)
                     timer.start()
                     try:
-                        stdout_data = proc.stdout.read()
+                        # Keep track of which config settings have been read.
+                        fields = set()
+                        stdout_data = ''
+                        for line in proc.stdout:
+                            if not line:
+                                break
+                            stdout_data += line
+                            fields.add(line.split('=', 1)[0])
+                            # Stop reading if we have all the required fields.
+                            if fields >= cls._required_config_fields:
+                                break
                     finally:
                         timer.cancel()
 
+                    missing_fields = cls._required_config_fields - fields
                     if timedout:
+                        # Within the time limit, at least one required field was
+                        # still missing. Killing the process has been triggered,
+                        # even if we now have all fields.
+                        details = ''
+                        if missing_fields:
+                            details = ': missing fields [{names}]'.format(
+                                names=', '.join(missing_fields))
                         LOGGER.error(
-                            'SSOAuthenticator: Timeout: %r: reading config.',
-                            cmd)
+                            'SSOAuthenticator: Timeout: %r: reading config%s.',
+                            cmd, details)
                         raise subprocess.TimeoutExpired(
                             cmd=cmd, timeout=cls._timeout_secs)
-
                     # if the process already ended, then something is wrong.
                     retcode = proc.poll()
-                    # if stdout was closed without any data, we need to wait for
-                    # end-of-process here and hope for an error message - the
-                    # poll above is racy in this case (we could see stdout EOF
-                    # but the process may not have quit yet).
-                    if not retcode and not stdout_data:
+                    # if stdout was closed without all required data, we need to
+                    # wait for end-of-process here and hope for an error message
+                    # - the poll above is racy in this case (we could see stdout
+                    # EOF but the process may not have quit yet).
+                    if not retcode and missing_fields:
                         retcode = proc.wait(timeout=cls._timeout_secs)
                         # We timed out while doing `wait` - we can't safely open
                         # stderr on windows, so just emit a generic timeout
