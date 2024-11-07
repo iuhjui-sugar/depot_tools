@@ -50,6 +50,24 @@
       "message": "nit: I would make fields a map and just directly parse this line by line and quit parsing when we have everything we need.",
       "revId": "835f7ebd2f6eb2c3f00bb16e3adb56abd9f58c6c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84ab105c_a09dbc40",
+        "filename": "gerrit_util.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-07T02:58:49Z",
+      "side": 1,
+      "message": "Done - changed to construct the config map instead and pass that in to MAKE THE `SSOInfo`.\n\nIf someone could +1 again that would be great. I had to update the tests for the new input type to `_parse_config`.",
+      "parentUuid": "4fe4409d_7077dd6b",
+      "revId": "835f7ebd2f6eb2c3f00bb16e3adb56abd9f58c6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
