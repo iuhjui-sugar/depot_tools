@@ -527,7 +527,12 @@ class BotUpdateApi(recipe_api.RecipeApi):
           in_rev = self.m.gclient.resolve_revision(revisions.get(out_solution))
           if not in_rev:
             in_rev = 'HEAD'
-          if got_revision_cp:
+          if (in_commit.ref.startswith('refs/tags/')
+              and in_commit.host == 'chromium.googlesource.com'
+              and in_commit.project == 'chromium/src'):
+            # If input ref is a Chromium tag, use it as output ref.
+            out_commit.ref = in_commit.ref
+          elif got_revision_cp:
             # If commit position string is available, read the ref from there.
             out_commit.ref, out_commit.position = (
                 self.m.commit_position.parse(got_revision_cp))
