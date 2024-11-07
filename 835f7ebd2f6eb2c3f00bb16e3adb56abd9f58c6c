@@ -16,6 +16,40 @@
       "message": "This CL was uploaded from my Windows machine using the new auth stack.\n\nI made another [CL](https://chromium-review.googlesource.com/c/infra/luci/luci-go/+/5981622) to confirm on linux I could still upload to Gerrit with the new auth stack.",
       "revId": "835f7ebd2f6eb2c3f00bb16e3adb56abd9f58c6c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e74e119_9877501b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-11-07T00:07:00Z",
+      "side": 1,
+      "message": "lgtm w/ suggestion",
+      "revId": "835f7ebd2f6eb2c3f00bb16e3adb56abd9f58c6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fe4409d_7077dd6b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-11-07T00:07:00Z",
+      "side": 1,
+      "message": "nit: I would make fields a map and just directly parse this line by line and quit parsing when we have everything we need.",
+      "revId": "835f7ebd2f6eb2c3f00bb16e3adb56abd9f58c6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
