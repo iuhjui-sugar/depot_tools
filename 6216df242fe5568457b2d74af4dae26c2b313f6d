@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fe6f7b0_c43c7fd5",
+        "filename": "bootstrap/git-bash.template.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-08T06:48:02Z",
+      "side": 1,
+      "message": "A workaround to construct the unix path correctly. This returns\n`C:\\Program Files\\Git` -\u003e `/c/Program Files/Git`.\n\nThe Git directory is where `cygpath` is mounted, so running `cygpath \"${GIT_BIN_ABSDIR}\"` returns `/`. But if you run `cygpath` on the parent directory, it returns the expected unix path.\n\nPython\u0027s `pathlib.PureWindowsPath.as_posix()` didn\u0027t seem to handle the drive well. e.g. `C:\\Program Files\\Git` -\u003e `C:/Program Files/Git`.",
+      "revId": "6216df242fe5568457b2d74af4dae26c2b313f6d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
