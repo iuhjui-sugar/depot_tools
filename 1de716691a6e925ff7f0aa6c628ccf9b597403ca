@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3682721a_9b91363d",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-11-11T21:52:15Z",
+      "side": 1,
+      "message": "I think you can skip this before the `for cmd` loop?",
+      "range": {
+        "startLine": 282,
+        "startChar": 28,
+        "endLine": 282,
+        "endChar": 47
+      },
+      "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9631ec9a_7ebbb45e",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-11-11T21:52:15Z",
+      "side": 1,
+      "message": "Consistently capitalize",
+      "range": {
+        "startLine": 290,
+        "startChar": 52,
+        "endLine": 290,
+        "endChar": 55
+      },
+      "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0aa2e5ac_a996cd6c",
+        "filename": "bootstrap/git-bash.template.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-11-11T21:52:15Z",
+      "side": 1,
+      "message": "Are these variables used (and WIN_GIT_PARENT above)?",
+      "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7f8224b_2202e9f5",
+        "filename": "bootstrap/git.template.bat",
+        "patchSetId": 12
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-11-11T21:52:15Z",
+      "side": 1,
+      "message": "Can you add a comment explaining the context?",
+      "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d3c4d4b_433eb048",
+        "filename": "git_common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-11-11T21:52:15Z",
+      "side": 1,
+      "message": "what case is this handling?",
+      "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
