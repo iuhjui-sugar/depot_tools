@@ -22,6 +22,30 @@
       },
       "revId": "f97eedddf385c1c7a52392d2b54fc387af1cf37d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f8d05e9_a19f2925",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1652,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-11-11T16:50:34Z",
+      "side": 1,
+      "message": "This is not directly consumed by recipe? I think all callers are within depot_tools. I would expect test failure if such a case exists.",
+      "parentUuid": "714140b9_c1b11cd7",
+      "range": {
+        "startLine": 1652,
+        "startChar": 15,
+        "endLine": 1652,
+        "endChar": 33
+      },
+      "revId": "f97eedddf385c1c7a52392d2b54fc387af1cf37d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
