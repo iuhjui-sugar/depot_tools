@@ -315,6 +315,46 @@ class GerritApi(recipe_api.RecipeApi):
         step_test_data=step_test_data,
     ).json.output
 
+  def add_message(self,
+                  host,
+                  change,
+                  message,
+                  revision='current',
+                  name=None,
+                  step_test_data=None):
+    """Add a message to a change at given revision
+
+    Args:
+      * host: URL of Gerrit host to query.
+      * change: The ID of the change to add message to as documented here:
+          https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#change-id
+      * message: The content of the message to add to the change.
+      * revision: The ID of the revision of change to add message to as
+          documented here:
+          https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#revision-id
+          This defaults to current, which names the most recent patchset.
+      * name: Optional step name.
+      * step_test_data: Optional mock test data for the underlying gerrit client.
+
+    Returns:
+      A related changes dictionary as documented here:
+          https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#related-changes-info
+
+    """
+    args = [
+        'addmessage', '--host', host, '--change',
+        int(change), '--revision',
+        str(revision), '--message', message, '--json_file',
+        self.m.json.output()
+    ]
+    if not step_test_data:
+      step_test_data = lambda: self.m.json.test_api.output({})
+    return self(
+        name or 'add message',
+        args,
+        step_test_data=step_test_data,
+    ).json.output
+
   def move_changes(self,
                    host,
                    project,
