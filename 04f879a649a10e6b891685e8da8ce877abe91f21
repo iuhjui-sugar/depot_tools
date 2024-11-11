@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2b204195_78f51487",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2024-11-11T18:50:32Z",
+      "side": 1,
+      "message": "buildbucket",
+      "range": {
+        "startLine": 9,
+        "startChar": 39,
+        "endLine": 9,
+        "endChar": 48
+      },
+      "revId": "04f879a649a10e6b891685e8da8ce877abe91f21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ecdad220_9bd9fc2d",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -14,6 +37,29 @@
       "writtenOn": "2024-11-11T18:49:04Z",
       "side": 1,
       "message": "I will wait for @gbeaty@google.com to review and stamps this CL to ensure that this matches what\u0027s been discussed in the bug.",
+      "revId": "04f879a649a10e6b891685e8da8ce877abe91f21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5001f318_f7c5aa41",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2024-11-11T18:50:32Z",
+      "side": 1,
+      "message": "I don\u0027t think we should be hard-coding this to specific host/project, I think we should add some argument that controls whether it parses the commit position and then our recipe can use that configuration option.",
+      "range": {
+        "startLine": 530,
+        "startChar": 0,
+        "endLine": 532,
+        "endChar": 55
+      },
       "revId": "04f879a649a10e6b891685e8da8ce877abe91f21",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
