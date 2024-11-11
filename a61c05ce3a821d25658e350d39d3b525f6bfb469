@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "055d13d7_081adbb0",
+        "filename": "recipes/recipe_modules/gerrit/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-11-11T17:20:57Z",
+      "side": 1,
+      "message": "`step_name`, as `step_test_data` has `step_` prefix.",
+      "range": {
+        "startLine": 326,
+        "startChar": 6,
+        "endLine": 326,
+        "endChar": 10
+      },
+      "revId": "a61c05ce3a821d25658e350d39d3b525f6bfb469",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
