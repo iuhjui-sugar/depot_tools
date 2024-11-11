@@ -46,6 +46,30 @@
       },
       "revId": "f97eedddf385c1c7a52392d2b54fc387af1cf37d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a127883d_b41aff31",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1652,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-11-11T17:09:40Z",
+      "side": 1,
+      "message": "oh yeah, v8 uses it, but it\u0027s not a recipe - http://shortn/_vfLPBLLKJU\n\nThat said, I looked at all the use cases and the convention seems as follows\n- all the args w/o default value are to be passed as positional args only\n- all the args w/  default value are to be passed as keyworded argss only\n\n(therefore, there is no place passing `msg` as a positional arg to `SetReview()`)",
+      "parentUuid": "1f8d05e9_a19f2925",
+      "range": {
+        "startLine": 1652,
+        "startChar": 15,
+        "endLine": 1652,
+        "endChar": 33
+      },
+      "revId": "f97eedddf385c1c7a52392d2b54fc387af1cf37d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
