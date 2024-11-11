@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecdad220_9bd9fc2d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-11-11T18:49:04Z",
+      "side": 1,
+      "message": "I will wait for @gbeaty@google.com to review and stamps this CL to ensure that this matches what\u0027s been discussed in the bug.",
+      "revId": "04f879a649a10e6b891685e8da8ce877abe91f21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
