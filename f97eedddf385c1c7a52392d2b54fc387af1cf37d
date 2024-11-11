@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "714140b9_c1b11cd7",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1652,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-11-11T16:48:34Z",
+      "side": 1,
+      "message": "it\u0027d be safer to add this arg as the last one, in case some recipes call this function only with positional arguments.",
+      "range": {
+        "startLine": 1652,
+        "startChar": 15,
+        "endLine": 1652,
+        "endChar": 33
+      },
+      "revId": "f97eedddf385c1c7a52392d2b54fc387af1cf37d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
