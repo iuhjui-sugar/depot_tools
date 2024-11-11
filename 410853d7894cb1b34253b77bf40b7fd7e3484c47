@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "194f3334_cdebf5d9",
+        "filename": "bootstrap/git.template.bat",
+        "patchSetId": 13
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-11-11T22:58:26Z",
+      "side": 1,
+      "message": "sorry for the followup, but probably good to go into a bit more detail on how it interacts with Go\u0027s behavior rejecting current directory lookups.",
+      "revId": "410853d7894cb1b34253b77bf40b7fd7e3484c47",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
