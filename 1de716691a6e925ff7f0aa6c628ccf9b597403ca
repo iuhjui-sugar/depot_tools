@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "96c8162e_3477efb4",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-11T22:36:12Z",
+      "side": 1,
+      "message": "Good point, thanks. Done",
+      "parentUuid": "3682721a_9b91363d",
+      "range": {
+        "startLine": 282,
+        "startChar": 28,
+        "endLine": 282,
+        "endChar": 47
+      },
+      "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9631ec9a_7ebbb45e",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-11-11T21:52:15Z",
       "side": 1,
       "message": "Consistently capitalize",
+      "range": {
+        "startLine": 290,
+        "startChar": 52,
+        "endLine": 290,
+        "endChar": 55
+      },
+      "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8612546c_f0e13719",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-11T22:36:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9631ec9a_7ebbb45e",
       "range": {
         "startLine": 290,
         "startChar": 52,
@@ -64,6 +112,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d269da01_b96c62cf",
+        "filename": "bootstrap/git-bash.template.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-11T22:36:12Z",
+      "side": 1,
+      "message": "They\u0027re used to construct the `UNIX_GIT` value below.",
+      "parentUuid": "0aa2e5ac_a996cd6c",
+      "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b7f8224b_2202e9f5",
@@ -81,6 +147,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3dd1236f_f046ea77",
+        "filename": "bootstrap/git.template.bat",
+        "patchSetId": 12
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-11T22:36:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7f8224b_2202e9f5",
+      "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d3c4d4b_433eb048",
@@ -94,6 +178,24 @@
       "writtenOn": "2024-11-11T21:52:15Z",
       "side": 1,
       "message": "what case is this handling?",
+      "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be7134d2_846686f7",
+        "filename": "git_common.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-11T22:36:12Z",
+      "side": 1,
+      "message": "This CL makes the path in `depot_tools\\git.bat` absolute instead of relative. So this case is once someone has updated their `depot_tools` and thus their `git.bat` has changed.",
+      "parentUuid": "2d3c4d4b_433eb048",
       "revId": "1de716691a6e925ff7f0aa6c628ccf9b597403ca",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
