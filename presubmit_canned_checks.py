@@ -1313,8 +1313,8 @@ def GetPylint(input_api,
     assert version in ('2.6', '2.7', '2.17'), \
         'Unsupported pylint version: %s' % version
 
-    if input_api.is_committing or input_api.no_diffs:
-        error_type = output_api.PresubmitError
+    if input_api.is_committing:
+        error_type = output_api.PresubmitNotifyResult
     else:
         error_type = output_api.PresubmitPromptWarning
 
