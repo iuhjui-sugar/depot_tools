@@ -71,11 +71,15 @@ def win_find_git():
                 # path to git.exe from git.bat in depot_tools.
                 if candidate == 'git.bat':
                     git_bat = open(path).readlines()
-                    new_path = os.path.join(elem, git_bat[-1][6:-5])
-                    if (git_bat[-1].startswith('"%~dp0')
-                            and git_bat[-1].endswith('" %*\n')
-                            and new_path.endswith('.exe')):
-                        path = new_path
+                    if git_bat[-1].endswith('" %*\n'):
+                        if git_bat[-1].startswith('"%~dp0'):
+                            # Handle relative path.
+                            new_path = os.path.join(elem, git_bat[-1][6:-5])
+                        elif git_bat[-1].startswith('"'):
+                            # Handle absolute path.
+                            new_path = git_bat[-1][1:-5]
+                        if new_path.endswith('.exe'):
+                            path = new_path
                 return path
     raise ValueError('Could not find Git on PATH.')
 
