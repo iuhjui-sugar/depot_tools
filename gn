@@ -7,7 +7,7 @@ base_dir=$(dirname "$0")
 
 # In git bash on Windows, invoke the batch file.
 if [ "$(expr "$(uname -s)" : "^MINGW64_NT")" == "10" ]; then
-    gn.bat "$@"
+    cmd /k gn.bat "$@"
     exit
 fi
 

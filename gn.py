@@ -11,6 +11,8 @@ binary. It will also automatically try to find the gn binary when run inside
 the chrome source tree, so users can just type "gn" on the command line
 (normally depot_tools is on the path)."""
 
+# testing
+
 import gclient_paths
 import os
 import subprocess
