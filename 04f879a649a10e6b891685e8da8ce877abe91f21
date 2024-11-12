@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39a99a5b_932d520f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3578280
+      },
+      "writtenOn": "2024-11-12T11:37:09Z",
+      "side": 1,
+      "message": "Oops, thanks, fixed!",
+      "parentUuid": "2b204195_78f51487",
+      "range": {
+        "startLine": 9,
+        "startChar": 39,
+        "endLine": 9,
+        "endChar": 48
+      },
+      "revId": "04f879a649a10e6b891685e8da8ce877abe91f21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ecdad220_9bd9fc2d",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-11-11T18:50:32Z",
       "side": 1,
       "message": "I don\u0027t think we should be hard-coding this to specific host/project, I think we should add some argument that controls whether it parses the commit position and then our recipe can use that configuration option.",
+      "range": {
+        "startLine": 530,
+        "startChar": 0,
+        "endLine": 532,
+        "endChar": 55
+      },
+      "revId": "04f879a649a10e6b891685e8da8ce877abe91f21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4f0534d_3e9adf89",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 3578280
+      },
+      "writtenOn": "2024-11-12T11:37:09Z",
+      "side": 1,
+      "message": "Do you have a specific API in mind? Something like a new parameter for the`ensure_checkout` method, like `parse_cp\u003dTrue`?",
+      "parentUuid": "5001f318_f7c5aa41",
       "range": {
         "startLine": 530,
         "startChar": 0,
