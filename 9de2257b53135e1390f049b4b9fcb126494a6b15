@@ -1,0 +1,65 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a29eb26_846a59ff",
+        "filename": "git_common.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-11-12T16:28:11Z",
+      "side": 1,
+      "message": "nit: let\u0027s extract this into its own function, and add unit tests.",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 43
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "02777931_8263f536",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "git_common.py",
+              "range": {
+                "startLine": 62,
+                "startChar": 0,
+                "endLine": 63,
+                "endChar": 0
+              },
+              "replacement": "def win_find_git() -\u003e str:\n"
+            },
+            {
+              "path": "git_common.py",
+              "range": {
+                "startLine": 73,
+                "startChar": 0,
+                "endLine": 83,
+                "endChar": 0
+              },
+              "replacement": "                    path \u003d _extract_git_path_from_git_bat(path)\n"
+            },
+            {
+              "path": "git_common.py",
+              "range": {
+                "startLine": 87,
+                "startChar": 0,
+                "endLine": 87,
+                "endChar": 0
+              },
+              "replacement": "def _extract_git_path_from_git_bat(path: str) -\u003e str:\n    \"\"\"Extracts the path to git.exe from git.bat.\n\n    Args:\n        path: The path to git.bat.\n\n    Returns:\n        The path to git.exe.\n    \"\"\"\n    git_bat \u003d open(path).readlines()\n    if git_bat[-1].endswith(\u0027\" %*\\n\u0027):\n        if git_bat[-1].startswith(\u0027\"%~dp0\u0027):\n            # Handle relative path.\n            new_path \u003d os.path.join(os.path.dirname(path), git_bat[-1][6:-5])\n        elif git_bat[-1].startswith(\u0027\"\u0027):\n            # Handle absolute path.\n            new_path \u003d git_bat[-1][1:-5]\n        if new_path.endswith(\u0027.exe\u0027):\n            return new_path\n    return path\n\n\n"
+            }
+          ]
+        }
+      ],
+      "revId": "9de2257b53135e1390f049b4b9fcb126494a6b15",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
