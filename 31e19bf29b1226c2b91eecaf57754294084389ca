@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1cbe0b03_372f179b",
+        "filename": "recipes/recipe_modules/git/tests/ls_remote.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-11-13T10:44:16Z",
+      "side": 1,
+      "message": "This seems to have no effect.",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 37,
+        "endChar": 5
+      },
+      "revId": "31e19bf29b1226c2b91eecaf57754294084389ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
