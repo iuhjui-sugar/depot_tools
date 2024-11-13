@@ -134,6 +134,30 @@
       },
       "revId": "04f879a649a10e6b891685e8da8ce877abe91f21",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd947eb2_4a88e47e",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 3578280
+      },
+      "writtenOn": "2024-11-13T09:48:33Z",
+      "side": 1,
+      "message": "Added `parse_commit_position` parameter.",
+      "parentUuid": "17aab84e_5414c889",
+      "range": {
+        "startLine": 530,
+        "startChar": 0,
+        "endLine": 532,
+        "endChar": 55
+      },
+      "revId": "04f879a649a10e6b891685e8da8ce877abe91f21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
