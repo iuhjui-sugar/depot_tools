@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "48fbe6c2_50b73373",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-11-13T19:53:21Z",
+      "side": 1,
+      "message": "nit: this line isn\u0027t about the change itself, but instead about python. I think it should be updated to reflect the CL, eg \"Always return \u0027aix\u0027, instead of \u0027aix6\u0027 or \u0027aix7\u0027.\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 44
+      },
+      "revId": "4b8b25cc3364ceff7c715572f777c8469c2e7fc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "39b65722_ef1a1706",
