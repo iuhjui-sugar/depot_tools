@@ -33,6 +33,24 @@
       "message": "Mohamed: Is there a specific example CL you can point to where you ran into issues?",
       "revId": "9cffd8f6412bef6c3d756f38d0fa3b59718a763b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24aa5019_c89aaa87",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1250067
+      },
+      "writtenOn": "2024-11-13T16:46:27Z",
+      "side": 1,
+      "message": "This is more a culmination of frustration rather than a specific cause in the CL I was working on. I mostly work with python files and pylint has always been a nemesis I have to work around rather than helper to point out issues I missed. Starting with pylint being out of date for a long time during the python3 migration which meant you could not use python3 only features even though they were better for a few years. Then the too long line errors which is only enforced on python files (we have another presubmit that checks the same thing for most files and that is FYI+warning but pylint blocks CQ).\n\nThe actual cl I was working on that broke the camel\u0027s back is [1]. By the time I uploaded it, I fixed most of the lint errors but the rest were just trivial or I disagreed with the linter in this specific situation. Starting with multiple 81 char lines that were not actually that long. - too many nested blocks but they were trivial and would do more harm to break up. - unused variable \"attempt\" in a retry loop but the name is useful since it explains that this is a retry loop - inconsistent return statement because one codepath asserts False instead of returning (this is probably a bug in pylint).\n\nIn my mind we should trust our devs to use their best judgement, which is normally what we do for most formatting related rules and I was surprised that in the case of pylint we trust the rigid rules more than the dev\u0027s judgement. I think if we want to keep pylint mandatory we should disable all the nitpicky rules like line length and formatting and just keep a small subset of rules to prevent error prone patterns. We can\u0027t treat formatting errors the same as something like accessing an undefined variable.\n\n[1] https://chromium-review.googlesource.com/c/chromium/src/+/5916308",
+      "parentUuid": "04debd59_63a1273c",
+      "revId": "9cffd8f6412bef6c3d756f38d0fa3b59718a763b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
