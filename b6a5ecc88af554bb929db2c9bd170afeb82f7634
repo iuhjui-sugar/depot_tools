@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "658c5e76_edb725ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-13T21:54:35Z",
+      "side": 1,
+      "message": "Thanks for the fix and sorry for the breakage.",
+      "revId": "b6a5ecc88af554bb929db2c9bd170afeb82f7634",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
