@@ -39,6 +39,29 @@
       "message": "Could you please review this changes.\nPlease let me know the next process as i am contributing first time in chromium repo.",
       "revId": "4b8b25cc3364ceff7c715572f777c8469c2e7fc3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dc5b92b_92733749",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-11-13T21:01:35Z",
+      "side": 1,
+      "message": "This could use `startswith()`, as suggested below.\n\nhttps://docs.python.org/3.9/library/sys.html#sys.platform\n```\nChanged in version 3.8: On AIX, sys.platform doesn’t contain the major version anymore. It is always \u0027aix\u0027, instead of \u0027aix5\u0027 or \u0027aix7\u0027. Since older Python versions include the version number, it is recommended to always use the startswith idiom presented above.\n```\n\nEven the existing code wasn\u0027t the best either, but WDYT of just adding one entry while keeping the existing ones?\n\ni.e.,\n```\nPLATFORM_MAPPING \u003d {\n    ...\n    \u0027aix6\u0027: \u0027aix\u0027, # Python \u003c 3.8\n    \u0027aix7\u0027: \u0027aix\u0027, \n    \u0027aix\u0027:  \u0027aix\u0027, # Python \u003e 3.8\n}\n```",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "4b8b25cc3364ceff7c715572f777c8469c2e7fc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
