@@ -51,6 +51,23 @@
       "parentUuid": "5527e2bf_83d26fc9",
       "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "074cf830_04bc53f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3637389
+      },
+      "writtenOn": "2024-11-13T11:45:39Z",
+      "side": 1,
+      "message": "Hi, @athom@google.com Can you help roll back this commit, or submit a MR to merge it in quickly? It blocks our CQ process.",
+      "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
