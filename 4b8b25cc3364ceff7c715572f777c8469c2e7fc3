@@ -62,6 +62,30 @@
       },
       "revId": "4b8b25cc3364ceff7c715572f777c8469c2e7fc3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bae03ab_11cf0892",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-11-13T21:09:08Z",
+      "side": 1,
+      "message": "FWIW the min python version for depot_tools is 3.8",
+      "parentUuid": "8dc5b92b_92733749",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "4b8b25cc3364ceff7c715572f777c8469c2e7fc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
