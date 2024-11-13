@@ -16,6 +16,23 @@
       "message": "Hi, Has this submission been tested in Windows? We got an error in Windows:\nFile \"F:\\depot_tools\\bootstrap\\bootstrap.py\", line 407, in \u003cmodule\u003e\nsys.exit(main(sys.argv[1:]))\n^^^^^^^^^^^^^^^^^^^^\nFile \"F:\\depot_tools\\bootstrap\\bootstrap.py\", line 373, in main\ngit_dir \u003d search_win_git_directory()\n^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFile \"F:\\depot_tools\\bootstrap\\bootstrap.py\", line 281, in search_win_git_directory\nif _within_depot_tools(p):\n^^^^^^^^^^^^^^^^^^^^^^^^^\nFile \"F:\\depot_tools\\bootstrap\\bootstrap.py\", line 251, in _within_depot_tools return os.path.commonpath([os.path.abspath(path), ROOT_DIR]) \u003d\u003d ROOT_DIR ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^^^ File \"\u003cfrozen ntpath\u003e\", line 826, in commonpath ValueError: Paths don\u0027t have the same drive",
       "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5527e2bf_83d26fc9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3718623
+      },
+      "writtenOn": "2024-11-13T10:25:54Z",
+      "side": 1,
+      "message": "I just filed https://github.com/dart-lang/sdk/issues/57079 because I\u0027m also seeing this broken on Windows when trying to sync the Dart SDK and wasn\u0027t sure where to file it.\n\nI believe the issue is that `_within_depot_tools` is using `commonpath` for all entries in the `PATH` environment variable, but it throws `ValueError` if the paths are on different drives.\n\nI think perhaps `_within_depot_tools` should first check the drive letters match before using `commonpath` (or handle the error?).",
+      "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
