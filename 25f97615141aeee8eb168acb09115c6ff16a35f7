@@ -33,6 +33,24 @@
       "message": "I just filed https://github.com/dart-lang/sdk/issues/57079 because I\u0027m also seeing this broken on Windows when trying to sync the Dart SDK and wasn\u0027t sure where to file it.\n\nI believe the issue is that `_within_depot_tools` is using `commonpath` for all entries in the `PATH` environment variable, but it throws `ValueError` if the paths are on different drives.\n\nI think perhaps `_within_depot_tools` should first check the drive letters match before using `commonpath` (or handle the error?).",
       "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44caa7bb_cb152841",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3637389
+      },
+      "writtenOn": "2024-11-13T10:52:57Z",
+      "side": 1,
+      "message": "I think os.path.commonprefix can achieve equivalent functionality without throwing exceptions, hope this helps with the fix.\n```\nReturn the longest path prefix (taken character-by-character) that is a prefix of all paths in list. If list is empty, return the empty string (\u0027\u0027).\n```",
+      "parentUuid": "5527e2bf_83d26fc9",
+      "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
