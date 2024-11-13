@@ -70,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48cc146c_7128016b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1238297
+      },
+      "writtenOn": "2024-11-13T13:37:34Z",
+      "side": 1,
+      "message": "I don\u0027t think I have sufficient rights there. I think we\u0027ll have to wait for OWNERS to take action.",
+      "parentUuid": "074cf830_04bc53f9",
+      "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "636e5d08_8d3d326e",
