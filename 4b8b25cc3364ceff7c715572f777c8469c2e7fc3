@@ -86,6 +86,94 @@
       },
       "revId": "4b8b25cc3364ceff7c715572f777c8469c2e7fc3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5edeb6b6_24aeac11",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-11-13T21:23:47Z",
+      "side": 1,
+      "message": "3.8+\n\nhttps://docs.python.org/3.8/library/sys.html#sys.platform shows that the change was on 3.8.",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "4b8b25cc3364ceff7c715572f777c8469c2e7fc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1873efb_bdd67f63",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-11-13T21:23:47Z",
+      "side": 1,
+      "message": "I see. then, LGTM",
+      "parentUuid": "2bae03ab_11cf0892",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "4b8b25cc3364ceff7c715572f777c8469c2e7fc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5c8d7e7_f6f8c5ef",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-11-13T21:23:47Z",
+      "side": 1,
+      "message": "3.8",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "8769d2fc_63846c2a",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "download_from_google_storage.py",
+              "range": {
+                "startLine": 36,
+                "startChar": 0,
+                "endLine": 37,
+                "endChar": 0
+              },
+              "replacement": "    \u0027aix\u0027: \u0027aix\u0027,  # Python 3.8+\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4b8b25cc3364ceff7c715572f777c8469c2e7fc3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
