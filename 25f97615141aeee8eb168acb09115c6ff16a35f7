@@ -68,6 +68,29 @@
       "message": "Hi, @athom@google.com Can you help roll back this commit, or submit a MR to merge it in quickly? It blocks our CQ process.",
       "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "636e5d08_8d3d326e",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 3730813
+      },
+      "writtenOn": "2024-11-13T12:19:06Z",
+      "side": 1,
+      "message": "Hi，I\u0027ve submitted a fix for the issue with os.path.commonpath handling paths on different drives. You can check it out here: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/6018123",
+      "range": {
+        "startLine": 248,
+        "startChar": 0,
+        "endLine": 250,
+        "endChar": 76
+      },
+      "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
