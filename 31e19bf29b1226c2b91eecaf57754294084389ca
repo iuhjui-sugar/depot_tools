@@ -3,6 +3,67 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f01dcbba_502a8fc7",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2024-11-13T13:15:45Z",
+      "side": 1,
+      "message": "I\u0027d also pass **kwargs through, so that users can e.g. chose to provide their own test data right away at the call site.",
+      "range": {
+        "startLine": 472,
+        "startChar": 6,
+        "endLine": 472,
+        "endChar": 15
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "9516c3d2_b38b2d96",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "recipes/recipe_modules/git/api.py",
+              "range": {
+                "startLine": 472,
+                "startChar": 0,
+                "endLine": 473,
+                "endChar": 0
+              },
+              "replacement": "  def ls_remote(self, url, ref, name\u003dNone, tags\u003dTrue, branches\u003dTrue, **kwargs):\n"
+            },
+            {
+              "path": "recipes/recipe_modules/git/api.py",
+              "range": {
+                "startLine": 482,
+                "startChar": 0,
+                "endLine": 482,
+                "endChar": 0
+              },
+              "replacement": "      * kwargs: Forwarded to \u0027__call__\u0027.\n"
+            },
+            {
+              "path": "recipes/recipe_modules/git/api.py",
+              "range": {
+                "startLine": 496,
+                "startChar": 0,
+                "endLine": 497,
+                "endChar": 0
+              },
+              "replacement": "      step_result \u003d self(*cmd, name\u003dname, **kwargs).stdout.splitlines()\n"
+            }
+          ]
+        }
+      ],
+      "revId": "31e19bf29b1226c2b91eecaf57754294084389ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1cbe0b03_372f179b",
         "filename": "recipes/recipe_modules/git/tests/ls_remote.py",
         "patchSetId": 2
@@ -14,6 +75,30 @@
       "writtenOn": "2024-11-13T10:44:16Z",
       "side": 1,
       "message": "This seems to have no effect.",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 37,
+        "endChar": 5
+      },
+      "revId": "31e19bf29b1226c2b91eecaf57754294084389ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff35fb00_26fec71d",
+        "filename": "recipes/recipe_modules/git/tests/ls_remote.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2024-11-13T13:15:45Z",
+      "side": 1,
+      "message": "Needs stdout\u003dself.m.raw_io.output_text() at the step.",
+      "parentUuid": "1cbe0b03_372f179b",
       "range": {
         "startLine": 34,
         "startChar": 1,
