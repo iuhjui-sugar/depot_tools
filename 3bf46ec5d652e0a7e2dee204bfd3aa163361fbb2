@@ -40,6 +40,57 @@
       ],
       "revId": "3bf46ec5d652e0a7e2dee204bfd3aa163361fbb2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac03e84b_1a278905",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-11-14T18:20:35Z",
+      "side": 1,
+      "message": "nit: use append/extend instead of `+\u003d`",
+      "range": {
+        "startLine": 489,
+        "startChar": 4,
+        "endLine": 493,
+        "endChar": 21
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "e9216697_1c1a0628",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "recipes/recipe_modules/git/api.py",
+              "range": {
+                "startLine": 490,
+                "startChar": 0,
+                "endLine": 491,
+                "endChar": 0
+              },
+              "replacement": "      cmd.append(\u0027-t\u0027)\n"
+            },
+            {
+              "path": "recipes/recipe_modules/git/api.py",
+              "range": {
+                "startLine": 492,
+                "startChar": 0,
+                "endLine": 494,
+                "endChar": 0
+              },
+              "replacement": "      cmd.append(\u0027-b\u0027)\n    cmd.extend([url, ref])\n"
+            }
+          ]
+        }
+      ],
+      "revId": "3bf46ec5d652e0a7e2dee204bfd3aa163361fbb2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
