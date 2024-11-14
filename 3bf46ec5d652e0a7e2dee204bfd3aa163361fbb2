@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93f10a07_44209f17",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2024-11-14T15:39:46Z",
+      "side": 1,
+      "message": "nit: Is check out accurate here? Maybe rather \"ref to read\"?",
+      "range": {
+        "startLine": 478,
+        "startChar": 19,
+        "endLine": 478,
+        "endChar": 46
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "027d65a5_36db9856",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "recipes/recipe_modules/git/api.py",
+              "range": {
+                "startLine": 478,
+                "startChar": 0,
+                "endLine": 479,
+                "endChar": 0
+              },
+              "replacement": "      * ref (str): ref to read.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "3bf46ec5d652e0a7e2dee204bfd3aa163361fbb2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
