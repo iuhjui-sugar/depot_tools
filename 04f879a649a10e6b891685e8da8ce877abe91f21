@@ -65,6 +65,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bde7913b_94f8b862",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-11-14T00:12:28Z",
+      "side": 1,
+      "message": "LGTM",
+      "parentUuid": "ecdad220_9bd9fc2d",
+      "revId": "04f879a649a10e6b891685e8da8ce877abe91f21",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5001f318_f7c5aa41",
