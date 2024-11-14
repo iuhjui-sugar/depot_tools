@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "51db223c_d2aaa98e",
+        "filename": ".cipd_impl.ps1",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 3680774
+      },
+      "writtenOn": "2024-11-14T02:02:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97be189c_bf5ed8b7",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 2
+      },
+      "revId": "c77a7881bc13729541f573766ab0c4d1bc19695e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "79eb82ae_f285e3b1",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-10-21T17:53:39Z",
       "side": 1,
       "message": "Gavine is OOO. So, I am jumping in to move the review process.\n\nThis looks good to me, but can you also add a check for `NO_PROXY`? For instance, if the hostname in `$URL` is in `NO_PROXY`, `proxy` shouldn\u0027t be sent.",
+      "revId": "c77a7881bc13729541f573766ab0c4d1bc19695e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ab977bc_f6f025b9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3680774
+      },
+      "writtenOn": "2024-11-14T02:02:52Z",
+      "side": 1,
+      "message": "added NO_PROXY support",
+      "parentUuid": "79eb82ae_f285e3b1",
       "revId": "c77a7881bc13729541f573766ab0c4d1bc19695e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
