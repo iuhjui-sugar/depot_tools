@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "317fffd2_19f26819",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-11-14T06:32:32Z",
+      "side": 1,
+      "message": "I don\u0027t know why there are minor formatting changes, I ran the linter and the presubmits are happy ¯\\_(ツ)_/¯ \n\nI\u0027m also very open to changing the comments around this list to reflect its importance and the process for adding new licenses.",
+      "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
