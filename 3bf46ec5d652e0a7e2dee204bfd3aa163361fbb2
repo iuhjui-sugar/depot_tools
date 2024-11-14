@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "074f7e86_f81d71e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-11-14T19:42:06Z",
+      "side": 1,
+      "message": "Thanks for the fast reviews.",
+      "revId": "3bf46ec5d652e0a7e2dee204bfd3aa163361fbb2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93f10a07_44209f17",
@@ -38,6 +55,30 @@
           ]
         }
       ],
+      "revId": "3bf46ec5d652e0a7e2dee204bfd3aa163361fbb2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6841711_88e777d1",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-11-14T19:42:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93f10a07_44209f17",
+      "range": {
+        "startLine": 478,
+        "startChar": 19,
+        "endLine": 478,
+        "endChar": 46
+      },
       "revId": "3bf46ec5d652e0a7e2dee204bfd3aa163361fbb2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -89,6 +130,30 @@
           ]
         }
       ],
+      "revId": "3bf46ec5d652e0a7e2dee204bfd3aa163361fbb2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "631d880e_c3dcbc45",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-11-14T19:42:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac03e84b_1a278905",
+      "range": {
+        "startLine": 489,
+        "startChar": 4,
+        "endLine": 493,
+        "endChar": 21
+      },
       "revId": "3bf46ec5d652e0a7e2dee204bfd3aa163361fbb2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
