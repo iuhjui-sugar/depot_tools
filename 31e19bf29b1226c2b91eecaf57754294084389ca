@@ -62,6 +62,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef51e4b6_d43f394b",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-11-14T09:53:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f01dcbba_502a8fc7",
+      "range": {
+        "startLine": 472,
+        "startChar": 6,
+        "endLine": 472,
+        "endChar": 15
+      },
+      "revId": "31e19bf29b1226c2b91eecaf57754294084389ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6408ad8c_14c11c4b",
@@ -75,6 +99,30 @@
       "writtenOn": "2024-11-13T14:19:00Z",
       "side": 1,
       "message": "nit: Maybe strip() the output and then expect one line?",
+      "range": {
+        "startLine": 496,
+        "startChar": 42,
+        "endLine": 496,
+        "endChar": 48
+      },
+      "revId": "31e19bf29b1226c2b91eecaf57754294084389ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ef4f583_4c76eb85",
+        "filename": "recipes/recipe_modules/git/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-11-14T09:53:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6408ad8c_14c11c4b",
       "range": {
         "startLine": 496,
         "startChar": 42,
@@ -146,6 +194,30 @@
       "side": 1,
       "message": "That\u0027s resulting in the same error. The stdout of the step result is `None` with both variants.",
       "parentUuid": "ff35fb00_26fec71d",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 37,
+        "endChar": 5
+      },
+      "revId": "31e19bf29b1226c2b91eecaf57754294084389ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60829746_0328503e",
+        "filename": "recipes/recipe_modules/git/tests/ls_remote.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-11-14T09:53:23Z",
+      "side": 1,
+      "message": "I did not add it to the step call, but to the step_data call 😐 Working now, thanks!",
+      "parentUuid": "1b4d4957_dc826b3f",
       "range": {
         "startLine": 34,
         "startChar": 1,
