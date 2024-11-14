@@ -19,33 +19,39 @@ import metadata.fields.field_types as field_types
 import metadata.fields.util as util
 import metadata.validation_result as vr
 
-# Copied from ANDROID_ALLOWED_LICENSES in
-# https://chromium.googlesource.com/chromium/src/+/refs/heads/main/third_party/PRESUBMIT.py
-_ANDROID_ALLOWED_LICENSES = [
-    "A(pple )?PSL 2(\.0)?",
-    "Android Software Development Kit License",
-    "Apache( License)?,?( Version)? 2(\.0)?",
-    "(New )?([23]-Clause )?BSD( [23]-Clause)?( with advertising clause)?",
-    "GNU Lesser Public License",
-    "L?GPL ?v?2(\.[01])?( or later)?( with the classpath exception)?",
-    "(The )?MIT(/X11)?(-like)?( License)?",
-    "MPL 1\.1 ?/ ?GPL 2(\.0)? ?/ ?LGPL 2\.1",
-    "MPL 2(\.0)?",
-    "Microsoft Limited Public License",
-    "Microsoft Permissive License",
-    "Public Domain",
-    "Python",
-    "SIL Open Font License, Version 1.1",
-    "SGI Free Software License B",
-    "Unicode, Inc. License",
-    "University of Illinois\/NCSA Open Source",
+# These licenses are used to verify that code imported to Android complies with
+# their licensing requirements. Do not add entries to this list without approval.
+# Any licenses added should be valid a SPDX Identifier. For the full list of
+# identifiers; see https://spdx.org/licenses/
+ALLOWED_SPDX_LICENSES = set([
+    "APSL-2.0",
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-2-Clause-FreeBSD",
+    "BSD-3-Clause",
+    "BSD-4-Clause",
+    "BSD-4-Clause-UC",
+    "BSD-Source-Code",
+    "GPL-2.0-with-classpath-exception",
+    "MIT",
+    "MIT-0",
+    "MIT-Modern-Variant",
+    "MPL-1.1",
+    "MPL-2.0",
+    "NCSA",
+    "OFL-1.1",
+    "SGI-B-2.0",
+    "Unicode-3.0",
+    "Unicode-DFS-2015",
+    "Unicode-DFS-2016",
     "X11",
     "Zlib",
-]
-_PATTERN_LICENSE_ALLOWED = re.compile(
-    "^({})$".format("|".join(_ANDROID_ALLOWED_LICENSES)),
-    re.IGNORECASE,
-)
+    # Public Domain variants.
+    "ISC",
+    "ICU",
+    "SunPro",
+    "BSL-1.0",
+])
 
 _PATTERN_VERBOSE_DELIMITER = re.compile(r" and | or | / ")
 
@@ -97,7 +103,7 @@ def is_license_allowlisted(value: str) -> bool:
     """Returns whether the value is in the allowlist for license
     types.
     """
-    return util.matches(_PATTERN_LICENSE_ALLOWED, value)
+    return value in ALLOWED_SPDX_LICENSES
 
 
 class LicenseField(field_types.SingleLineTextField):
@@ -105,6 +111,7 @@ class LicenseField(field_types.SingleLineTextField):
 
     e.g. Apache 2.0, MIT, BSD, Public Domain.
     """
+
     def __init__(self):
         super().__init__(name="License")
 
@@ -129,7 +136,8 @@ class LicenseField(field_types.SingleLineTextField):
                 additional=[
                     "Licenses not allowlisted: "
                     f"{util.quoted(not_allowlisted)}.",
-                ])
+                ],
+            )
 
         return None
 

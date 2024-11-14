@@ -30,6 +30,7 @@ _INVALID_METADATA_FILEPATH = os.path.join(_THIS_DIR, "data",
 
 class ValidateContentTest(unittest.TestCase):
     """Tests for the validate_content function."""
+
     def test_empty(self):
         # Validate empty content (should result in a validation error).
         results = metadata.validate.validate_content(
@@ -56,7 +57,7 @@ class ValidateContentTest(unittest.TestCase):
             source_file_dir=_SOURCE_FILE_DIR,
             repo_root_dir=_THIS_DIR,
         )
-        self.assertEqual(len(results), 9)
+        self.assertEqual(len(results), 10)
         error_count = 0
         warning_count = 0
         for result in results:
@@ -65,11 +66,12 @@ class ValidateContentTest(unittest.TestCase):
             else:
                 warning_count += 1
         self.assertEqual(error_count, 7)
-        self.assertEqual(warning_count, 2)
+        self.assertEqual(warning_count, 3)
 
 
 class ValidateFileTest(unittest.TestCase):
     """Tests for the validate_file function."""
+
     def test_missing(self):
         # Validate a file that does not exist.
         results = metadata.validate.validate_file(
@@ -94,7 +96,7 @@ class ValidateFileTest(unittest.TestCase):
             filepath=_INVALID_METADATA_FILEPATH,
             repo_root_dir=_THIS_DIR,
         )
-        self.assertEqual(len(results), 9)
+        self.assertEqual(len(results), 10)
         error_count = 0
         warning_count = 0
         for result in results:
@@ -103,11 +105,12 @@ class ValidateFileTest(unittest.TestCase):
             else:
                 warning_count += 1
         self.assertEqual(error_count, 7)
-        self.assertEqual(warning_count, 2)
+        self.assertEqual(warning_count, 3)
 
 
 class CheckFileTest(unittest.TestCase):
     """Tests for the check_file function."""
+
     def test_missing(self):
         # Check a file that does not exist.
         errors, warnings = metadata.validate.check_file(
@@ -141,7 +144,7 @@ class CheckFileTest(unittest.TestCase):
         # self.assertEqual(len(errors), 7)
         # self.assertEqual(len(warnings), 2)
         self.assertEqual(len(errors), 0)
-        self.assertEqual(len(warnings), 9)
+        self.assertEqual(len(warnings), 10)
 
 
 class ValidationResultTest(unittest.TestCase):
@@ -171,9 +174,10 @@ class ValidationResultTest(unittest.TestCase):
         self.assertEqual(
             ("Third party metadata issue: abc message1 message2 Check "
              "//third_party/README.chromium.template for details."),
-            ve.get_message())
+            ve.get_message(),
+        )
         self.assertEqual("abc message1 message2",
-                         ve.get_message(prescript='', postscript=''))
+                         ve.get_message(prescript="", postscript=""))
 
     def test_getters(self):
         ve = metadata.validation_result.ValidationError(
@@ -192,19 +196,20 @@ class ValidationWithLineNumbers(unittest.TestCase):
                                 "README.chromium.test.validation-line-number")
         content = gclient_utils.FileRead(filepath)
         unittest.mock.patch(
-            'metadata.fields.known.LICENSE_FILE.validate_on_disk',
+            "metadata.fields.known.LICENSE_FILE.validate_on_disk",
             return_value=metadata.validation_result.ValidationError(
-                "File doesn't exist."))
+                "File doesn't exist."),
+        )
 
         results = metadata.validate.validate_content(content,
                                                      "chromium/src/test_dir",
                                                      "chromium/src")
 
         for r in results:
-            if r.get_reason() == 'License File is invalid.':
+            if r.get_reason() == "License File is invalid.":
                 self.assertEqual(r.get_lines(), [10])
-            elif r.get_reason(
-            ) == "Required field 'License Android Compatible' is missing.":
+            elif (r.get_reason() ==
+                  "Required field 'License Android Compatible' is missing."):
                 # We can't add a line number to errors caused by missing fields.
                 self.assertEqual(r.get_lines(), [])
             elif r.get_reason() == "Versioning fields are insufficient.":

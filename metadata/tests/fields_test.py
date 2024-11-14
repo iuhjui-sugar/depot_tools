@@ -21,11 +21,14 @@ import metadata.validation_result as vr
 
 
 class FieldValidationTest(unittest.TestCase):
-    def _run_field_validation(self,
-                              field: field_types.MetadataField,
-                              valid_values: List[str],
-                              error_values: List[str],
-                              warning_values: List[str] = []):
+
+    def _run_field_validation(
+        self,
+        field: field_types.MetadataField,
+        valid_values: List[str],
+        error_values: List[str],
+        warning_values: List[str] = [],
+    ):
         """Helper to run a field's validation for different values."""
         for value in valid_values:
             self.assertIsNone(field.validate(value), value)
@@ -104,10 +107,15 @@ class FieldValidationTest(unittest.TestCase):
                 "04/03/2012",  # Ambiguous month and day.
             ],
             warning_values=[
-                "2012-03-04 UTC", "2012-03-04 UTC+10:00",
-                "2012/03/04 UTC+10:00", "20120304", "April 3, 2012",
-                "3 Apr 2012", "30/12/2000", "20-03-2020",
-                "Tue Apr 3 05:06:07 2012 +0800"
+                "2012-03-04 UTC",
+                "2012-03-04 UTC+10:00",
+                "2012/03/04 UTC+10:00",
+                "20120304",
+                "April 3, 2012",
+                "3 Apr 2012",
+                "30/12/2000",
+                "20-03-2020",
+                "Tue Apr 3 05:06:07 2012 +0800",
             ],
         )
 
@@ -115,13 +123,12 @@ class FieldValidationTest(unittest.TestCase):
         self._run_field_validation(
             field=known_fields.LICENSE,
             valid_values=[
-                "Apache, 2.0 / MIT / MPL 2",
-                "LGPL 2.1",
-                "GPL v2 or later",
-                "LGPL2 with the classpath exception",
-                "Apache, Version 2 and Public domain",
-                "Public domain or MPL 2",
-                "APSL 2 and the MIT license",
+                "Apache-2.0 / MIT",
+                "Apache-2.0",
+                "BSD-2-Clause",
+                "BSD-2-Clause-FreeBSD",
+                "MIT",
+                "APSL-2.0 and MIT",
             ],
             error_values=["", "\n", ",", "Apache 2.0 / MIT / "],
             warning_values=[
@@ -134,9 +141,10 @@ class FieldValidationTest(unittest.TestCase):
         self._run_field_validation(
             field=known_fields.LICENSE_FILE,
             valid_values=[
-                "LICENSE", "src/LICENSE.txt",
+                "LICENSE",
+                "src/LICENSE.txt",
                 "LICENSE, //third_party_test/LICENSE-TEST",
-                "src/MISSING_LICENSE"
+                "src/MISSING_LICENSE",
             ],
             error_values=["", "\n", ","],
             warning_values=["NOT_SHIPPED"],
@@ -209,7 +217,12 @@ class FieldValidationTest(unittest.TestCase):
     def test_local_modifications(self):
         # Checks local modifications field early terminates when we can reasonably infer there's no modification.
         _NO_MODIFICATION_VALUES = [
-            "None", "None.", "N/A.", "(none).", "No modification", "\nNone."
+            "None",
+            "None.",
+            "N/A.",
+            "(none).",
+            "No modification",
+            "\nNone.",
         ]
         for value in _NO_MODIFICATION_VALUES:
             self.assertTrue(
@@ -223,6 +236,7 @@ class FieldValidationTest(unittest.TestCase):
         for value in _MAY_CONTAIN_MODIFICATION_VALUES:
             self.assertFalse(
                 known_fields.LOCAL_MODIFICATIONS.should_terminate_field(value))
+
 
 if __name__ == "__main__":
     unittest.main()
