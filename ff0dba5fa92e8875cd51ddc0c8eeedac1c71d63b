@@ -16,6 +16,81 @@
       "message": "I don\u0027t know why there are minor formatting changes, I ran the linter and the presubmits are happy ¯\\_(ツ)_/¯ \n\nI\u0027m also very open to changing the comments around this list to reflect its importance and the process for adding new licenses.",
       "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c95e499c_1cab4789",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-11-14T21:52:54Z",
+      "side": 1,
+      "message": "Are you using VScode with a plugin installed which formats files on save? You might be unintentionally formatting everything you open.",
+      "parentUuid": "317fffd2_19f26819",
+      "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3add84c7_e1d49fec",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-11-14T21:52:54Z",
+      "side": 1,
+      "message": "I would suggest adding more \"so what\" to this comment.\n\n\n```suggestion\n# These licenses are used to verify that code imported to Android complies with\n# their licensing requirements. Do not add entries to this list without approval.\n# Any licenses added should be valid a SPDX Identifier. For the full list of\n# identifiers; see https://spdx.org/licenses/\n```",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 77
+      },
+      "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4748e281_9b132243",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-11-14T21:52:54Z",
+      "side": 1,
+      "message": "I suggest moving this to it\u0027s own file and importing. Ideally we\u0027d have a file which we can grant ATL owners on once the cleanup is complete. We don\u0027t want to be the long term decision makers about allowed licensing.",
+      "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ef276df_8dddd1fc",
+        "filename": "metadata/tests/validate_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-11-14T21:52:54Z",
+      "side": 1,
+      "message": "Can you give some context on why these counts changed? \n\nIt looks like nothing in the `_INVALID_METADATA_FILEPATH` got changed in this CL, and I would have thought everything in this file was already invalid?",
+      "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
