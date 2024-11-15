@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "66326cdd_20fe71c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-11-15T04:17:36Z",
+      "side": 1,
+      "message": "I used `git cl format --no-clang-format` along with a standard one in vscode. More investigation required..",
+      "parentUuid": "c95e499c_1cab4789",
+      "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3add84c7_e1d49fec",
@@ -59,6 +77,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "42cf745a_b60543e3",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-11-15T04:17:36Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "3add84c7_e1d49fec",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 77
+      },
+      "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4748e281_9b132243",
@@ -72,6 +114,24 @@
       "writtenOn": "2024-11-14T21:52:54Z",
       "side": 1,
       "message": "I suggest moving this to it\u0027s own file and importing. Ideally we\u0027d have a file which we can grant ATL owners on once the cleanup is complete. We don\u0027t want to be the long term decision makers about allowed licensing.",
+      "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "187684ab_e96c64f1",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-11-15T04:17:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4748e281_9b132243",
       "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
