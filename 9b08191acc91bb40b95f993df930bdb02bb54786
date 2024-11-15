@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69193b91_a1abf619",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2024-11-15T14:57:21Z",
+      "side": 1,
+      "message": "This is a great improvement. Nice to have more clarity \u0026 consistency about what\u0027s allowed in this field. I suspect we\u0027ll have a lot of violations in chromium though, have you checked?",
+      "revId": "9b08191acc91bb40b95f993df930bdb02bb54786",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
