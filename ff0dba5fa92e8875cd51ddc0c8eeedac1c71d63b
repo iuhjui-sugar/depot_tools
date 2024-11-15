@@ -169,6 +169,24 @@
       "parentUuid": "4ef276df_8dddd1fc",
       "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3217ad09_3f093620",
+        "filename": "metadata/tests/validate_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-11-15T04:32:51Z",
+      "side": 1,
+      "message": "But this is a test for invalid metadata - so don\u0027t we expect it to be invalid and handled appropriately?",
+      "parentUuid": "6b6398dc_1758aa60",
+      "revId": "ff0dba5fa92e8875cd51ddc0c8eeedac1c71d63b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
