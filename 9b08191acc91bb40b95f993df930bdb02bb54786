@@ -16,6 +16,40 @@
       "message": "This is a great improvement. Nice to have more clarity \u0026 consistency about what\u0027s allowed in this field. I suspect we\u0027ll have a lot of violations in chromium though, have you checked?",
       "revId": "9b08191acc91bb40b95f993df930bdb02bb54786",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c7ecac4_5151a8a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000112
+      },
+      "writtenOn": "2024-11-15T21:54:38Z",
+      "side": 1,
+      "message": "LGTM with nit",
+      "revId": "9b08191acc91bb40b95f993df930bdb02bb54786",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d808adaa_1890a76e",
+        "filename": "metadata/LICENSE_OWNERS",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000112
+      },
+      "writtenOn": "2024-11-15T21:54:38Z",
+      "side": 1,
+      "message": "Can you use file:/ATL_OWNERS so we don\u0027t repeat the set? I\u0027m hoping it won\u0027t be just the two of us forever :-)",
+      "revId": "9b08191acc91bb40b95f993df930bdb02bb54786",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
