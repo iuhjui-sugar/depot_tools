@@ -16,6 +16,24 @@
       "message": "We should also make a CL to remove this list from //third_party/PRESUBMIT.py to remove confusion about what\u0027s being used for validation. \n\nI created a tracking bug (b/379211393) to flip over the validation to go with this TODO [1]. We can track removing the `ANDROID_ALLOWED_LICENSES` licenses against that new bug right now, as it will now be fully moved to here. We won\u0027t be able to turn over the validation to depot tools entirely yet since I think there\u0027s probably still some failing metadata.\n\n[1] https://source.chromium.org/chromium/chromium/src/+/main:third_party/PRESUBMIT.py;l\u003d154",
       "revId": "c22f4dc74fed3850bfa9f0775f0d026419bab980",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf475a5b_88c55efd",
+        "filename": "metadata/fields/custom/license.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-11-15T07:39:40Z",
+      "side": 0,
+      "message": "I made a CL removing it and linked the bug you mentioned. \nhttps://crrev.com/c/6025122",
+      "parentUuid": "f66e8854_ab3446e0",
+      "revId": "c22f4dc74fed3850bfa9f0775f0d026419bab980",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
