@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e47d68c_2afd11ee",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-11-18T09:57:32Z",
+      "side": 1,
+      "message": "The default exception printed by this function in case the import fails is not very useful - wrapping it in an ImportError makes it much more readable.\n\n```suggestion\ndef _import_from_path(module_name, file_path):\n    try:\n        spec \u003d importlib.util.spec_from_file_location(module_name, file_path)\n        module \u003d importlib.util.module_from_spec(spec)\n        sys.modules[module_name] \u003d module\n        spec.loader.exec_module(module)\n    except Exception:\n        raise ImportError(\n            \u0027Could not import module \"{}\" from \"{}\"\u0027.format(module_name, file_path),\n            name\u003dmodule_name,\n            path\u003dfile_path,\n        )\n    return module\n```",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 17
+      },
+      "revId": "92ec5ae8de263746e11bf794f2b1ec222225e2b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3149e51c_3d688030",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-11-18T09:57:32Z",
+      "side": 1,
+      "message": "I tested this, and it works fine, but in case anything goes wrong with calling the method, it results in a rather unhelpful exception. Also, we should probably validate that the method returns the expected result type.\n\nWhen we extract it into a separate method, we can also reduce the nesting:\n\n```\ndef _get_use_siso_default(output_dir):\n    root_dir \u003d gclient_paths.GetPrimarySolutionPath()\n    if not root_dir:\n        return False\n\n    script_path \u003d os.path.join(root_dir, \"build/toolchain/use_siso_default.py\")\n    if not os.path.exists(script_path):\n        return False\n\n    script \u003d _import_from_path(\"use_siso_default\", script_path)\n\n    try:\n        r \u003d script.use_siso_default(output_dir)\n    except Exception:\n        raise RuntimeError(\n            \u0027Could not call method \"use_siso_default\" in \"{}\"\u0027.format(script_path)\n        )\n    if not isinstance(r, bool):\n        raise TypeError(\n            \u0027Method \"use_siso_default\" in \"{}\" returned invalid result; expected bool, got \"{}\" (type \"{}\")\u0027.format(\n                script_path, r, type(r)\n            )\n        )\n\n    return r\n```\n\nThen we can just call that here:\n\n```suggestion\n    use_siso \u003d _get_use_siso_default(output_dir)\n```",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 181,
+        "endChar": 67
+      },
+      "revId": "92ec5ae8de263746e11bf794f2b1ec222225e2b2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
