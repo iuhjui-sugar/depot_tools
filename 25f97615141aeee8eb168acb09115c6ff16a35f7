@@ -88,6 +88,42 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8650c79c_6e798022",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-18T03:43:10Z",
+      "side": 1,
+      "message": "Ack. `os.path.commonprefix` may return invalid paths because it works a character at a time, e.g. `os.path.commonprefix([\"C:\\path\\to\\depot_tools\", \"C:\\path\\to\\depot_tools_old\"]) -\u003e \"C:\\path\\to\\depot_tools\"`.\n\nThanks for landing the fix of putting a `try-catch` around `os.path.commonpath`.",
+      "parentUuid": "44caa7bb_cb152841",
+      "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89d16d55_32578795",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-18T03:43:10Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "b3fcc0e7_84379d54",
+      "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "636e5d08_8d3d326e",
@@ -101,6 +137,30 @@
       "writtenOn": "2024-11-13T12:19:06Z",
       "side": 1,
       "message": "Hi，I\u0027ve submitted a fix for the issue with os.path.commonpath handling paths on different drives. You can check it out here: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/6018123",
+      "range": {
+        "startLine": 248,
+        "startChar": 0,
+        "endLine": 250,
+        "endChar": 76
+      },
+      "revId": "25f97615141aeee8eb168acb09115c6ff16a35f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e55a5eed_6232a246",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-18T03:43:10Z",
+      "side": 1,
+      "message": "Thanks for landing the fix.",
+      "parentUuid": "636e5d08_8d3d326e",
       "range": {
         "startLine": 248,
         "startChar": 0,
