@@ -173,6 +173,12 @@ def _main_inner(input_args, build_id, should_collect_logs=False):
     use_siso = False
     root_dir = gclient_paths.GetPrimarySolutionPath()
     if root_dir:
+        use_reclient_default_path = os.path.join(
+            root_dir, "build/toolchain/use_reclient_defualt.py")
+        if os.path.exists(use_reclient_default_path):
+            use_reclient = import_from_path(
+                "use_reclient_default",
+                use_reclient_default_path).use_reclient_default(output_dir)
         use_siso_default_path = os.path.join(
             root_dir, "build/toolchain/use_siso_default.py")
         if os.path.exists(use_siso_default_path):
