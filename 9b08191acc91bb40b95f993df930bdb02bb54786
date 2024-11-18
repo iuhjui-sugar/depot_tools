@@ -70,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d0911bd_784fc0c5",
+        "filename": "metadata/LICENSE_OWNERS",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-11-18T01:02:36Z",
+      "side": 1,
+      "message": "I made a bug to add an ATL_OWNERS file to depot_tools http://b/379562012",
+      "parentUuid": "ff06a7e5_aae45299",
+      "revId": "9b08191acc91bb40b95f993df930bdb02bb54786",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ce6fbff0_cddaf5d6",
@@ -107,6 +125,30 @@
           ]
         }
       ],
+      "revId": "9b08191acc91bb40b95f993df930bdb02bb54786",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14a771e3_75123ac3",
+        "filename": "metadata/fields/custom/license_allowlist.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-11-18T01:02:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce6fbff0_cddaf5d6",
+      "range": {
+        "startLine": 8,
+        "startChar": 31,
+        "endLine": 8,
+        "endChar": 38
+      },
       "revId": "9b08191acc91bb40b95f993df930bdb02bb54786",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
