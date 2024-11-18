@@ -14,7 +14,7 @@ does handle import statements, but it can't handle conditional setting of build
 settings.
 """
 
-import uuid
+import importlib.util
 import logging
 import multiprocessing
 import os
@@ -25,6 +25,7 @@ import shutil
 import subprocess
 import sys
 import time
+import uuid
 import warnings
 
 import build_telemetry
@@ -51,6 +52,14 @@ _NINJALOG_UPLOADER = os.path.join(_SCRIPT_DIR, "ninjalog_uploader.py")
 # [2] https://web.archive.org/web/20150815000000*/https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/set.mspx # noqa
 _UNSAFE_FOR_CMD = set("^<>&|()%")
 _ALL_META_CHARS = _UNSAFE_FOR_CMD.union(set('"'))
+
+
+def _import_from_path(module_name, file_path):
+    spec = importlib.util.spec_from_file_location(module_name, file_path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[module_name] = module
+    spec.loader.exec_module(module)
+    return module
 
 
 def _is_google_corp_machine():
@@ -162,6 +171,13 @@ def _main_inner(input_args, build_id, should_collect_logs=False):
     use_remoteexec = False
     use_reclient = None
     use_siso = False
+    root_dir = gclient_paths.GetPrimarySolutionPath()
+    if root_dir:
+        use_siso_default_path = os.path.join(
+            root_dir, "build/toolchain/use_siso_default.py")
+        if os.path.exists(use_siso_default_path):
+            use_siso = _import_from_path(
+                "use_siso_default", use_siso_default_path).use_siso_default()
 
     # Attempt to auto-detect remote build acceleration. We support gn-based
     # builds, where we look for args.gn in the build tree, and cmake-based
