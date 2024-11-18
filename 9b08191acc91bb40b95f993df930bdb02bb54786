@@ -88,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e64752e7_6c773364",
+        "filename": "metadata/LICENSE_OWNERS",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000112
+      },
+      "writtenOn": "2024-11-18T18:26:39Z",
+      "side": 1,
+      "message": "Ah of course, sorry. If this is the only place then I\u0027m fine with the inline copy. If we get a second place in depot_tools then we should add a file. I\u0027ll say that on the bug.",
+      "parentUuid": "5d0911bd_784fc0c5",
+      "revId": "9b08191acc91bb40b95f993df930bdb02bb54786",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ce6fbff0_cddaf5d6",
