@@ -1,0 +1,86 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "835a9f21_f81bfac3",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-11-18T10:22:16Z",
+      "side": 1,
+      "message": "Ah, sorry, we can remove this `return` here and just keep the one at the end of the function.",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 21
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "43701b70_e0804930",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 63,
+                "startChar": 0,
+                "endLine": 64,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "98d0c8b78567ef77f3b18802bafdbbe7e70dbbd1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d798213a_17b525f6",
+        "filename": "autoninja.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-11-18T10:22:16Z",
+      "side": 1,
+      "message": "nits to follow the usual Python style:\n- Capitalize the first letter of the sentence.\n- Typo \"except\" -\u003e \"Expected\"",
+      "range": {
+        "startLine": 154,
+        "startChar": 13,
+        "endLine": 154,
+        "endChar": 103
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "ef5bb6bf_f9900e70",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 154,
+                "startChar": 0,
+                "endLine": 155,
+                "endChar": 0
+              },
+              "replacement": "            \u0027Method \"use_siso_default\" in \"{}\" returns invalid result. Expected bool, got \"{}\" (type \"{}\")\u0027\n"
+            }
+          ]
+        }
+      ],
+      "revId": "98d0c8b78567ef77f3b18802bafdbbe7e70dbbd1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
