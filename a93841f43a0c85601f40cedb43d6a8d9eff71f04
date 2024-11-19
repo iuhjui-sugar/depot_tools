@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ba35e0a_73a8bdd3",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-11-19T07:47:42Z",
+      "side": 1,
+      "message": "typo in filename?",
+      "range": {
+        "startLine": 177,
+        "startChar": 39,
+        "endLine": 177,
+        "endChar": 59
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "0f43884c_d515b79b",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 177,
+                "startChar": 0,
+                "endLine": 178,
+                "endChar": 0
+              },
+              "replacement": "            root_dir, \"build/toolchain/use_reclient_default.py\")\n"
+            }
+          ]
+        }
+      ],
+      "revId": "a93841f43a0c85601f40cedb43d6a8d9eff71f04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
