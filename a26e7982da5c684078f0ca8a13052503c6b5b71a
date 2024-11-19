@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b72bcae7_ccfb2b7c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-11-19T07:11:26Z",
+      "side": 1,
+      "message": "I tested this on Linux and Windows, and it\u0027s working for me. I think this is already safe to merge, as the script that it calls doesn\u0027t exist yet.\n\nMy test:\n```\n# patch this CL into my depot_tools\n$ gn gen --args\u003d\"is_debug\u003dtrue use_remoteexec\u003dtrue\" out/debug\n$ autoninja -C out/debug base  # this should use ninja+reclient\n# patch crrev.com/c/5901413 into my chromium\n$ autoninja -C out/debug base  # this should still use ninja+reclient\n$ gn clean out/debug\n$ autoninja -C out/debug base  # this should use siso+reclient now\n```\n\nI also tested GN args with explicit use_siso\u003dtrue and use_siso\u003dfalse, and they also both work as expected.",
+      "revId": "a26e7982da5c684078f0ca8a13052503c6b5b71a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
