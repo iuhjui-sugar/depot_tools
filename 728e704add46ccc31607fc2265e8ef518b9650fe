@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee48108a_2134026a",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1638,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-11-20T01:26:17Z",
+      "side": 0,
+      "message": "Hmm, I didn\u0027t know about this...",
+      "range": {
+        "startLine": 1638,
+        "startChar": 31,
+        "endLine": 1638,
+        "endChar": 35
+      },
+      "revId": "728e704add46ccc31607fc2265e8ef518b9650fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
