@@ -16,6 +16,23 @@
       "message": "Threw this together since I keep accidentally adding \"windows\" instead of \"win\" to my .gclient file. LMK what we think.",
       "revId": "5d0f89b71d0d7eae7ae7e1bcde85cacec3858fa0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37e12ee9_c564e573",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-11-20T05:07:55Z",
+      "side": 1,
+      "message": "no concern from my side, too.",
+      "revId": "5d0f89b71d0d7eae7ae7e1bcde85cacec3858fa0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
