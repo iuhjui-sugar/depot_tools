@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e883e581_471d7d84",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-20T02:19:15Z",
+      "side": 1,
+      "message": "Using a separate path so that users that have set up `depot_tools` before using the bootstrap git will still set their global config if they have recently installed git directly.",
+      "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
