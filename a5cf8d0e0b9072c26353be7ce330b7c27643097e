@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd7448e1_43982c9b",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-11-20T16:38:31Z",
+      "side": 1,
+      "message": "One thing to note is that our users don\u0027t run bootstrap.py directly. Instead, it\u0027s invoked by gclient and a few other commands. Unless we use envvar, or do more plumbing work, this is not going to be all that useful.\n\nI\u0027m LGTM as the current state breaks folks with preinstalled windows (due to global config), but we should revisit it.",
+      "revId": "a5cf8d0e0b9072c26353be7ce330b7c27643097e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
