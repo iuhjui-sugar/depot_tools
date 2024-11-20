@@ -304,8 +304,8 @@ def git_get_mingw_dir(git_directory):
     return None
 
 
-def git_postprocess(template, bootstrap_git_dir, add_docs):
-    if add_docs:
+def git_postprocess(template, bootstrap_git_dir, is_system_git):
+    if not is_system_git:
         # Update depot_tools files for "git help <command>".
         mingw_dir = git_get_mingw_dir(template.GIT_BIN_ABSDIR)
         if mingw_dir:
@@ -324,25 +324,36 @@ def git_postprocess(template, bootstrap_git_dir, add_docs):
         stub_template.maybe_install('git.template.bat',
                                     os.path.join(ROOT_DIR, stub_name))
 
-    # Set-up our system configuration environment. The following set of
+    if is_system_git:
+        # Set up global-level configs, as this doesn't require admin privileges.
+        config_level = '--global'
+        postprocess_path = os.path.join(bootstrap_git_dir,
+                                        '.git_postprocess_global')
+    else:
+        # We can set up system-level configs easily because this will be applied
+        # to depot_tools' git files.
+        config_level = '--system'
+        postprocess_path = os.path.join(bootstrap_git_dir, '.git_postprocess')
+
+    # Set-up our configuration environment. The following set of
     # parameters is versioned by "GIT_POSTPROCESS_VERSION". If they change,
     # update "GIT_POSTPROCESS_VERSION" accordingly.
     def configure_git_system():
         git_bat_path = os.path.join(ROOT_DIR, 'git.bat')
         _check_call(
-            [git_bat_path, 'config', '--system', 'core.autocrlf', 'false'])
+            [git_bat_path, 'config', config_level, 'core.autocrlf', 'false'])
         _check_call(
-            [git_bat_path, 'config', '--system', 'core.filemode', 'false'])
+            [git_bat_path, 'config', config_level, 'core.filemode', 'false'])
         _check_call(
-            [git_bat_path, 'config', '--system', 'core.preloadindex', 'true'])
+            [git_bat_path, 'config', config_level, 'core.preloadindex', 'true'])
         _check_call(
-            [git_bat_path, 'config', '--system', 'core.fscache', 'true'])
+            [git_bat_path, 'config', config_level, 'core.fscache', 'true'])
         _check_call(
-            [git_bat_path, 'config', '--system', 'protocol.version', '2'])
+            [git_bat_path, 'config', config_level, 'protocol.version', '2'])
 
     os.makedirs(bootstrap_git_dir, exist_ok=True)
-    call_if_outdated(os.path.join(bootstrap_git_dir, '.git_postprocess'),
-                     GIT_POSTPROCESS_VERSION, configure_git_system)
+    call_if_outdated(postprocess_path, GIT_POSTPROCESS_VERSION,
+                     configure_git_system)
 
 
 def main(argv):
@@ -367,15 +378,16 @@ def main(argv):
 
     if IS_WIN:
         bootstrap_git_dir = os.path.join(bootstrap_dir, 'git')
-        # Avoid messing with system git docs.
-        add_docs = False
+        # Flag which denotes whether we found an existing system git, so we can
+        # avoid messing with it.
+        found_system_git = True
         git_dir = search_win_git_directory()
         if not git_dir:
             # git not found in PATH - fall back to depot_tools bundled git.
             git_dir = bootstrap_git_dir
-            add_docs = True
+            found_system_git = False
         template = template._replace(GIT_BIN_ABSDIR=git_dir)
-        git_postprocess(template, bootstrap_git_dir, add_docs)
+        git_postprocess(template, bootstrap_git_dir, found_system_git)
         templates = [
             ('git-bash.template.sh', 'git-bash', ROOT_DIR),
             ('python3.bat', 'python3.bat', ROOT_DIR),
