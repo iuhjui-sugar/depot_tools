@@ -111,6 +111,24 @@
       "parentUuid": "a12a18b8_4552025f",
       "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfeb1e48_66e66f73",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-20T03:41:32Z",
+      "side": 1,
+      "message": "Hmm this seems more complicated than I thought. I\u0027m happy to update the bootstrap script to use the bundled git by default so no one is blocked by this change. See https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/6033861",
+      "parentUuid": "be890ed6_d015f26d",
+      "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
