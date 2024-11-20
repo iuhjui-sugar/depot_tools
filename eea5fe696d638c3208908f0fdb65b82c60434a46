@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "039ccc14_2e10c232",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-11-20T16:46:55Z",
+      "side": 1,
+      "message": "Add a sentence on what we what and why (e.g. use correct settings for chromium development, performance).",
+      "fixSuggestions": [
+        {
+          "fixId": "fbd724c5_13ed6344",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "bootstrap/bootstrap.py",
+              "range": {
+                "startLine": 341,
+                "startChar": 0,
+                "endLine": 341,
+                "endChar": 0
+              },
+              "replacement": "            \u0027This will ensure that git is configured correctly for Chromium \u0027\n            \u0027development, improving performance and reducing errors.\\n\u0027\n"
+            }
+          ]
+        }
+      ],
+      "revId": "eea5fe696d638c3208908f0fdb65b82c60434a46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
