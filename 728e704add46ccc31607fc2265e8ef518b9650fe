@@ -22,6 +22,30 @@
       },
       "revId": "728e704add46ccc31607fc2265e8ef518b9650fe",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be6124d0_d64e66d9",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1638,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2024-11-20T03:47:05Z",
+      "side": 0,
+      "message": "Yeah, I have no idea where this originally came from but it\u0027s been this way forever. Very confusing.",
+      "parentUuid": "ee48108a_2134026a",
+      "range": {
+        "startLine": 1638,
+        "startChar": 31,
+        "endLine": 1638,
+        "endChar": 35
+      },
+      "revId": "728e704add46ccc31607fc2265e8ef518b9650fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
