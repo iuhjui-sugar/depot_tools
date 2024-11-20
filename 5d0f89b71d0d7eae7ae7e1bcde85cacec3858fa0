@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "239a8f57_094db11f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2024-11-20T00:23:27Z",
+      "side": 1,
+      "message": "Threw this together since I keep accidentally adding \"windows\" instead of \"win\" to my .gclient file. LMK what we think.",
+      "revId": "5d0f89b71d0d7eae7ae7e1bcde85cacec3858fa0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
