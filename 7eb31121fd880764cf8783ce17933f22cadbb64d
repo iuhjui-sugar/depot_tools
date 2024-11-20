@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5575bdf8_0e6d7c7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-11-20T09:19:22Z",
+      "side": 1,
+      "message": "I confirm that this fixes the regression documented in b/379999879. Thank you Junji!",
+      "revId": "7eb31121fd880764cf8783ce17933f22cadbb64d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
