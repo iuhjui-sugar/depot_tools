@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "752325f3_b64c3159",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-11-20T02:31:31Z",
+      "side": 1,
+      "message": "nit: I suggest doing like so for readability/preventing mistakes:\n\n```\ngit_postprocess(template, bootstrap_git_dir, *, is_system_git\u003dTrue/False)\n```",
+      "range": {
+        "startLine": 307,
+        "startChar": 49,
+        "endLine": 307,
+        "endChar": 62
+      },
+      "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "e883e581_471d7d84",
@@ -14,6 +37,24 @@
       "writtenOn": "2024-11-20T02:19:15Z",
       "side": 1,
       "message": "Using a separate path so that users that have set up `depot_tools` before using the bootstrap git will still set their global config if they have recently installed git directly.",
+      "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0715a03_e71a0af7",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-11-20T02:31:31Z",
+      "side": 1,
+      "message": "Can\u0027t we always do `--global` instead of `--system`?  IMO editing the system config is really weird.  I don\u0027t think this really harms existing users of either setup...?\n\n(Also that would simplify this logic)",
+      "parentUuid": "e883e581_471d7d84",
       "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
