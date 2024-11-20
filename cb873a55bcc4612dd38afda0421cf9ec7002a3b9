@@ -93,6 +93,24 @@
       "parentUuid": "b0715a03_e71a0af7",
       "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be890ed6_d015f26d",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-11-20T03:12:12Z",
+      "side": 1,
+      "message": "\u003e For automatically editing the user\u0027s config, that can be somewhat invasive\n\nThis is a great point - when we bundled our own git, it was okay to set its system settings, but it\u0027s not okay to set user\u0027s global config without their consent (or at least informing them). With that, I think we should ask user for permission to set it up, and maybe even hard fail fetch/gclient operation if postprocess_path is not set.",
+      "parentUuid": "a12a18b8_4552025f",
+      "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
