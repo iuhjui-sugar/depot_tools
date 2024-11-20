@@ -57,6 +57,24 @@
       "parentUuid": "e883e581_471d7d84",
       "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b500a198_37e4a9e2",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-11-20T02:35:09Z",
+      "side": 1,
+      "message": "Sorry, forgot something.  For automatically editing the user\u0027s config, that can be somewhat invasive.  It\u0027s pretty standard to set a custom Git config option that indicates that it has already run and doesn\u0027t need to be run again, rather than a file.\n\nThat way, removing the file doesn\u0027t re-clobber the user\u0027s global config.  And the user can manually add a `win_bootstrap \u003d skip` option to manually skip this.\n\nI think this is used in various places in depot_tools/luci.  If you find my auth CLs in depot_tools, you can see how I did that, with an incrementing version number to re-run bootstrap if any updates were made.  (I\u0027ll link it later if I don\u0027t forget).\n\nEven if you don\u0027t do the above, I recommend adding your comment as a comment for context.",
+      "parentUuid": "b0715a03_e71a0af7",
+      "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
