@@ -75,6 +75,24 @@
       "parentUuid": "b0715a03_e71a0af7",
       "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a12a18b8_4552025f",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-20T02:39:32Z",
+      "side": 1,
+      "message": "Good point. I could switch the level to `--global` and just bump up the postprocess version, so existing `depot_tools` users set up their global config?",
+      "parentUuid": "b0715a03_e71a0af7",
+      "revId": "cb873a55bcc4612dd38afda0421cf9ec7002a3b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
