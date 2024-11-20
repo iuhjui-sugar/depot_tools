@@ -185,14 +185,15 @@ def _toolchain_in_use(toolchain_path):
 
 
 def _check_call(argv, stdin_input=None, **kwargs):
-    """Wrapper for subprocess.check_call that adds logging."""
+    """Wrapper for subprocess.Popen that adds logging."""
     logging.info('running %r', argv)
     if stdin_input is not None:
         kwargs['stdin'] = subprocess.PIPE
     proc = subprocess.Popen(argv, **kwargs)
-    proc.communicate(input=stdin_input)
+    stdout, stderr = proc.communicate(input=stdin_input)
     if proc.returncode:
         raise subprocess.CalledProcessError(proc.returncode, argv, None)
+    return stdout, stderr
 
 
 def _safe_rmtree(path):
@@ -307,7 +308,59 @@ def git_get_mingw_dir(git_directory):
     return None
 
 
-def git_postprocess(template, bootstrap_git_dir, add_docs):
+def get_git_global_config_value(git_path, key):
+    """Helper to get the value from the global git config."""
+    try:
+        stdout, _ = _check_call([git_path, 'config', '--global', key],
+                                stdout=subprocess.PIPE,
+                                encoding='utf-8')
+        return stdout.strip()
+    except subprocess.CalledProcessError:
+        logging.info('{} was not set in global git config.'.format(key))
+
+    return ''
+
+
+def _win_git_bootstrap_config():
+    git_bat_path = os.path.join(ROOT_DIR, 'git.bat')
+
+    postprocess_key = 'depot-tools.gitpostprocessVersion'
+    postprocess_version = get_git_global_config_value(git_path=git_bat_path,
+                                                      key=postprocess_key)
+    if postprocess_version == GIT_POSTPROCESS_VERSION:
+        # Already configured. Nothing to do.
+        return
+
+    allow_global_key = 'depot-tools.allowGlobalGitConfig'
+    allow_global = get_git_global_config_value(git_path=git_bat_path,
+                                               key=allow_global_key)
+
+    if allow_global.lower() not in ('yes', 'on', 'true', '1'):
+        logging.warning(
+            'depot_tools would like to update your global git config.\n'
+            'Allow this by running\n'
+            f'`git config --global {allow_global_key} 1`\n')
+        return
+
+    # Set up our global configuration environment. The following set of
+    # parameters is versioned by "GIT_POSTPROCESS_VERSION". If they change,
+    # update "GIT_POSTPROCESS_VERSION" accordingly.
+    _check_call([git_bat_path, 'config', '--global', 'core.autocrlf', 'false'])
+    _check_call([git_bat_path, 'config', '--global', 'core.filemode', 'false'])
+    _check_call(
+        [git_bat_path, 'config', '--global', 'core.preloadindex', 'true'])
+    _check_call([git_bat_path, 'config', '--global', 'core.fscache', 'true'])
+    _check_call([git_bat_path, 'config', '--global', 'protocol.version', '2'])
+
+    # Update the postprocess version to denote this configuration has been
+    # applied.
+    _check_call([
+        git_bat_path, 'config', '--global', postprocess_key,
+        GIT_POSTPROCESS_VERSION
+    ])
+
+
+def git_postprocess(template, add_docs):
     if add_docs:
         # Update depot_tools files for "git help <command>".
         mingw_dir = git_get_mingw_dir(template.GIT_BIN_ABSDIR)
@@ -327,25 +380,8 @@ def git_postprocess(template, bootstrap_git_dir, add_docs):
         stub_template.maybe_install('git.template.bat',
                                     os.path.join(ROOT_DIR, stub_name))
 
-    # Set-up our system configuration environment. The following set of
-    # parameters is versioned by "GIT_POSTPROCESS_VERSION". If they change,
-    # update "GIT_POSTPROCESS_VERSION" accordingly.
-    def configure_git_system():
-        git_bat_path = os.path.join(ROOT_DIR, 'git.bat')
-        _check_call(
-            [git_bat_path, 'config', '--system', 'core.autocrlf', 'false'])
-        _check_call(
-            [git_bat_path, 'config', '--system', 'core.filemode', 'false'])
-        _check_call(
-            [git_bat_path, 'config', '--system', 'core.preloadindex', 'true'])
-        _check_call(
-            [git_bat_path, 'config', '--system', 'core.fscache', 'true'])
-        _check_call(
-            [git_bat_path, 'config', '--system', 'protocol.version', '2'])
-
-    os.makedirs(bootstrap_git_dir, exist_ok=True)
-    call_if_outdated(os.path.join(bootstrap_git_dir, '.git_postprocess'),
-                     GIT_POSTPROCESS_VERSION, configure_git_system)
+    # Bootstrap the git global config.
+    _win_git_bootstrap_config()
 
 
 def main(argv):
@@ -374,7 +410,6 @@ def main(argv):
     clean_up_old_installations(bootstrap_dir)
 
     if IS_WIN:
-        bootstrap_git_dir = os.path.join(bootstrap_dir, 'git')
         # Avoid messing with system git docs.
         add_docs = False
         git_dir = None
@@ -384,10 +419,10 @@ def main(argv):
             # Either using system git was not enabled
             # or git was not found in PATH.
             # Fall back to depot_tools bundled git.
-            git_dir = bootstrap_git_dir
+            git_dir = os.path.join(bootstrap_dir, 'git')
             add_docs = True
         template = template._replace(GIT_BIN_ABSDIR=git_dir)
-        git_postprocess(template, bootstrap_git_dir, add_docs)
+        git_postprocess(template, add_docs)
         templates = [
             ('git-bash.template.sh', 'git-bash', ROOT_DIR),
             ('python3.bat', 'python3.bat', ROOT_DIR),
