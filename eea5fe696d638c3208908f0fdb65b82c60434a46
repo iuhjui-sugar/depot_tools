@@ -34,6 +34,24 @@
       ],
       "revId": "eea5fe696d638c3208908f0fdb65b82c60434a46",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01bba445_4e5c1bda",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-21T05:04:38Z",
+      "side": 1,
+      "message": "Done. I also added a check for it being explicitly disabled, so users have a way to silence the warning.",
+      "parentUuid": "039ccc14_2e10c232",
+      "revId": "eea5fe696d638c3208908f0fdb65b82c60434a46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
