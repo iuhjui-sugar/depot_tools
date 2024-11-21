@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4673a2c8_87832367",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-11-21T01:05:26Z",
+      "side": 1,
+      "message": "Adding \u0027Supplement:Apache-2.0\u0027 based on our conversation today",
+      "revId": "c1dd231a75ea9bf1eea082db19405848ca0853a6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
