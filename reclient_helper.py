@@ -307,6 +307,14 @@ def workspace_is_cog():
         os.getcwd()).startswith("/google/cog")
 
 
+def is_initial_build(out_dir):
+    if os.path.exists(os.path.join(out_dir, ".ninja_deps")):
+        return False
+    if os.path.exists(os.path.join(out_dir, ".siso_deps")):
+        return False
+    return True
+
+
 # pylint: disable=line-too-long
 def reclient_setup_docs_url():
     if sys.platform == "darwin":
@@ -355,6 +363,12 @@ def build_context(argv, tool, should_collect_logs):
         # If we are building inside a Cog workspace, racing is likely not a
         # performance improvement, so we disable it by default.
         if workspace_is_cog():
+            os.environ.setdefault("RBE_exec_strategy", "remote_local_fallback")
+        # If this is the first build, using racing will always be slower than
+        # running as much as possible remotely. This also avoids an issue where
+        # Siso can sometimes cause reproxy's racing mode to become extremely
+        # slow during clean builds. (b/379999879)
+        if tool == "autosiso" and is_initial_build(ninja_out):
             os.environ.setdefault("RBE_exec_strategy", "remote_local_fallback")
         set_racing_defaults()
         if sys.platform == "darwin":
