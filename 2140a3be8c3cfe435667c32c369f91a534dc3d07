@@ -34,6 +34,24 @@
       "parentUuid": "abea44a7_5ed45b80",
       "revId": "2140a3be8c3cfe435667c32c369f91a534dc3d07",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d34a7ef_90ebb12a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-11-25T21:36:37Z",
+      "side": 1,
+      "message": "I\u0027d hold off until Monday, but I\u0027m noticing now that we haven\u0027t updated dates for our infra freeze presubmit check yet. https://crrev.com/c/6049175 should fix that",
+      "parentUuid": "52b08b89_3d815f30",
+      "revId": "2140a3be8c3cfe435667c32c369f91a534dc3d07",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
