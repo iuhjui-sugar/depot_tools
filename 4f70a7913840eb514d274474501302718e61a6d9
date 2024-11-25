@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "add0bbbd_f50d5fa7",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-25T00:14:10Z",
+      "side": 1,
+      "message": "Keeping it `\u003d\u003d` means rollbacks of CLs that change the config and corresponding version will take effect.",
+      "parentUuid": "a7b14777_7383613b",
+      "range": {
+        "startLine": 360,
+        "startChar": 28,
+        "endLine": 360,
+        "endChar": 29
+      },
+      "revId": "4f70a7913840eb514d274474501302718e61a6d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf154ccf_27910098",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-11-22T00:34:38Z",
       "side": 1,
       "message": "nit: s/git/Git/",
+      "range": {
+        "startLine": 376,
+        "startChar": 58,
+        "endLine": 376,
+        "endChar": 61
+      },
+      "revId": "4f70a7913840eb514d274474501302718e61a6d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d304335_16b91327",
+        "filename": "bootstrap/bootstrap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-11-25T00:14:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf154ccf_27910098",
       "range": {
         "startLine": 376,
         "startChar": 58,
