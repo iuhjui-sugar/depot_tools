@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abea44a7_5ed45b80",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-11-25T20:15:10Z",
+      "side": 1,
+      "message": "lgtm, but there\u0027s a prod freeze til 11/30 so not auto-submitting",
+      "revId": "2140a3be8c3cfe435667c32c369f91a534dc3d07",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
