@@ -67,6 +67,8 @@ class Result:
   manifest: dict[str, ManifestRepo]
   fixed_revisions: dict[str, str]
 
+  out_commit: common_pb2.GitilesCommit
+
 
 class BotUpdateApi(recipe_api.RecipeApi):
 
@@ -504,9 +506,9 @@ class BotUpdateApi(recipe_api.RecipeApi):
             blamelist_pins.append(pin)
           self.m.milo.show_blamelist_for(blamelist_pins)
 
-        # Set output commit of the build.
-        if (set_output_commit and
-            'got_revision' in self._last_returned_properties and
+        out_commit = None
+
+        if ('got_revision' in self._last_returned_properties and
             'got_revision' in reverse_rev_map):
           # As of April 2019, got_revision describes the output commit,
           # the same commit that Build.output.gitiles_commit describes.
@@ -555,6 +557,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
                 'Unsupported case. '
                 'Call buildbucket.set_output_gitiles_commit directly.'
             )
+
+        if set_output_commit:
           self.m.buildbucket.set_output_gitiles_commit(out_commit)
 
         # Set the "checkout" path for the main solution.
@@ -579,6 +583,7 @@ class BotUpdateApi(recipe_api.RecipeApi):
         properties=result.get('properties', {}),
         manifest=result.get('manifest', {}),
         fixed_revisions=result.get('fixed_revisions', {}),
+        out_commit=out_commit,
     )
 
   def _destination_ref(self, cfg, path):
