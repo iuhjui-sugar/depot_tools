@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fdaac504_8a0cd230",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-11-25T09:00:04Z",
+      "side": 1,
+      "message": "Fix merge conflict and CQ?",
+      "revId": "a93841f43a0c85601f40cedb43d6a8d9eff71f04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6ba35e0a_73a8bdd3",
         "filename": "autoninja.py",
         "patchSetId": 1
