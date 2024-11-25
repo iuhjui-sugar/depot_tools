@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bef6006_3c59c03d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-11-25T17:09:51Z",
+      "side": 1,
+      "message": "Looks good to me, but I\u0027ll hold off on voting CR+1 until next Monday after our Thanksgiving prod freeze is over.",
+      "revId": "70952afaa916ae564826879c987c9ce3dc9745ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
