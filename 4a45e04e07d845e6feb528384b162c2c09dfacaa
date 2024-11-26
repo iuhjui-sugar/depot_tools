@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3142b284_b1d9fc28",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2024-11-26T17:31:24Z",
+      "side": 1,
+      "message": "This should be `common_pb2.GitilesCommit | None` since it will be None if got_revision isn\u0027t set.",
+      "range": {
+        "startLine": 71,
+        "startChar": 14,
+        "endLine": 71,
+        "endChar": 38
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "47e8bbb9_05cdc566",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "recipes/recipe_modules/bot_update/api.py",
+              "range": {
+                "startLine": 71,
+                "startChar": 0,
+                "endLine": 72,
+                "endChar": 0
+              },
+              "replacement": "  out_commit: common_pb2.GitilesCommit | None\n"
+            }
+          ]
+        }
+      ],
+      "revId": "4a45e04e07d845e6feb528384b162c2c09dfacaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
