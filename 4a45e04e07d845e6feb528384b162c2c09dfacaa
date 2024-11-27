@@ -40,6 +40,30 @@
       ],
       "revId": "4a45e04e07d845e6feb528384b162c2c09dfacaa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14ce5a2c_723f3339",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 3578280
+      },
+      "writtenOn": "2024-11-27T09:42:22Z",
+      "side": 1,
+      "message": "Good point, thanks!",
+      "parentUuid": "3142b284_b1d9fc28",
+      "range": {
+        "startLine": 71,
+        "startChar": 14,
+        "endLine": 71,
+        "endChar": 38
+      },
+      "revId": "4a45e04e07d845e6feb528384b162c2c09dfacaa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
