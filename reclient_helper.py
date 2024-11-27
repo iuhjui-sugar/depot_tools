@@ -383,7 +383,9 @@ Ensure you have completed the reproxy setup instructions:
             print('%1.3fs to stop reproxy' % elapsed)
 
 
-def run_ninja(ninja_cmd, should_collect_logs=False):
+def run_ninja(ninja_cmd,
+              should_collect_logs=False,
+              swallow_keyboard_interrupt=True):
     """Runs Ninja in build_context()."""
     # TODO: crbug.com/345113094 - rename the `tool` label to `ninja`.
     with build_context(ninja_cmd, "ninja_reclient",
@@ -394,10 +396,14 @@ def run_ninja(ninja_cmd, should_collect_logs=False):
             return ninja.main(ninja_cmd)
         except KeyboardInterrupt:
             print("Shutting down reproxy...", file=sys.stderr)
+            if not swallow_keyboard_interrupt:
+                raise
             return 1
 
 
-def run_siso(siso_cmd, should_collect_logs=False):
+def run_siso(siso_cmd,
+             should_collect_logs=False,
+             swallow_keyboard_interrupt=True):
     """Runs Siso in build_context()."""
     # TODO: crbug.com/345113094 - rename the `autosiso` label to `siso`.
     with build_context(siso_cmd, "autosiso", should_collect_logs) as ret_code:
@@ -407,4 +413,6 @@ def run_siso(siso_cmd, should_collect_logs=False):
             return siso.main(siso_cmd)
         except KeyboardInterrupt:
             print("Shutting down reproxy...", file=sys.stderr)
+            if not swallow_keyboard_interrupt:
+                raise
             return 1
