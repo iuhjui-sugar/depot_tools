@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bc65e33_8865b885",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-11-27T07:01:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fdaac504_8a0cd230",
+      "revId": "a93841f43a0c85601f40cedb43d6a8d9eff71f04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ba35e0a_73a8bdd3",
@@ -55,6 +73,30 @@
           ]
         }
       ],
+      "revId": "a93841f43a0c85601f40cedb43d6a8d9eff71f04",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23f9dbc0_28adf2ae",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-11-27T07:01:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ba35e0a_73a8bdd3",
+      "range": {
+        "startLine": 177,
+        "startChar": 39,
+        "endLine": 177,
+        "endChar": 59
+      },
       "revId": "a93841f43a0c85601f40cedb43d6a8d9eff71f04",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
