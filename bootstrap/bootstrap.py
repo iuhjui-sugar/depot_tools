@@ -185,7 +185,7 @@ def _toolchain_in_use(toolchain_path):
 
 
 def _check_call(argv, stdin_input=None, **kwargs):
-    """Wrapper for subprocess.check_call that adds logging."""
+    """Wrapper for subprocess.Popen that adds logging."""
     logging.info('running %r', argv)
     if stdin_input is not None:
         kwargs['stdin'] = subprocess.PIPE
