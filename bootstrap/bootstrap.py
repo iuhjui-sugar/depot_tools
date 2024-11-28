@@ -190,9 +190,10 @@ def _check_call(argv, stdin_input=None, **kwargs):
     if stdin_input is not None:
         kwargs['stdin'] = subprocess.PIPE
     proc = subprocess.Popen(argv, **kwargs)
-    proc.communicate(input=stdin_input)
+    stdout, stderr = proc.communicate(input=stdin_input)
     if proc.returncode:
         raise subprocess.CalledProcessError(proc.returncode, argv, None)
+    return stdout, stderr
 
 
 def _safe_rmtree(path):
