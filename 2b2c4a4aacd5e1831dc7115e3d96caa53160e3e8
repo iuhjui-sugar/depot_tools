@@ -1,0 +1,109 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3cf899d_1f6331e2",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-11-28T07:51:17Z",
+      "side": 1,
+      "message": "better to return `None` if it can\u0027t use use_reclient_value.py?",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 0
+      },
+      "revId": "2b2c4a4aacd5e1831dc7115e3d96caa53160e3e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea24107b_55726ab5",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-11-28T07:51:17Z",
+      "side": 1,
+      "message": "If a value is already returned from `reclient_value.py`, it should change use_reclient? \n(If the values are mismatched, it should fail?)",
+      "range": {
+        "startLine": 255,
+        "startChar": 16,
+        "endLine": 255,
+        "endChar": 28
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "8acc69ab_ab82b6b7",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 258,
+                "startChar": 0,
+                "endLine": 259,
+                "endChar": 0
+              },
+              "replacement": "                use_reclient \u003d False\n"
+            }
+          ]
+        }
+      ],
+      "revId": "2b2c4a4aacd5e1831dc7115e3d96caa53160e3e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13a1a741_d270e242",
+        "filename": "autoninja.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-11-28T07:51:17Z",
+      "side": 1,
+      "message": "why changing use_siso here?",
+      "range": {
+        "startLine": 258,
+        "startChar": 16,
+        "endLine": 258,
+        "endChar": 24
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "6c9a749d_e7fcc884",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 258,
+                "startChar": 0,
+                "endLine": 259,
+                "endChar": 0
+              },
+              "replacement": "                use_reclient \u003d False\n"
+            }
+          ]
+        }
+      ],
+      "revId": "2b2c4a4aacd5e1831dc7115e3d96caa53160e3e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
