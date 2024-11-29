@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a709e4fa_32d74605",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-11-29T07:59:41Z",
+      "side": 1,
+      "message": "should have been set by build/toolchain/use_reclient_value.py ?",
+      "revId": "8b469ee08d92b4aa711e47f4dc27abdcfb7c2804",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
