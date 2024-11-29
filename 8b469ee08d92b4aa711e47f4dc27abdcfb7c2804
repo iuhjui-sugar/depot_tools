@@ -52,6 +52,24 @@
       "parentUuid": "b0e51c15_e4e24106",
       "revId": "8b469ee08d92b4aa711e47f4dc27abdcfb7c2804",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "215b68c6_30255ad4",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-11-29T08:07:44Z",
+      "side": 1,
+      "message": "I assume you will remove `args.gn` handling only after `use_reclient_value.py` is landed to all channels, so we should be good.",
+      "parentUuid": "00697470_4114194a",
+      "revId": "8b469ee08d92b4aa711e47f4dc27abdcfb7c2804",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
