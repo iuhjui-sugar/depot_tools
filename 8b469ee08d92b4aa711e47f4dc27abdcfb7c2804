@@ -34,6 +34,24 @@
       "parentUuid": "a709e4fa_32d74605",
       "revId": "8b469ee08d92b4aa711e47f4dc27abdcfb7c2804",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00697470_4114194a",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-11-29T08:01:43Z",
+      "side": 1,
+      "message": "hmm...\nplease prepare that.\n\nwe\u0027ll remove args.gn handling from autoninja.py",
+      "parentUuid": "b0e51c15_e4e24106",
+      "revId": "8b469ee08d92b4aa711e47f4dc27abdcfb7c2804",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
